@@ -41,9 +41,10 @@ body { font-family: system-ui, -apple-system, sans-serif; background: var(--bg);
 .sidebar { width: var(--sidebar-w); background: var(--surface); border-right: 1px solid var(--border); display: flex; flex-direction: column; position: fixed; top: 0; left: 0; height: 100vh; z-index: 100; transition: transform 0.3s; }
 .desktop-header { display: none; }
 @media (min-width: 769px) {
-  .desktop-header { display: flex; align-items: center; gap: var(--space-md); padding: var(--space-md) var(--space-lg); background: var(--surface); border-bottom: 1px solid var(--border); position: fixed; top: 0; left: 0; right: 0; z-index: 90; height: var(--header-h); }
-  .desktop-toggle { background: none; border: none; font-size: 1.25rem; cursor: pointer; color: var(--text-secondary); min-width: 44px; min-height: 44px; display: flex; align-items: center; justify-content: center; border-radius: var(--radius-md); }
+  .desktop-header { display: flex; align-items: center; gap: var(--space-md); padding: var(--space-md) var(--space-lg); background: var(--surface); border-bottom: 1px solid var(--border); position: fixed; top: 0; left: 0; right: 0; z-index: 102; height: var(--header-h); }
+  .desktop-toggle { background: none; border: none; font-size: 1.25rem; cursor: pointer; color: var(--text-secondary); min-width: 44px; min-height: 44px; display: flex; align-items: center; justify-content: center; border-radius: var(--radius-md); position: relative; z-index: 103; }
   .desktop-toggle:hover { background: var(--bg); color: var(--primary); }
+  .desktop-toggle { position: relative; z-index: 103; }
   .desktop-title { font-weight: 700; color: var(--primary); font-size: 1.1rem; }
   .desktop-updated { margin-left: auto; font-size: 0.75rem; color: var(--text-secondary); }
   .sidebar { transition: width 0.3s ease; }
