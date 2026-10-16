@@ -135,6 +135,6 @@ body { font-family: system-ui, -apple-system, sans-serif; background: var(--bg);
   .hamburger { background: none; border: none; font-size: 1.5rem; cursor: pointer; min-width: 44px; min-height: 44px; }
   .mobile-title { font-weight: 700; color: var(--primary); flex: 1; }
   .mobile-updated { font-size: 0.7rem; color: var(--text-secondary); }
-  .scroll-container { padding-top: var(--header-h); }
-  .slide { width: 100vw; padding: var(--space-md); }
+  .scroll-container { padding-top: var(--header-h); white-space: nowrap; }
+  .slide { display: inline-block; vertical-align: top; width: 100vw; overflow-y: auto; padding: var(--space-md); height: 100%; white-space: normal; }
 }
