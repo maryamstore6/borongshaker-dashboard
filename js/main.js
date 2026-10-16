@@ -31,9 +31,7 @@
 
   function scrollToSlide(targetId) {
     const targetSlide = document.getElementById(targetId);
-    console.log('[SCROLL] scrollToSlide called:', targetId, 'slide:', !!targetSlide, 'container:', !!scrollContainer, 'slides:', slides.length);
     if (!targetSlide || !scrollContainer) return;
-    console.log('[SCROLL] before scroll - scrollLeft:', scrollContainer.scrollLeft, 'scrollWidth:', scrollContainer.scrollWidth, 'clientWidth:', scrollContainer.clientWidth);
     const isMobile = window.innerWidth < 768;
     if (isMobile) {
       const slideIndex = Array.from(slides).indexOf(targetSlide);
