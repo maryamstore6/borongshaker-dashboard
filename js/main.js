@@ -1,5 +1,5 @@
 /**
- * main.js — Navigasi tab, inisialisasi Chart.js & DataTable
+ * main.js — Scroll-snap navigation, inisialisasi Chart.js & DataTable
  */
 (function() {
   'use strict';
@@ -11,27 +11,12 @@
 
   window.DASH = { fmtRM, fmtNum, fmtPct };
 
-  // ========== Navigasi Tab (hash routing) ==========
-  const tabs = document.querySelectorAll('.nav-tab');
-  const currentPath = location.pathname.split('/').pop() || 'index.html';
-
-  tabs.forEach(tab => {
-    const href = tab.getAttribute('href');
-    if (!href) return;
-    if (href === currentPath || (currentPath === 'index.html' && href === 'index.html')) {
-      tab.classList.add('active');
-    } else {
-      tab.classList.remove('active');
-    }
-  });
-
   // ========== Tunggu data dimuat ==========
   function onDataReady() {
-    const path = location.pathname.split('/').pop() || 'index.html';
-    if (path === 'index.html' || path === '') initOverview();
-    else if (path === 'stock.html') initStock();
-    else if (path === 'sales.html') initSales();
-    else if (path === 'restock.html') initRestock();
+    initOverview();
+    initStock();
+    initSales();
+    initRestock();
   }
 
   function safeInit() {
@@ -48,7 +33,45 @@
     window.addEventListener('load', safeInit);
   }
 
-  // ========== OVERVIEW PAGE ==========
+  // ========== Navigasi Dot ==========
+  const navDots = document.querySelectorAll('.nav-dot');
+  const slides = document.querySelectorAll('.slide');
+  const scrollContainer = document.querySelector('.scroll-container');
+
+  navDots.forEach(dot => {
+    dot.addEventListener('click', () => {
+      const targetId = dot.getAttribute('data-target');
+      const targetSlide = document.getElementById(targetId);
+      if (targetSlide) {
+        targetSlide.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  });
+
+  // IntersectionObserver to update active dot
+  if (scrollContainer && slides.length > 0) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const id = entry.target.id;
+          navDots.forEach(dot => {
+            if (dot.getAttribute('data-target') === id) {
+              dot.classList.add('active');
+            } else {
+              dot.classList.remove('active');
+            }
+          });
+        }
+      });
+    }, {
+      root: scrollContainer,
+      threshold: 0.5
+    });
+
+    slides.forEach(slide => observer.observe(slide));
+  }
+
+  // ========== OVERVIEW ==========
   function initOverview() {
     const kpi = window.DASHBOARD_DATA.kpiSummary;
     const monthly = window.DASHBOARD_DATA.salesMonthly;
@@ -180,7 +203,7 @@
     }
   }
 
-  // ========== STOCK PAGE ==========
+  // ========== STOCK ==========
   function initStock() {
     const stock = window.DASHBOARD_DATA.stockCurrent;
     if (!stock) return;
@@ -262,7 +285,6 @@
           </tr>
         `).join('');
       }
-
       // Initialize DataTable for low stock
       if ($.fn.DataTable) {
         $('#low-stock-table').DataTable({
@@ -279,7 +301,7 @@
     }
   }
 
-  // ========== SALES PAGE ==========
+  // ========== SALES ==========
   function initSales() {
     const monthly = window.DASHBOARD_DATA.salesMonthly;
     const daily = window.DASHBOARD_DATA.dailySales;
@@ -428,7 +450,7 @@
     }
   }
 
-  // ========== RESTOCK PAGE ==========
+  // ========== RESTOCK ==========
   function initRestock() {
     const stock = window.DASHBOARD_DATA.stockCurrent;
     if (!stock || !stock.critical) return;
@@ -486,16 +508,16 @@
     const btn = document.getElementById('btn-whatsapp');
     if (btn) {
       btn.addEventListener('click', () => {
-        let msg = '*SURATAN PEMBELIANAN — RESTOCK*\n';
-        msg += 'Tarikh: ' + new Date().toLocaleDateString('ms-MY') + '\n';
-        msg += 'Bilangan item: ' + items.length + '\n';
-        msg += 'Anggaran kos: ' + fmtRM(totalCost) + '\n\n';
-        msg += 'Senarai item:\n';
+        let msg = '*SURATAN PEMBELIANAN — RESTOCK*\\n';
+        msg += 'Tarikh: ' + new Date().toLocaleDateString('ms-MY') + '\\n';
+        msg += 'Bilangan item: ' + items.length + '\\n';
+        msg += 'Anggaran kos: ' + fmtRM(totalCost) + '\\n\\n';
+        msg += 'Senarai item:\\n';
         items.forEach((item, idx) => {
           const orderQty = Math.max((item.threshold || 50) - (item.onhand || 0) - (item.onTheWay || 0), 10);
-          msg += (idx + 1) + '. ' + item.sku + ' — ' + orderQty + ' unit @ ' + fmtRM(item.cost) + '\n';
+          msg += (idx + 1) + '. ' + item.sku + ' — ' + orderQty + ' unit @ ' + fmtRM(item.cost) + '\\n';
         });
-        msg += '\nSila hantar pengesahan. Terima kasih.';
+        msg += '\\nSila hantar pengesahan. Terima kasih.';
 
         const url = 'https://wa.me/?text=' + encodeURIComponent(msg);
         window.open(url, '_blank');

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BigSeller Dashboard — Ringkasan</title>
+  <title>BigSeller Dashboard</title>
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
@@ -25,113 +25,310 @@
     </div>
   </header>
 
-  <!-- Navigation -->
-  <nav class="nav-tabs">
-    <div class="nav-inner">
-      <a href="index.html" class="nav-tab active">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
-        Ringkasan
-      </a>
-      <a href="stock.html" class="nav-tab">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><path d="M3.3 7L12 12l8.7-5"/><path d="M12 22V12"/></svg>
-        Stok
-      </a>
-      <a href="sales.html" class="nav-tab">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 15l4-6 4 3 5-8"/></svg>
-        Jualan
-      </a>
-      <a href="restock.html" class="nav-tab">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><path d="M3.3 7L12 12l8.7-5"/><path d="M12 22V12"/></svg>
-        Restock
-      </a>
-    </div>
+  <!-- Scroll-Snap Container -->
+  <div class="scroll-container">
+
+    <!-- Section 1: Overview -->
+    <section id="overview" class="slide">
+      <h1 class="page-title">Ringkasan BigSeller</h1>
+      <p class="page-subtitle">Prestasi keseluruhan untuk tempoh 9 bulan (Januari – September 2026)</p>
+
+      <!-- Critical Stock Alert -->
+      <div id="alert-critical" class="alert-box alert-danger hidden">
+        <svg class="alert-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        <div class="alert-content">
+          <h4>Amaran Stok Kritikal</h4>
+          <p><span id="alert-count">0</span> produk kehabisan stok: <span id="alert-items"></span></p>
+        </div>
+      </div>
+
+      <!-- KPI Cards -->
+      <div class="grid grid-4 mb-2">
+        <div class="kpi-card kpi-green">
+          <span class="kpi-label">Jumlah Jualan</span>
+          <span class="kpi-value tnum" id="kpi-sales">RM0.00</span>
+          <span class="kpi-sub">9 bulan</span>
+        </div>
+        <div class="kpi-card kpi-blue">
+          <span class="kpi-label">Jumlah Untung</span>
+          <span class="kpi-value tnum" id="kpi-profit">RM0.00</span>
+          <span class="kpi-sub">9 bulan</span>
+        </div>
+        <div class="kpi-card kpi-gold">
+          <span class="kpi-label">Jumlah Order</span>
+          <span class="kpi-value tnum" id="kpi-orders">0</span>
+          <span class="kpi-sub">9 bulan</span>
+        </div>
+        <div class="kpi-card kpi-purple">
+          <span class="kpi-label">Purata Margin</span>
+          <span class="kpi-value tnum" id="kpi-margin">0%</span>
+          <span class="kpi-sub">9 bulan</span>
+        </div>
+      </div>
+
+      <!-- Charts Row -->
+      <div class="grid grid-2-1 mb-2">
+        <div class="card">
+          <div class="card-header">
+            <span class="card-title">Trend Jualan & Untung (9 Bulan)</span>
+          </div>
+          <div class="chart-container" style="height: 300px;">
+            <canvas id="chart-sales-trend"></canvas>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header">
+            <span class="card-title">Pecahan Channel</span>
+          </div>
+          <div class="chart-container" style="height: 300px;">
+            <canvas id="chart-channel"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <!-- Monthly Breakdown Table -->
+      <div class="card">
+        <div class="card-header">
+          <span class="card-title">Prestasi Bulanan Terperinci</span>
+        </div>
+        <div class="table-wrapper">
+          <table class="display" id="monthly-table" style="width:100%">
+            <thead>
+              <tr>
+                <th>Bulan</th>
+                <th class="text-right">Order</th>
+                <th class="text-right">Qty</th>
+                <th class="text-right">Jualan (RM)</th>
+                <th class="text-right">Hasil (RM)</th>
+                <th class="text-right">Untung (RM)</th>
+                <th class="text-right">Margin</th>
+                <th class="text-right">Shopee</th>
+                <th class="text-right">TikTok</th>
+                <th class="text-right">Lazada</th>
+              </tr>
+            </thead>
+            <tbody id="monthly-table-body">
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: Stok -->
+    <section id="stok" class="slide">
+      <h1 class="page-title">Pengurusan Stok</h1>
+      <p class="page-subtitle">Keseluruhan kesihatan stok dan produk yang memerlukan perhatian</p>
+
+      <!-- Stock Health Summary -->
+      <div class="stock-summary mb-2">
+        <div class="stock-summary-item critical">
+          <div class="stock-summary-value tnum" id="stock-critical-count">0</div>
+          <div class="stock-summary-label">Kritikal</div>
+        </div>
+        <div class="stock-summary-item low">
+          <div class="stock-summary-value tnum" id="stock-low-count">0</div>
+          <div class="stock-summary-label">Stok Rendah</div>
+        </div>
+        <div class="stock-summary-item no-stock">
+          <div class="stock-summary-value tnum" id="stock-no-count">0</div>
+          <div class="stock-summary-label">Tanpa Stok</div>
+        </div>
+        <div class="stock-summary-item total">
+          <div class="stock-summary-value tnum" id="stock-total-count">0</div>
+          <div class="stock-summary-label">Jumlah Produk</div>
+        </div>
+      </div>
+
+      <!-- Stock Chart -->
+      <div class="card mb-2">
+        <div class="card-header">
+          <span class="card-title">Kategori Stok</span>
+        </div>
+        <div class="chart-container" style="height: 200px;">
+          <canvas id="chart-stock"></canvas>
+        </div>
+      </div>
+
+      <!-- Critical Items Table -->
+      <div class="card mb-2">
+        <div class="card-header">
+          <span class="card-title">Produk Kritikal — Restock Segera</span>
+          <span class="card-badge badge-danger">8 item</span>
+        </div>
+        <div class="table-wrapper">
+          <table class="display" id="critical-table" style="width:100%">
+            <thead>
+              <tr>
+                <th>SKU</th>
+                <th>Nama Produk</th>
+                <th class="text-right">Stok</th>
+                <th class="text-right">Ambang</th>
+                <th class="text-right">Purata/Hari</th>
+                <th class="text-right">Kos (RM)</th>
+                <th class="text-right">Jumlah Kos</th>
+                <th class="text-right">Dalam Transit</th>
+              </tr>
+            </thead>
+            <tbody id="critical-table-body">
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Low Stock Table -->
+      <div class="card">
+        <div class="card-header">
+          <span class="card-title">Stok Rendah</span>
+          <span class="card-badge badge-warning">54 item</span>
+        </div>
+        <div class="table-wrapper">
+          <table class="display" id="low-stock-table" style="width:100%">
+            <thead>
+              <tr>
+                <th>SKU</th>
+                <th>Nama Produk</th>
+                <th class="text-right">Stok</th>
+                <th class="text-right">Ambang</th>
+                <th class="text-right">Purata/Hari</th>
+                <th class="text-right">Kos (RM)</th>
+                <th class="text-right">Jumlah Kos</th>
+                <th class="text-right">Dalam Transit</th>
+              </tr>
+            </thead>
+            <tbody id="low-table-body">
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: Jualan -->
+    <section id="jualan" class="slide">
+      <h1 class="page-title">Analisis Jualan</h1>
+      <p class="page-subtitle">Prestasi jualan bulanan dan harian (Januari – September 2026)</p>
+
+      <!-- Charts Row 1: Monthly Sales + MoM Growth -->
+      <div class="grid grid-2 mb-2">
+        <div class="card">
+          <div class="card-header">
+            <span class="card-title">Jualan Bulanan (RM)</span>
+          </div>
+          <div class="chart-container" style="height: 280px;">
+            <canvas id="chart-monthly-sales"></canvas>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header">
+            <span class="card-title">Pertumbuhan Bulan-ke-Bulan</span>
+          </div>
+          <div class="chart-container" style="height: 280px;">
+            <canvas id="chart-mom-growth"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <!-- Channel Comparison -->
+      <div class="card mb-2">
+        <div class="card-header">
+          <span class="card-title">Perbandingan Channel Bulanan</span>
+        </div>
+        <div class="chart-container" style="height: 280px;">
+          <canvas id="chart-channel-compare"></canvas>
+        </div>
+      </div>
+
+      <!-- Daily Sales DataTable -->
+      <div class="card">
+        <div class="card-header">
+          <span class="card-title">Data Jualan Harian</span>
+          <span class="card-badge badge-info">268 hari</span>
+        </div>
+        <div class="table-wrapper">
+          <table class="display" id="daily-sales-table" style="width:100%">
+            <thead>
+              <tr>
+                <th>Tarikh</th>
+                <th class="text-right">Order</th>
+                <th class="text-right">Qty</th>
+                <th class="text-right">Jualan</th>
+                <th class="text-right">Hasil</th>
+                <th class="text-right">Untung</th>
+                <th class="text-right">Margin</th>
+                <th class="text-right">Shopee</th>
+                <th class="text-right">TikTok</th>
+                <th class="text-right">Lazada</th>
+              </tr>
+            </thead>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 4: Restock -->
+    <section id="restock" class="slide">
+      <h1 class="page-title">Senarai Restock</h1>
+      <p class="page-subtitle">Produk kritikal yang memerlukan pesanan semula segera</p>
+
+      <!-- Summary Cards -->
+      <div class="grid grid-3 mb-2">
+        <div class="kpi-card kpi-green">
+          <span class="kpi-label">Jumlah Item</span>
+          <span class="kpi-value tnum" id="restock-total-items">0</span>
+          <span class="kpi-sub">perlu restock</span>
+        </div>
+        <div class="kpi-card kpi-blue">
+          <span class="kpi-label">Anggaran Kos</span>
+          <span class="kpi-value tnum" id="restock-total-cost">RM0.00</span>
+          <span class="kpi-sub">unit kos pembelian</span>
+        </div>
+        <div class="kpi-card kpi-gold">
+          <span class="kpi-label">Tindakan</span>
+          <span class="kpi-value" style="font-size:1rem; padding-top:0.3rem;">Hantar pesanan ke supplier</span>
+          <span class="kpi-sub">via WhatsApp</span>
+        </div>
+      </div>
+
+      <!-- WhatsApp Button -->
+      <div class="card mb-2" style="text-align: center;">
+        <button id="btn-whatsapp" class="btn btn-primary" style="width: 100%; justify-content: center; font-size: 1rem; padding: 0.85rem;">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Salin Senarai Pesanan ke WhatsApp
+        </button>
+      </div>
+
+      <!-- Restock List -->
+      <div class="card">
+        <div class="card-header">
+          <span class="card-title">Senarai Pesanan Restock</span>
+          <span class="card-badge badge-danger">8 item</span>
+        </div>
+        <div id="restock-list">
+          <div class="loading"><div class="loading-spinner"></div> Memuat data...</div>
+        </div>
+      </div>
+    </section>
+
+  </div><!-- /scroll-container -->
+
+  <!-- Nav Dots -->
+  <nav class="nav-dots">
+    <button class="nav-dot active" data-target="overview">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+      <span>Ringkasan</span>
+    </button>
+    <button class="nav-dot" data-target="stok">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><path d="M3.3 7L12 12l8.7-5"/><path d="M12 22V12"/></svg>
+      <span>Stok</span>
+    </button>
+    <button class="nav-dot" data-target="jualan">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 15l4-6 4 3 5-8"/></svg>
+      <span>Jualan</span>
+    </button>
+    <button class="nav-dot" data-target="restock">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><path d="M3.3 7L12 12l8.7-5"/><path d="M12 22V12"/></svg>
+      <span>Restock</span>
+    </button>
   </nav>
-
-  <!-- Main Content -->
-  <main class="main">
-    <h1 class="page-title">Ringkasan BigSeller</h1>
-    <p class="page-subtitle">Prestasi keseluruhan untuk tempoh 9 bulan (Januari – September 2026)</p>
-
-    <!-- Critical Stock Alert -->
-    <div id="alert-critical" class="alert-box alert-danger hidden">
-      <svg class="alert-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-      <div class="alert-content">
-        <h4>Amaran Stok Kritikal</h4>
-        <p><span id="alert-count">0</span> produk kehabisan stok: <span id="alert-items"></span></p>
-      </div>
-    </div>
-
-    <!-- KPI Cards -->
-    <div class="grid grid-4 mb-2">
-      <div class="kpi-card kpi-green">
-        <span class="kpi-label">Jumlah Jualan</span>
-        <span class="kpi-value tnum" id="kpi-sales">RM0.00</span>
-        <span class="kpi-sub">9 bulan</span>
-      </div>
-      <div class="kpi-card kpi-blue">
-        <span class="kpi-label">Jumlah Untung</span>
-        <span class="kpi-value tnum" id="kpi-profit">RM0.00</span>
-        <span class="kpi-sub">9 bulan</span>
-      </div>
-      <div class="kpi-card kpi-gold">
-        <span class="kpi-label">Jumlah Order</span>
-        <span class="kpi-value tnum" id="kpi-orders">0</span>
-        <span class="kpi-sub">9 bulan</span>
-      </div>
-      <div class="kpi-card kpi-purple">
-        <span class="kpi-label">Purata Margin</span>
-        <span class="kpi-value tnum" id="kpi-margin">0%</span>
-        <span class="kpi-sub">9 bulan</span>
-      </div>
-    </div>
-
-    <!-- Charts Row -->
-    <div class="grid grid-2-1 mb-2">
-      <div class="card">
-        <div class="card-header">
-          <span class="card-title">Trend Jualan & Untung (9 Bulan)</span>
-        </div>
-        <div class="chart-container" style="height: 300px;">
-          <canvas id="chart-sales-trend"></canvas>
-        </div>
-      </div>
-      <div class="card">
-        <div class="card-header">
-          <span class="card-title">Pecahan Channel</span>
-        </div>
-        <div class="chart-container" style="height: 300px;">
-          <canvas id="chart-channel"></canvas>
-        </div>
-      </div>
-    </div>
-
-    <!-- Monthly Breakdown Table -->
-    <div class="card">
-      <div class="card-header">
-        <span class="card-title">Prestasi Bulanan Terperinci</span>
-      </div>
-      <div class="table-wrapper">
-        <table class="display" id="monthly-table" style="width:100%">
-          <thead>
-            <tr>
-              <th>Bulan</th>
-              <th class="text-right">Order</th>
-              <th class="text-right">Qty</th>
-              <th class="text-right">Jualan (RM)</th>
-              <th class="text-right">Hasil (RM)</th>
-              <th class="text-right">Untung (RM)</th>
-              <th class="text-right">Margin</th>
-              <th class="text-right">Shopee</th>
-              <th class="text-right">TikTok</th>
-              <th class="text-right">Lazada</th>
-            </tr>
-          </thead>
-          <tbody id="monthly-table-body">
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </main>
 
   <script>
     // Populate monthly table when data is ready
