@@ -28,6 +28,16 @@
   const scrollContainer = document.querySelector('.scroll-container');
   const hamburger = document.getElementById('hamburger-btn');
   const sidebar = document.getElementById('sidebar');
+  const mainContent = document.querySelector('.main-content');
+  const desktopToggle = document.getElementById('desktop-toggle');
+
+  // Desktop sidebar collapse toggle
+  if (desktopToggle) {
+    desktopToggle.addEventListener('click', () => {
+      sidebar.classList.toggle('collapsed');
+      if (mainContent) mainContent.classList.toggle('expanded');
+    });
+  }
 
   function scrollToSlide(targetId) {
     const targetSlide = document.getElementById(targetId);
