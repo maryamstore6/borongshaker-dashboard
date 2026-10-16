@@ -40,19 +40,25 @@
 
   function scrollToSlide(targetId) {
     const targetSlide = document.getElementById(targetId);
+    console.log('[NAV] scrollToSlide called:', targetId, 'slide:', !!targetSlide, 'container:', !!scrollContainer);
     if (!targetSlide || !scrollContainer) return;
     
     const isMobile = window.innerWidth < 768;
+    console.log('[NAV] isMobile:', isMobile, 'innerWidth:', window.innerWidth);
     if (isMobile) {
       // Mobile: scroll to top of slide
       const slideTop = targetSlide.offsetTop;
+      console.log('[NAV] mobile scroll to top:', slideTop);
       scrollContainer.scrollTop = slideTop;
+      console.log('[NAV] scrollTop now:', scrollContainer.scrollTop);
     } else {
       // Desktop: scroll to left of slide
       const slideIndex = Array.from(slides).indexOf(targetSlide);
       const slideWidth = scrollContainer.clientWidth;
       const slideLeft = slideIndex * slideWidth;
+      console.log('[NAV] desktop: slideIndex=', slideIndex, 'slideWidth=', slideWidth, 'slideLeft=', slideLeft);
       scrollContainer.scrollLeft = slideLeft;
+      console.log('[NAV] scrollLeft now:', scrollContainer.scrollLeft);
     }
     
     // Update active dot
