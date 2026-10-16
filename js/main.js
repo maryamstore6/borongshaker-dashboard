@@ -77,6 +77,29 @@
     backdrop.addEventListener('click', closeSidebar);
   }
 
+  // Swipe gesture: swipe left to close, swipe right to open
+  let touchStartX = 0;
+  let touchEndX = 0;
+  const dashboardLayout = document.querySelector('.dashboard-layout');
+
+  if (dashboardLayout) {
+    dashboardLayout.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+
+    dashboardLayout.addEventListener('touchend', (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+      const diff = touchStartX - touchEndX;
+      if (Math.abs(diff) > 50 && window.innerWidth < 768) {
+        if (diff > 0 && sidebar && sidebar.classList.contains('open')) {
+          closeSidebar(); // swipe left to close
+        } else if (diff < 0 && touchStartX < 50) {
+          openSidebar(); // swipe right from edge to open
+        }
+      }
+    }, { passive: true });
+  }
+
   // Overview
   function initOverview() {
     const kpi = window.DASHBOARD_DATA.kpiSummary;
