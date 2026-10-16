@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BigSeller Dashboard — Ringkasan</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+  <script src="js/data-loader.js"></script>
+  <script src="js/main.js"></script>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="header-inner">
+      <a href="index.html" class="header-logo">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 15l4-6 4 3 5-8"/></svg>
+        BigSeller
+      </a>
+      <span class="header-updated">Dikemas kini: 16 Okt 2026</span>
+    </div>
+  </header>
+
+  <!-- Navigation -->
+  <nav class="nav-tabs">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-tab active">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+        Ringkasan
+      </a>
+      <a href="stock.html" class="nav-tab">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><path d="M3.3 7L12 12l8.7-5"/><path d="M12 22V12"/></svg>
+        Stok
+      </a>
+      <a href="sales.html" class="nav-tab">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 15l4-6 4 3 5-8"/></svg>
+        Jualan
+      </a>
+      <a href="restock.html" class="nav-tab">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><path d="M3.3 7L12 12l8.7-5"/><path d="M12 22V12"/></svg>
+        Restock
+      </a>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="main">
+    <h1 class="page-title">Ringkasan BigSeller</h1>
+    <p class="page-subtitle">Prestasi keseluruhan untuk tempoh 9 bulan (Januari – September 2026)</p>
+
+    <!-- Critical Stock Alert -->
+    <div id="alert-critical" class="alert-box alert-danger hidden">
+      <svg class="alert-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+      <div class="alert-content">
+        <h4>Amaran Stok Kritikal</h4>
+        <p><span id="alert-count">0</span> produk kehabisan stok: <span id="alert-items"></span></p>
+      </div>
+    </div>
+
+    <!-- KPI Cards -->
+    <div class="grid grid-4 mb-2">
+      <div class="kpi-card kpi-green">
+        <span class="kpi-label">Jumlah Jualan</span>
+        <span class="kpi-value tnum" id="kpi-sales">RM0.00</span>
+        <span class="kpi-sub">9 bulan</span>
+      </div>
+      <div class="kpi-card kpi-blue">
+        <span class="kpi-label">Jumlah Untung</span>
+        <span class="kpi-value tnum" id="kpi-profit">RM0.00</span>
+        <span class="kpi-sub">9 bulan</span>
+      </div>
+      <div class="kpi-card kpi-gold">
+        <span class="kpi-label">Jumlah Order</span>
+        <span class="kpi-value tnum" id="kpi-orders">0</span>
+        <span class="kpi-sub">9 bulan</span>
+      </div>
+      <div class="kpi-card kpi-purple">
+        <span class="kpi-label">Purata Margin</span>
+        <span class="kpi-value tnum" id="kpi-margin">0%</span>
+        <span class="kpi-sub">9 bulan</span>
+      </div>
+    </div>
+
+    <!-- Charts Row -->
+    <div class="grid grid-2-1 mb-2">
+      <div class="card">
+        <div class="card-header">
+          <span class="card-title">Trend Jualan & Untung (9 Bulan)</span>
+        </div>
+        <div class="chart-container" style="height: 300px;">
+          <canvas id="chart-sales-trend"></canvas>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <span class="card-title">Pecahan Channel</span>
+        </div>
+        <div class="chart-container" style="height: 300px;">
+          <canvas id="chart-channel"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <!-- Monthly Breakdown Table -->
+    <div class="card">
+      <div class="card-header">
+        <span class="card-title">Prestasi Bulanan Terperinci</span>
+      </div>
+      <div class="table-wrapper">
+        <table class="display" id="monthly-table" style="width:100%">
+          <thead>
+            <tr>
+              <th>Bulan</th>
+              <th class="text-right">Order</th>
+              <th class="text-right">Qty</th>
+              <th class="text-right">Jualan (RM)</th>
+              <th class="text-right">Hasil (RM)</th>
+              <th class="text-right">Untung (RM)</th>
+              <th class="text-right">Margin</th>
+              <th class="text-right">Shopee</th>
+              <th class="text-right">TikTok</th>
+              <th class="text-right">Lazada</th>
+            </tr>
+          </thead>
+          <tbody id="monthly-table-body">
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    // Populate monthly table when data is ready
+    document.addEventListener('dashboard:data-loaded', function() {
+      var monthly = window.DASHBOARD_DATA.salesMonthly;
+      if (!monthly) return;
+      var tbody = document.getElementById('monthly-table-body');
+      var html = '';
+      monthly.forEach(function(m) {
+        html += '<tr>' +
+          '<td>' + m.month + '</td>' +
+          '<td class="text-right tnum">' + (m.orders || 0).toLocaleString() + '</td>' +
+          '<td class="text-right tnum">' + (m.qty || 0).toLocaleString() + '</td>' +
+          '<td class="text-right tnum">RM' + Number(m.sales || 0).toLocaleString(undefined,{minimumFractionDigits:2,maximumFractionDigits:2}) + '</td>' +
+          '<td class="text-right tnum">RM' + Number(m.revenue || 0).toLocaleString(undefined,{minimumFractionDigits:2,maximumFractionDigits:2}) + '</td>' +
+          '<td class="text-right tnum">RM' + Number(m.profit || 0).toLocaleString(undefined,{minimumFractionDigits:2,maximumFractionDigits:2}) + '</td>' +
+          '<td class="text-right tnum">' + (m.margin != null ? m.margin + '%' : '-') + '</td>' +
+          '<td class="text-right tnum">RM' + Number(m.shopee || 0).toLocaleString(undefined,{minimumFractionDigits:2,maximumFractionDigits:2}) + '</td>' +
+          '<td class="text-right tnum">RM' + Number(m.tiktok || 0).toLocaleString(undefined,{minimumFractionDigits:2,maximumFractionDigits:2}) + '</td>' +
+          '<td class="text-right tnum">RM' + Number(m.lazada || 0).toLocaleString(undefined,{minimumFractionDigits:2,maximumFractionDigits:2}) + '</td>' +
+          '</tr>';
+      });
+      tbody.innerHTML = html;
+    });
+  </script>
+</body>
+</html>
