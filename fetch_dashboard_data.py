@@ -202,6 +202,13 @@ def fetch_kpi_summary(ws):
         print(f"ERROR parsing KPI response: {result[:200]}")
         return None
 
+def extract_val(row, key):
+    """Extract currentData from a metric dict, or return the value directly."""
+    v = row.get(key, 0)
+    if isinstance(v, dict):
+        return v.get("currentData", 0) or 0
+    return v or 0
+
 def aggregate_monthly_sales(sales_data):
     """Aggregate daily sales data into monthly summary."""
     if not sales_data or "data" not in sales_data:
@@ -219,8 +226,6 @@ def aggregate_monthly_sales(sales_data):
         if not date_str:
             continue
         month_key = date_str[:7]  # YYYY-MM
-        
-        metrics = row.get("metrics", {})
         
         if month_key not in monthly:
             monthly[month_key] = {
@@ -241,17 +246,17 @@ def aggregate_monthly_sales(sales_data):
             }
         
         m = monthly[month_key]
-        m["orders"] += int(metrics.get("totalOrderCount", 0) or 0)
-        m["validOrders"] += int(metrics.get("validOrderCount", 0) or 0)
-        m["qty"] += int(metrics.get("validProductSalesQty", metrics.get("totalProductSalesQty", 0)) or 0)
-        m["sales"] += float(metrics.get("validSaleAmount", 0) or 0)
-        m["revenue"] += float(metrics.get("validSaleAmount", 0) or 0)
-        m["cost"] += float(metrics.get("skuCost", 0) or 0)
-        m["shopee"] += float(metrics.get("shopeeSaleAmount", 0) or 0)
-        m["tiktok"] += float(metrics.get("tiktokSaleAmount", 0) or 0)
-        m["lazada"] += float(metrics.get("lazadaSaleAmount", 0) or 0)
-        m["cancels"] += int(metrics.get("cancelOrderCount", 0) or 0)
-        m["refunds"] += int(metrics.get("refundOrderCount", 0) or 0)
+        m["orders"] += int(extract_val(row, "totalOrderCount"))
+        m["validOrders"] += int(extract_val(row, "validOrderCount"))
+        m["qty"] += int(extract_val(row, "validProductSales"))
+        m["sales"] += float(extract_val(row, "validSaleAmount"))
+        m["revenue"] += float(extract_val(row, "validSaleAmount"))
+        m["cost"] += float(extract_val(row, "skuCost"))
+        m["shopee"] += float(extract_val(row, "shopeeSaleAmount"))
+        m["tiktok"] += float(extract_val(row, "tiktokSaleAmount"))
+        m["lazada"] += float(extract_val(row, "lazadaSaleAmount"))
+        m["cancels"] += int(extract_val(row, "cancelOrderCount"))
+        m["refunds"] += int(extract_val(row, "refundOrderCount"))
         m["days"] += 1
     
     # Calculate derived metrics
@@ -278,29 +283,28 @@ def aggregate_daily_sales(sales_data):
         date_str = row.get("sDate", "")
         if not date_str:
             continue
-        metrics = row.get("metrics", {})
-        sales = float(metrics.get("validSaleAmount", 0) or 0)
-        cost = float(metrics.get("skuCost", 0) or 0)
+        sales = float(extract_val(row, "validSaleAmount"))
+        cost = float(extract_val(row, "skuCost"))
         profit = sales - cost
-        valid_orders = int(metrics.get("validOrderCount", 0) or 0)
+        valid_orders = int(extract_val(row, "validOrderCount"))
         
         daily.append({
             "date": date_str,
-            "orders": int(metrics.get("totalOrderCount", 0) or 0),
+            "orders": int(extract_val(row, "totalOrderCount")),
             "validOrders": valid_orders,
-            "qty": int(metrics.get("validProductSalesQty", metrics.get("totalProductSalesQty", 0)) or 0),
+            "qty": int(extract_val(row, "validProductSales")),
             "sales": round(sales, 2),
             "revenue": round(sales, 2),
             "cost": round(cost, 2),
             "profit": round(profit, 2),
             "margin": round(profit / sales * 100, 2) if sales > 0 else 0,
-            "shopee": round(float(metrics.get("shopeeSaleAmount", 0) or 0), 2),
-            "tiktok": round(float(metrics.get("tiktokSaleAmount", 0) or 0), 2),
-            "lazada": round(float(metrics.get("lazadaSaleAmount", 0) or 0), 2),
-            "cancels": int(metrics.get("cancelOrderCount", 0) or 0),
-            "refunds": int(metrics.get("refundOrderCount", 0) or 0),
-            "subsidy": round(float(metrics.get("subsidyAmount", 0) or 0), 2),
-            "discount": round(float(metrics.get("discountAmount", 0) or 0), 2),
+            "shopee": round(float(extract_val(row, "shopeeSaleAmount")), 2),
+            "tiktok": round(float(extract_val(row, "tiktokSaleAmount")), 2),
+            "lazada": round(float(extract_val(row, "lazadaSaleAmount")), 2),
+            "cancels": int(extract_val(row, "cancelOrderCount")),
+            "refunds": int(extract_val(row, "refundOrderCount")),
+            "subsidy": round(float(extract_val(row, "totalSubsidy")), 2),
+            "discount": round(float(extract_val(row, "totalDiscount")), 2),
             "avgOrder": round(sales / valid_orders, 2) if valid_orders > 0 else 0
         })
     
