@@ -51,7 +51,7 @@ body { font-family: system-ui, -apple-system, sans-serif; background: var(--bg);
 /* Main Content */
 .main-content { flex: 1; min-width: 0; margin-left: var(--sidebar-w); overflow: hidden; }
 .scroll-container { overflow-x: auto; overflow-y: hidden; white-space: nowrap; height: 100vh; -webkit-overflow-scrolling: touch; }
-.slide { display: inline-block; vertical-align: top; width: 100%; overflow-y: auto; padding: var(--space-xl); height: 100%; white-space: normal; }
+.slide { display: inline-block; vertical-align: top; width: calc(100vw - var(--sidebar-w)); overflow-y: auto; padding: var(--space-xl); height: 100%; white-space: normal; }
 
 /* Section Header */
 .section-header { margin-bottom: var(--space-xl); padding-bottom: var(--space-lg); border-bottom: 2px solid var(--border); }
