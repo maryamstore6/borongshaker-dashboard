@@ -99,6 +99,9 @@ body { font-family: system-ui, -apple-system, sans-serif; background: var(--bg);
 .stock-summary-card.ok .stock-summary-value { color: var(--success); }
 .stock-summary-label { font: var(--font-label); text-transform: uppercase; color: var(--text-secondary); }
 
+/* Grid 2-1 */
+.grid-2-1 { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-lg); margin-bottom: var(--space-lg); }
+
 /* Tables */
 .table-container { overflow-x: auto; padding: var(--space-md); }
 .data-table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }

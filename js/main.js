@@ -10,6 +10,7 @@
     initStock();
     initSales();
     initRestock();
+    initAnalisis();
   }
 
   function safeInit() {
@@ -210,6 +211,154 @@
         const text = 'Senarai Restock BigSeller:\n\n' + lines.join('\n') + '\n\nTotal anggaran: ' + fmtRM(totalCost);
         navigator.clipboard.writeText(text).then(() => alert('Disalin! Teka ke WhatsApp.'));
       });
+    }
+  }
+
+  // Analisis
+  function initAnalisis() {
+    const daily = window.DASHBOARD_DATA.dailySales;
+    const monthly = window.DASHBOARD_DATA.salesMonthly;
+    if (!daily || !monthly) return;
+
+    // Chart: Daily sales trend (line with fill)
+    const ctx1 = document.getElementById('chart-daily-sales');
+    if (ctx1) {
+      const sorted = [...daily].sort((a, b) => a.date.localeCompare(b.date));
+      new Chart(ctx1, {
+        type: 'line',
+        data: {
+          labels: sorted.map(d => d.date),
+          datasets: [{
+            label: 'Jualan (RM)',
+            data: sorted.map(d => d.sales),
+            borderColor: '#274D0C',
+            backgroundColor: 'rgba(39, 77, 12, 0.1)',
+            borderWidth: 2,
+            pointRadius: 0,
+            pointHoverRadius: 4,
+            fill: true,
+            tension: 0.3
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          interaction: { mode: 'index', intersect: false },
+          plugins: { legend: { display: false } },
+          scales: {
+            x: { ticks: { maxTicksLimit: 12 }, grid: { display: false } },
+            y: { beginAtZero: true, ticks: { callback: v => 'RM' + v.toLocaleString() } }
+          }
+        }
+      });
+    }
+
+    // Chart: Channel breakdown daily (stacked bar)
+    const ctx2 = document.getElementById('chart-channel-daily');
+    if (ctx2) {
+      const sorted = [...daily].sort((a, b) => a.date.localeCompare(b.date));
+      new Chart(ctx2, {
+        type: 'bar',
+        data: {
+          labels: sorted.map(d => d.date),
+          datasets: [
+            { label: 'Shopee', data: sorted.map(d => d.shopee), backgroundColor: '#FF6B35', stack: 'stack' },
+            { label: 'TikTok', data: sorted.map(d => d.tiktok), backgroundColor: '#1DA1F2', stack: 'stack' },
+            { label: 'Lazada', data: sorted.map(d => d.lazada), backgroundColor: '#274D0C', stack: 'stack' }
+          ]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          interaction: { mode: 'index', intersect: false },
+          scales: {
+            x: { stacked: true, ticks: { maxTicksLimit: 12 }, grid: { display: false } },
+            y: { stacked: true, beginAtZero: true, ticks: { callback: v => 'RM' + v.toLocaleString() } }
+          }
+        }
+      });
+    }
+
+    // Chart: Margin trend daily (line)
+    const ctx3 = document.getElementById('chart-margin-trend');
+    if (ctx3) {
+      const sorted = [...daily].sort((a, b) => a.date.localeCompare(b.date));
+      new Chart(ctx3, {
+        type: 'line',
+        data: {
+          labels: sorted.map(d => d.date),
+          datasets: [{
+            label: 'Margin (%)',
+            data: sorted.map(d => d.margin),
+            borderColor: '#22C55E',
+            backgroundColor: 'rgba(34, 197, 94, 0.1)',
+            borderWidth: 2,
+            pointRadius: 0,
+            pointHoverRadius: 4,
+            fill: true,
+            tension: 0.3
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          interaction: { mode: 'index', intersect: false },
+          plugins: { legend: { display: false } },
+          scales: {
+            x: { ticks: { maxTicksLimit: 12 }, grid: { display: false } },
+            y: { beginAtZero: true, ticks: { callback: v => v + '%' } }
+          }
+        }
+      });
+    }
+
+    // Chart: Order vs Sales scatter (colored by month)
+    const ctx4 = document.getElementById('chart-scatter');
+    if (ctx4) {
+      const monthColors = ['#FF6B35', '#1DA1F2', '#274D0C', '#F59E0B', '#8B5CF6', '#EC4899', '#06B6D4', '#84CC16', '#F97316'];
+      const sorted = [...daily].sort((a, b) => a.date.localeCompare(b.date));
+      const datasets = [];
+      const monthMap = {};
+      sorted.forEach(d => {
+        const m = d.date.substring(0, 7);
+        if (!monthMap[m]) monthMap[m] = Object.keys(monthMap).length;
+      });
+      Object.keys(monthMap).forEach(m => {
+        const monthName = monthly.find(mo => mo.month_key === m);
+        datasets.push({
+          label: monthName ? monthName.month : m,
+          data: sorted.filter(d => d.date.startsWith(m)).map(d => ({ x: d.orders, y: d.sales })),
+          backgroundColor: monthColors[monthMap[m] % monthColors.length],
+          pointRadius: 4,
+          pointHoverRadius: 6
+        });
+      });
+      new Chart(ctx4, {
+        type: 'scatter',
+        data: { datasets },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: { legend: { position: 'bottom' } },
+          scales: {
+            x: { title: { display: true, text: 'Jumlah Order' }, beginAtZero: true },
+            y: { title: { display: true, text: 'Jualan (RM)' }, beginAtZero: true, ticks: { callback: v => 'RM' + v.toLocaleString() } }
+          }
+        }
+      });
+    }
+
+    // Monthly comparison table
+    const tbody = document.querySelector('#monthly-compare-table tbody');
+    if (tbody) {
+      tbody.innerHTML = monthly.map((m, i) => {
+        const prev = i > 0 ? monthly[i - 1] : null;
+        const trend = prev ? ((m.sales / prev.sales - 1) * 100).toFixed(1) : null;
+        const trendHtml = trend !== null
+          ? '<span style="color:' + (parseFloat(trend) >= 0 ? '#22C55E' : '#EF4444') + '">' + (parseFloat(trend) >= 0 ? '↑' : '↓') + ' ' + Math.abs(parseFloat(trend)) + '%</span>'
+          : '<span style="color:#6B7280;">—</span>';
+        return '<tr><td>' + m.month + '</td><td class="text-right">' + fmtNum(m.orders) + '</td><td class="text-right">' + fmtRM(m.sales) + '</td><td class="text-right">' + fmtRM(m.profit) + '</td><td class="text-right">' + fmtPct(m.margin) + '</td><td class="text-right">' + fmtRM(m.shopee) + '</td><td class="text-right">' + fmtRM(m.tiktok) + '</td><td class="text-right">' + fmtRM(m.lazada) + '</td><td>' + trendHtml + '</td></tr>';
+      }).join('');
     }
   }
 })();

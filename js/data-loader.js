@@ -7,6 +7,9 @@
 
   const DATA_FILES = {
     salesMonthly: 'data/sales_monthly.json',
+    monthlySummary: 'data/monthly_summary.json',
+    channelSummary: 'data/channel_summary.json',
+    weeklySummary: 'data/weekly_summary.json',
     stockCurrent: 'data/stock_current.json',
     kpiSummary: 'data/kpi_summary.json',
     dailySales: 'data/daily_sales.json'

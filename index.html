@@ -39,6 +39,10 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><path d="M3.3 7L12 12l8.7-5"/><path d="M12 22V12"/></svg>
           <span>Restock</span>
         </a>
+        <a href="#analisis" class="sidebar-link" data-target="analisis">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="M7 15l4-6 4 3 5-8"/></svg>
+          <span>Analisis</span>
+        </a>
       </nav>
       <div class="sidebar-footer">
         <span class="sidebar-updated">Dikemas kini: 16 Okt 2026</span>
@@ -223,6 +227,58 @@
             <div class="restock-summary">
               <span class="restock-cost" id="restock-cost">RM 0.00</span>
               <button class="btn-whatsapp" id="btn-whatsapp">📋 Copy ke WhatsApp</button>
+            </div>
+          </div>
+        </section>
+
+        <!-- Section 5: Analisis -->
+        <section class="slide" id="analisis">
+          <div class="section-header">
+            <h1 class="section-title">Analisis Mendalam</h1>
+            <p class="section-subtitle">Trend harian, margin & perbandingan bulanan • Jan-Sep 2026</p>
+          </div>
+
+          <div class="grid-2-1">
+            <div class="card">
+              <div class="card-header"><span class="card-title">Jualan Harian (9 Bulan)</span></div>
+              <div class="chart-container"><canvas id="chart-daily-sales"></canvas></div>
+            </div>
+            <div class="card">
+              <div class="card-header"><span class="card-title">Channel Breakdown Harian</span></div>
+              <div class="chart-container"><canvas id="chart-channel-daily"></canvas></div>
+            </div>
+          </div>
+
+          <div class="grid-2-1">
+            <div class="card">
+              <div class="card-header"><span class="card-title">Margin Trend Harian</span></div>
+              <div class="chart-container"><canvas id="chart-margin-trend"></canvas></div>
+            </div>
+            <div class="card">
+              <div class="card-header"><span class="card-title">Order vs Sales Scatter</span></div>
+              <div class="chart-container"><canvas id="chart-scatter"></canvas></div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header"><span class="card-title">Perbandingan Bulanan</span></div>
+            <div class="table-container">
+              <table id="monthly-compare-table" class="data-table">
+                <thead>
+                  <tr>
+                    <th>Bulan</th>
+                    <th class="text-right">Order</th>
+                    <th class="text-right">Jualan (RM)</th>
+                    <th class="text-right">Untung (RM)</th>
+                    <th class="text-right">Margin</th>
+                    <th class="text-right">Shopee</th>
+                    <th class="text-right">TikTok</th>
+                    <th class="text-right">Lazada</th>
+                    <th>Trend</th>
+                  </tr>
+                </thead>
+                <tbody></tbody>
+              </table>
             </div>
           </div>
         </section>
