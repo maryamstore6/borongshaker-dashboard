@@ -38,29 +38,54 @@
   const slides = document.querySelectorAll('.slide');
   const scrollContainer = document.querySelector('.scroll-container');
 
-  navDots.forEach(dot => {
-    dot.addEventListener('click', () => {
-      try {
-        const targetId = dot.getAttribute('data-target');
-        const targetSlide = document.getElementById(targetId);
-        if (targetSlide && scrollContainer) {
-          const slideIndex = Array.from(slides).indexOf(targetSlide);
-          const slideWidth = scrollContainer.clientWidth;
-          const isMobile = window.innerWidth < 768;
-          if (isMobile) {
-            scrollContainer.scrollTo({ top: targetSlide.offsetTop, behavior: 'instant' });
-          } else {
-            const slideLeft = slideIndex * slideWidth;
-            scrollContainer.scrollTo({ left: slideLeft, behavior: 'instant' });
-          }
-          // Update active dot manually
-          navDots.forEach(d => d.classList.remove('active'));
-          dot.classList.add('active');
-        }
-      } catch (e) {
-        console.error('Nav dot click error:', e);
-      }
+  function scrollToSlide(targetId) {
+    const targetSlide = document.getElementById(targetId);
+    if (!targetSlide || !scrollContainer) return;
+    
+    const isMobile = window.innerWidth < 768;
+    if (isMobile) {
+      // Mobile: scroll to top of slide
+      const slideTop = targetSlide.offsetTop;
+      scrollContainer.scrollTop = slideTop;
+    } else {
+      // Desktop: scroll to left of slide
+      const slideIndex = Array.from(slides).indexOf(targetSlide);
+      const slideWidth = scrollContainer.clientWidth;
+      const slideLeft = slideIndex * slideWidth;
+      scrollContainer.scrollLeft = slideLeft;
+    }
+    
+    // Update active dot
+    navDots.forEach(d => {
+      d.classList.toggle('active', d.getAttribute('data-target') === targetId);
     });
+    
+    // Update hash
+    history.replaceState(null, '', '#' + targetId);
+  }
+
+  navDots.forEach(dot => {
+    dot.addEventListener('click', (e) => {
+      e.preventDefault();
+      const targetId = dot.getAttribute('data-target');
+      scrollToSlide(targetId);
+    });
+  });
+
+  // Handle hashchange (browser back/forward, direct link)
+  window.addEventListener('hashchange', () => {
+    const hash = location.hash.substring(1);
+    if (hash && document.getElementById(hash)) {
+      scrollToSlide(hash);
+    }
+  });
+
+  // Handle initial hash on page load
+  window.addEventListener('load', () => {
+    const hash = location.hash.substring(1);
+    if (hash && document.getElementById(hash)) {
+      setTimeout(() => scrollToSlide(hash), 500);
+    }
   });
 
   // IntersectionObserver to update active dot
