@@ -141,7 +141,7 @@ body { font-family: system-ui, -apple-system, sans-serif; background: var(--bg);
   .mobile-updated { font-size: 0.7rem; color: var(--text-secondary); }
   .scroll-container { padding-top: var(--header-h); white-space: nowrap; height: calc(100vh - var(--header-h)); }
   .slide { display: inline-block; vertical-align: top; width: 100vw !important; overflow-y: auto; padding: var(--space-md); height: 100%; white-space: normal; }
-  .main-content { margin-left: 0; }
+  .main-content { margin-left: 0; overflow: visible; }
   .kpi-grid { grid-template-columns: repeat(2, 1fr); }
   .stock-summary { grid-template-columns: repeat(2, 1fr); }
   .grid-2-1 { grid-template-columns: 1fr; }
