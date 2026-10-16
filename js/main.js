@@ -77,6 +77,15 @@
     backdrop.addEventListener('click', closeSidebar);
   }
 
+  // Close button inside sidebar
+  const closeBtn = document.getElementById('sidebar-close');
+  if (closeBtn) {
+    closeBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      closeSidebar();
+    });
+  }
+
   // Swipe gesture: swipe left to close, swipe right to open
   let touchStartX = 0;
   let touchEndX = 0;
