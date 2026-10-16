@@ -1,0 +1,20 @@
+{
+  "code": 0,
+  "errorType": 0,
+  "msg": "Successfully",
+  "msgObjStr": "",
+  "data": {
+    "inventory": {
+      "suggestionNum": 11,
+      "stockPushFailNum": 16,
+      "outOfStockNum": 84,
+      "lowStock": 18
+    },
+    "order": {
+      "newOrderNum": 23,
+      "expiredSoonNum": 8,
+      "toPickUpNum": 1,
+      "outOfStockNum": 0
+    }
+  }
+}
