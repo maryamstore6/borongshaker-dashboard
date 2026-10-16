@@ -41,7 +41,7 @@
       scrollContainer.scrollLeft = slideIndex * slideWidth;
     }
     sidebarLinks.forEach(l => l.classList.toggle('active', l.getAttribute('data-target') === targetId));
-    if (window.innerWidth < 768 && sidebar) sidebar.classList.remove('open');
+    if (window.innerWidth < 768) closeSidebar();
     history.replaceState(null, '', '#' + targetId);
   }
 
@@ -52,8 +52,27 @@
     });
   });
 
+  const backdrop = document.getElementById('sidebar-backdrop');
+  function closeSidebar() {
+    if (sidebar) sidebar.classList.remove('open');
+    if (backdrop) backdrop.classList.remove('open');
+    const mc = document.querySelector('.main-content');
+    if (mc) mc.style.pointerEvents = '';
+  }
+  function openSidebar() {
+    if (sidebar) sidebar.classList.add('open');
+    if (backdrop) backdrop.classList.add('open');
+    const mc = document.querySelector('.main-content');
+    if (mc) mc.style.pointerEvents = 'none';
+  }
   if (hamburger && sidebar) {
-    hamburger.addEventListener('click', () => sidebar.classList.toggle('open'));
+    hamburger.addEventListener('click', () => {
+      if (sidebar.classList.contains('open')) closeSidebar();
+      else openSidebar();
+    });
+  }
+  if (backdrop) {
+    backdrop.addEventListener('click', closeSidebar);
   }
 
   // Overview
