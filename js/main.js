@@ -42,8 +42,17 @@
     dot.addEventListener('click', () => {
       const targetId = dot.getAttribute('data-target');
       const targetSlide = document.getElementById(targetId);
-      if (targetSlide) {
-        targetSlide.scrollIntoView({ behavior: 'smooth' });
+      if (targetSlide && scrollContainer) {
+        const slideIndex = Array.from(slides).indexOf(targetSlide);
+        const slideWidth = scrollContainer.clientWidth;
+        const isMobile = window.innerWidth < 768;
+        if (isMobile) {
+          const slideTop = targetSlide.offsetTop;
+          scrollContainer.scrollTo({ top: slideTop, behavior: 'smooth' });
+        } else {
+          const slideLeft = slideIndex * slideWidth;
+          scrollContainer.scrollTo({ left: slideLeft, behavior: 'smooth' });
+        }
       }
     });
   });

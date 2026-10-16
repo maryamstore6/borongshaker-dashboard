@@ -181,6 +181,18 @@ body {
   height: 18px;
 }
 
+.nav-label {
+  font-size: 11px;
+  font-weight: 600;
+  color: #555;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.nav-dot.active .nav-label {
+  color: white;
+}
+
 .nav-dot:hover {
   border-color: var(--primary);
   color: var(--primary);
