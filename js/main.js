@@ -52,6 +52,10 @@
         } else {
           const slideLeft = slideIndex * slideWidth;
           scrollContainer.scrollTo({ left: slideLeft, behavior: 'smooth' });
+          // Fallback for scroll-snap compatibility
+          setTimeout(() => {
+            scrollContainer.scrollLeft = slideLeft;
+          }, 100);
         }
       }
     });
