@@ -1,0 +1,15 @@
+{
+  "total_sales": 274212.27,
+  "total_profit": 83920.27,
+  "total_orders": 22422,
+  "total_qty": 127737,
+  "avg_margin": 30.6,
+  "monthly_avg_sales": 30468.03,
+  "best_month": "Jun",
+  "channels": {
+    "shopee": 101819.59,
+    "tiktok": 92437.71,
+    "lazada": 5363.96
+  },
+  "updated": "2026-10-16"
+}
