@@ -34,11 +34,13 @@
     if (!targetSlide || !scrollContainer) return;
     const isMobile = window.innerWidth < 768;
     if (isMobile) {
-      scrollContainer.scrollTop = targetSlide.offsetTop;
+      const slideIndex = Array.from(slides).indexOf(targetSlide);
+      const slideWidth = scrollContainer.clientWidth;
+      scrollContainer.scrollTo({ left: slideIndex * slideWidth, behavior: 'instant' });
     } else {
       const slideIndex = Array.from(slides).indexOf(targetSlide);
       const slideWidth = scrollContainer.clientWidth;
-      scrollContainer.scrollLeft = slideIndex * slideWidth;
+      scrollContainer.scrollTo({ left: slideIndex * slideWidth, behavior: 'instant' });
     }
     sidebarLinks.forEach(l => l.classList.toggle('active', l.getAttribute('data-target') === targetId));
     if (window.innerWidth < 768) closeSidebar();
