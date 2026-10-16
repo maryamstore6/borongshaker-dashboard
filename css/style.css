@@ -132,8 +132,9 @@ body { font-family: system-ui, -apple-system, sans-serif; background: var(--bg);
   .sidebar-backdrop { position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 98; opacity: 0; transition: opacity 0.3s; pointer-events: none; }
   .sidebar-backdrop.open { display: block; opacity: 1; pointer-events: auto; }
   .sidebar.open ~ .sidebar-backdrop, .sidebar-backdrop.open { display: block; }
-  .sidebar { position: fixed; top: 0; left: -280px; z-index: 101; width: 280px; visibility: hidden; pointer-events: none; transition: left 0.3s, visibility 0.3s; }
-  .sidebar.open { left: 0; visibility: visible; pointer-events: auto; box-shadow: 4px 0 16px rgba(0,0,0,0.2); }
+  .sidebar { position: fixed; top: 0; left: 0; z-index: 101; width: 280px; display: none; }
+  .sidebar.open { display: flex; box-shadow: 4px 0 16px rgba(0,0,0,0.2); animation: slideIn 0.25s ease-out; }
+  @keyframes slideIn { from { transform: translateX(-100%); } to { transform: translateX(0); } }
   .mobile-header { z-index: 100; display: flex; align-items: center; gap: var(--space-md); padding: var(--space-md); background: var(--surface); border-bottom: 1px solid var(--border); position: fixed; top: 0; left: 0; right: 0; }
   .hamburger { background: none; border: none; font-size: 1.5rem; cursor: pointer; min-width: 44px; min-height: 44px; }
   .mobile-title { font-weight: 700; color: var(--primary); flex: 1; }
