@@ -50,6 +50,22 @@
     });
 
     window.DASHBOARD_DATA.loaded = true;
+
+    // Auto-update date labels from KPI data
+    const months = ['Jan','Feb','Mac','Apr','Mei','Jun','Jul','Ogs','Sep','Okt','Nov','Dis'];
+    let dateStr = '...';
+    const updated = window.DASHBOARD_DATA.kpiSummary?.updated;
+    if (updated) {
+      const [y, m, d] = updated.split('-').map(Number);
+      dateStr = `${d} ${months[m - 1]} ${y}`;
+    }
+    ['date-desktop', 'date-mobile', 'date-sidebar'].forEach(id => {
+      const el = document.getElementById(id);
+      if (el) el.textContent = id === 'date-mobile' ? dateStr : `Dikemas kini: ${dateStr}`;
+    });
+    const sec = document.getElementById('date-section');
+    if (sec && dateStr !== '...') sec.textContent = sec.textContent.replace('...', dateStr);
+
     document.dispatchEvent(new CustomEvent('dashboard:data-loaded'));
   }
 
