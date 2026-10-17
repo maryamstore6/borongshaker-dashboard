@@ -1,7 +1,7 @@
 {
   "total_sales": 284159.42,
   "total_profit": 87407.08,
-  "total_orders": 23368,
+  "total_orders": 23394,
   "total_qty": 131357,
   "avg_margin": 30.8,
   "channels": {
@@ -9,5 +9,5 @@
     "tiktok": 96236.58,
     "lazada": 5780.35
   },
-  "updated": "2026-10-17"
+  "updated": "2026-10-18"
 }

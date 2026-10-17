@@ -1,8 +1,8 @@
 [
   {
     "date": "2026-10-17",
-    "orders": 2.0,
-    "validOrders": 2.0,
+    "orders": 28.0,
+    "validOrders": 25.0,
     "qty": 2.0,
     "sales": 29.87,
     "revenue": 23.62,
@@ -12,13 +12,13 @@
     "shopee": 0.0,
     "tiktok": 2.62,
     "lazada": 27.25,
-    "cancels": 0.0,
+    "cancels": 3.0,
     "refunds": 0.0
   },
   {
     "date": "2026-10-16",
     "orders": 38.0,
-    "validOrders": 32.0,
+    "validOrders": 31.0,
     "qty": 44.0,
     "sales": 354.13,
     "revenue": 301.41,
@@ -28,7 +28,7 @@
     "shopee": 234.05,
     "tiktok": 156.66,
     "lazada": 0.0,
-    "cancels": 6.0,
+    "cancels": 7.0,
     "refunds": 0.0
   },
   {

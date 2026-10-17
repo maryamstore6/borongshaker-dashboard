@@ -836,7 +836,7 @@
       "sku": "RANDOM COLOR",
       "title": "SHAKER RANDOM 350ML",
       "onhand": 9313,
-      "available": 9312,
+      "available": 9313,
       "avgDailySales": 75.08,
       "cost": 1.4,
       "threshold": 1031
@@ -844,8 +844,8 @@
     {
       "sku": "WHITE-BAR",
       "title": "SHAKER BAR - WHITE 350ML",
-      "onhand": 9775,
-      "available": 9764,
+      "onhand": 9760,
+      "available": 9753,
       "avgDailySales": 34.02,
       "cost": 1.45,
       "threshold": 114
@@ -853,8 +853,8 @@
     {
       "sku": "PINK BAR",
       "title": "SHAKER BAR- PINK 350ML",
-      "onhand": 14481,
-      "available": 14474,
+      "onhand": 14462,
+      "available": 14458,
       "avgDailySales": 29.36,
       "cost": 1.45,
       "threshold": 323
@@ -862,8 +862,8 @@
     {
       "sku": "SHA-BAR-PURPLE-350ML",
       "title": "SHAKER BAR- PURPLE 350ML",
-      "onhand": 17440,
-      "available": 17438,
+      "onhand": 17432,
+      "available": 17431,
       "avgDailySales": 12.53,
       "cost": 1.45,
       "threshold": 222
@@ -871,8 +871,8 @@
     {
       "sku": "GREEN-BAR",
       "title": "SHAKER BAR- GREEN 350ML",
-      "onhand": 13710,
-      "available": 13709,
+      "onhand": 13709,
+      "available": 13708,
       "avgDailySales": 12.03,
       "cost": 1.45,
       "threshold": 497
@@ -889,8 +889,8 @@
     {
       "sku": "MAILBOX INDOOR",
       "title": "MAILBOX INDOOR",
-      "onhand": 40,
-      "available": 38,
+      "onhand": 37,
+      "available": 36,
       "avgDailySales": 2.45,
       "cost": 7.54,
       "threshold": 67
@@ -898,8 +898,8 @@
     {
       "sku": "STICKER HOTWHEELS 5X11CM",
       "title": "STICKER HOTWHEELS",
-      "onhand": 1307,
-      "available": 1306,
+      "onhand": 1306,
+      "available": 1302,
       "avgDailySales": 1.66,
       "cost": 0.15,
       "threshold": 2897
@@ -908,7 +908,7 @@
       "sku": "R8S- COMPACT-WALL",
       "title": "RACK 8 SLOT- COMPACT - WALL",
       "onhand": 12,
-      "available": 12,
+      "available": 11,
       "avgDailySales": 1.25,
       "cost": 5.2,
       "threshold": 0
@@ -916,7 +916,7 @@
     {
       "sku": "BOX-HOT-30S-BLU",
       "title": "BOX HOTWHEELS 30SLOT BLUE",
-      "onhand": 18,
+      "onhand": 17,
       "available": 17,
       "avgDailySales": 0.81,
       "cost": 5.55,
@@ -934,7 +934,7 @@
     {
       "sku": "PREM BLACK-PASSWD",
       "title": "MAILBOX PREMIUM BLACK PASSWORD",
-      "onhand": 12,
+      "onhand": 11,
       "available": 11,
       "avgDailySales": 0.55,
       "cost": 17.68,
@@ -944,7 +944,7 @@
       "sku": "BUBBLE WRAP",
       "title": "BUBBLE WRAP",
       "onhand": 802,
-      "available": 802,
+      "available": 801,
       "avgDailySales": 0.41,
       "cost": 0.35,
       "threshold": 295
@@ -988,7 +988,7 @@
     {
       "sku": "BOX-HOT-18S-PREMIUM",
       "title": "HOTWHEELS BOX Premium white 18slot",
-      "onhand": 22,
+      "onhand": 21,
       "available": 21,
       "avgDailySales": 0.22,
       "cost": 18.69,
@@ -1043,7 +1043,7 @@
       "sku": "FULL PINK RABBIT-ECO",
       "title": "HELMET FULL PINK RABBIT ECONOMICAL",
       "onhand": 18,
-      "available": 18,
+      "available": 17,
       "avgDailySales": 0.08,
       "cost": 11.82,
       "threshold": 30
