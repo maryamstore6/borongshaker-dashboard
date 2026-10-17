@@ -14,7 +14,8 @@
     kpiSummary: 'data/kpi_summary.json',
     dailySales: 'data/daily_sales.json',
     productsList: 'data/products_list.json',
-    downloadMenu: 'data/download_menu.json'
+    downloadMenu: 'data/download_menu.json',
+    ordersList: 'data/orders_list.json'
   };
 
   window.DASHBOARD_DATA = {

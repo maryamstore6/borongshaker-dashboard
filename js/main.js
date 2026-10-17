@@ -13,6 +13,8 @@
     initAnalisis();
     initProducts();
     initReports();
+    initOrders();
+    initStockAlerts();
   }
 
   function safeInit() {
@@ -630,6 +632,151 @@
       exportsTbody.innerHTML = recentExports.slice(0, 10).map(e =>
         '<tr><td>' + e.name + '</td><td>' + e.category + '</td><td>' + e.date + '</td><td><span style="color:#22C55E;font-weight:600;">' + e.status + '</span></td></tr>'
       ).join('');
+    }
+  }
+
+  // Orders
+  function initOrders() {
+    const ordersData = window.DASHBOARD_DATA.ordersList;
+    if (!ordersData) return;
+
+    const orders = ordersData.orders || [];
+    const summary = ordersData.summary || {};
+    const byStatus = summary.byStatus || {};
+
+    // Status cards
+    document.getElementById('order-new').textContent = fmtNum(byStatus.new || 0);
+    document.getElementById('order-processing').textContent = fmtNum(byStatus.processing || 0);
+    document.getElementById('order-shipped').textContent = fmtNum(byStatus.shipped || 0);
+    document.getElementById('order-completed').textContent = fmtNum(byStatus.completed || 0);
+    document.getElementById('order-cancelled').textContent = fmtNum(byStatus.cancelled || 0);
+
+    // Platform distribution
+    const platformCounts = {};
+    orders.forEach(o => {
+      const p = o.platform || 'unknown';
+      platformCounts[p] = (platformCounts[p] || 0) + 1;
+    });
+
+    // Render table
+    const tbody = document.querySelector('#orders-table tbody');
+    if (tbody) {
+      tbody.innerHTML = orders.slice(0, 50).map(o => {
+        const stateColor = o.state === 'new' ? '#3B82F6' : o.state === 'processing' ? '#F59E0B' : o.state === 'shipped' ? '#22C55E' : o.state === 'completed' ? '#22C55E' : '#EF4444';
+        const stateLabel = o.state === 'new' ? 'New' : o.state === 'processing' ? 'Processing' : o.state === 'shipped' ? 'Shipped' : o.state === 'completed' ? 'Completed' : 'Cancelled';
+        return '<tr><td>' + o.id + '</td><td>' + o.platform + '</td><td>' + o.shop + '</td><td><span style="color:' + stateColor + ';font-weight:600;">' + stateLabel + '</span></td><td class="text-right">' + fmtRM(o.amount) + '</td><td class="text-right">' + o.items + '</td><td>' + o.buyer + '</td><td>' + o.date + '</td></tr>';
+      }).join('');
+    }
+
+    // Platform filter
+    const filterBtns = document.querySelectorAll('#order-platform-filters .platform-btn');
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const filter = btn.getAttribute('data-filter');
+        const filtered = filter === 'all' ? orders : orders.filter(o => o.platform === filter);
+        if (tbody) {
+          tbody.innerHTML = filtered.slice(0, 50).map(o => {
+            const stateColor = o.state === 'new' ? '#3B82F6' : o.state === 'processing' ? '#F59E0B' : o.state === 'shipped' ? '#22C55E' : o.state === 'completed' ? '#22C55E' : '#EF4444';
+            const stateLabel = o.state === 'new' ? 'New' : o.state === 'processing' ? 'Processing' : o.state === 'shipped' ? 'Shipped' : o.state === 'completed' ? 'Completed' : 'Cancelled';
+            return '<tr><td>' + o.id + '</td><td>' + o.platform + '</td><td>' + o.shop + '</td><td><span style="color:' + stateColor + ';font-weight:600;">' + stateLabel + '</span></td><td class="text-right">' + fmtRM(o.amount) + '</td><td class="text-right">' + o.items + '</td><td>' + o.buyer + '</td><td>' + o.date + '</td></tr>';
+          }).join('');
+        }
+      });
+    });
+
+    // Platform distribution chart
+    const ctx = document.getElementById('chart-platform-dist-orders');
+    if (ctx) {
+      const labels = Object.keys(platformCounts);
+      const data = Object.values(platformCounts);
+      const colors = ['#FF6B35', '#1DA1F2', '#274D0C', '#F59E0B', '#8B5CF6', '#EC4899'];
+      new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+          labels: labels,
+          datasets: [{
+            data: data,
+            backgroundColor: colors.slice(0, labels.length),
+            borderWidth: 2,
+            borderColor: '#FFFFFF',
+            hoverOffset: 4,
+            spacing: 2
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          cutout: '55%',
+          layout: { padding: 8 },
+          plugins: {
+            legend: { position: 'right', labels: { padding: 12, usePointStyle: true, pointStyle: 'circle' } },
+            tooltip: { callbacks: { label: (c) => c.label + ': ' + c.raw + ' orders' } }
+          }
+        }
+      });
+    }
+  }
+
+  // Stock Alerts
+  function initStockAlerts() {
+    const stock = window.DASHBOARD_DATA.stockCurrent;
+    if (!stock) return;
+
+    const critical = stock.critical || [];
+    const lowStock = stock.low_stock || [];
+    const noStock = stock.no_stock || [];
+    const summary = stock.summary || {};
+
+    // Summary cards
+    document.getElementById('stock-critical-alerts').textContent = fmtNum(summary.critical_count || critical.length);
+    document.getElementById('stock-low-alerts').textContent = fmtNum(summary.low_stock_count || lowStock.length);
+    document.getElementById('stock-out-alerts').textContent = fmtNum(summary.no_stock_count || noStock.length);
+    const totalProducts = summary.total_products || (critical.length + lowStock.length + noStock.length);
+    const healthyCount = totalProducts - critical.length - lowStock.length - noStock.length;
+    document.getElementById('stock-healthy-alerts').textContent = fmtNum(Math.max(0, healthyCount));
+
+    // Stock health bar chart
+    const ctx = document.getElementById('chart-stock-health');
+    if (ctx) {
+      new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: ['Kritikal', 'Low Stock', 'Habis', 'Sihat'],
+          datasets: [{
+            label: 'Bilangan Produk',
+            data: [critical.length, lowStock.length, noStock.length, Math.max(0, healthyCount)],
+            backgroundColor: ['#EF4444', '#F59E0B', '#7F1D1D', '#22C55E'],
+            borderRadius: 8
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: { legend: { display: false } },
+          scales: {
+            y: { beginAtZero: true, ticks: { stepSize: 10 } }
+          }
+        }
+      });
+    }
+
+    // Critical stock table
+    const critTbody = document.querySelector('#critical-stock-table tbody');
+    if (critTbody) {
+      critTbody.innerHTML = critical.map(r => {
+        const restockQty = Math.ceil((r.avgDailySales || 0) * 30);
+        return '<tr><td>' + r.sku + '</td><td>' + r.title + '</td><td class="text-right">' + (r.available || 0) + '</td><td class="text-right">' + (r.avgDailySales || 0).toFixed(1) + '</td><td class="text-right">RM ' + (r.cost || 0).toFixed(2) + '</td><td class="text-right">' + restockQty + '</td></tr>';
+      }).join('');
+    }
+
+    // Low stock table (top 10)
+    const lowTbody = document.querySelector('#low-stock-alerts-table tbody');
+    if (lowTbody) {
+      lowTbody.innerHTML = lowStock.slice(0, 10).map(r => {
+        return '<tr><td>' + r.sku + '</td><td>' + r.title + '</td><td class="text-right">' + (r.onhand || 0) + '</td><td class="text-right">' + (r.available || 0) + '</td><td class="text-right">' + (r.avgDailySales || 0).toFixed(1) + '</td></tr>';
+      }).join('');
     }
   }
 })();

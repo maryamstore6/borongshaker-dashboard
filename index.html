@@ -59,6 +59,14 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
           <span>Reports</span>
         </a>
+        <a href="#orders" class="sidebar-link" data-target="orders">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><line x1="9" y1="12" x2="15" y2="12"/><line x1="9" y1="16" x2="13" y2="16"/></svg>
+          <span>Orders</span>
+        </a>
+        <a href="#stock-alerts" class="sidebar-link" data-target="stock-alerts">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+          <span>Stock Alerts</span>
+        </a>
       </nav>
       <div class="sidebar-footer">
         <span class="sidebar-updated" id="date-sidebar">Dikemas kini: ...</span>
@@ -378,6 +386,148 @@
                     <th>Kategori</th>
                     <th>Tarikh</th>
                     <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody></tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- Section 8: Orders -->
+        <section class="slide" id="orders">
+          <div class="section-header">
+            <h1 class="section-title">Senarai Orders</h1>
+            <p class="section-subtitle">Shopee/TikTok/Lazada/Shopify • Semua status</p>
+          </div>
+
+          <!-- Order Status Summary Cards -->
+          <div class="stock-summary" id="order-status-cards">
+            <div class="stock-summary-card critical">
+              <span class="stock-summary-value" id="order-new">0</span>
+              <span class="stock-summary-label">New</span>
+            </div>
+            <div class="stock-summary-card warning">
+              <span class="stock-summary-value" id="order-processing">0</span>
+              <span class="stock-summary-label">Processing</span>
+            </div>
+            <div class="stock-summary-card ok">
+              <span class="stock-summary-value" id="order-shipped">0</span>
+              <span class="stock-summary-label">Shipped</span>
+            </div>
+            <div class="stock-summary-card ok">
+              <span class="stock-summary-value" id="order-completed">0</span>
+              <span class="stock-summary-label">Completed</span>
+            </div>
+            <div class="stock-summary-card danger">
+              <span class="stock-summary-value" id="order-cancelled">0</span>
+              <span class="stock-summary-label">Cancelled</span>
+            </div>
+          </div>
+
+          <!-- Platform Filter Buttons -->
+          <div class="platform-filters" id="order-platform-filters">
+            <button class="platform-btn active" data-filter="all">Semua</button>
+            <button class="platform-btn" data-filter="shopee">Shopee</button>
+            <button class="platform-btn" data-filter="tiktok">TikTok</button>
+            <button class="platform-btn" data-filter="lazada">Lazada</button>
+            <button class="platform-btn" data-filter="shopify">Shopify</button>
+          </div>
+
+          <!-- Orders DataTable -->
+          <div class="card">
+            <div class="card-header"><span class="card-title">Senarai Orders Terbaru</span></div>
+            <div class="table-container">
+              <table id="orders-table" class="data-table">
+                <thead>
+                  <tr>
+                    <th>ID</th>
+                    <th>Platform</th>
+                    <th>Shop</th>
+                    <th>State</th>
+                    <th class="text-right">Amount</th>
+                    <th class="text-right">Items</th>
+                    <th>Buyer</th>
+                    <th>Date</th>
+                  </tr>
+                </thead>
+                <tbody></tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Platform Distribution Chart -->
+          <div class="card">
+            <div class="card-header"><span class="card-title">Pecahan Platform</span></div>
+            <div class="chart-container"><canvas id="chart-platform-dist-orders"></canvas></div>
+          </div>
+        </section>
+
+        <!-- Section 9: Stock Alerts -->
+        <section class="slide" id="stock-alerts">
+          <div class="section-header">
+            <h1 class="section-title">Amaran Stok</h1>
+            <p class="section-subtitle">Produk kritikal & low stock</p>
+          </div>
+
+          <!-- Stock Health Summary Cards -->
+          <div class="stock-summary" id="stock-health-cards">
+            <div class="stock-summary-card danger">
+              <span class="stock-summary-value" id="stock-critical-alerts">0</span>
+              <span class="stock-summary-label">Kritikal</span>
+            </div>
+            <div class="stock-summary-card warning">
+              <span class="stock-summary-value" id="stock-low-alerts">0</span>
+              <span class="stock-summary-label">Low Stock</span>
+            </div>
+            <div class="stock-summary-card critical">
+              <span class="stock-summary-value" id="stock-out-alerts">0</span>
+              <span class="stock-summary-label">Habis</span>
+            </div>
+            <div class="stock-summary-card ok">
+              <span class="stock-summary-value" id="stock-healthy-alerts">0</span>
+              <span class="stock-summary-label">Sihat</span>
+            </div>
+          </div>
+
+          <!-- Stock Health Bar Chart -->
+          <div class="card">
+            <div class="card-header"><span class="card-title">Kesihatan Stok</span></div>
+            <div class="chart-container"><canvas id="chart-stock-health"></canvas></div>
+          </div>
+
+          <!-- Critical Stock Table -->
+          <div class="card">
+            <div class="card-header"><span class="card-title">Produk Kritikal</span></div>
+            <div class="table-container">
+              <table id="critical-stock-table" class="data-table">
+                <thead>
+                  <tr>
+                    <th>SKU</th>
+                    <th>Produk</th>
+                    <th class="text-right">Stok</th>
+                    <th class="text-right">Avg/Hari</th>
+                    <th class="text-right">Kos/Unit</th>
+                    <th class="text-right">Restock Qty</th>
+                  </tr>
+                </thead>
+                <tbody></tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Low Stock Table -->
+          <div class="card">
+            <div class="card-header"><span class="card-title">Stok Rendah (Top 10)</span></div>
+            <div class="table-container">
+              <table id="low-stock-alerts-table" class="data-table">
+                <thead>
+                  <tr>
+                    <th>SKU</th>
+                    <th>Produk</th>
+                    <th class="text-right">Stok</th>
+                    <th class="text-right">Available</th>
+                    <th class="text-right">Avg/Hari</th>
                   </tr>
                 </thead>
                 <tbody></tbody>
