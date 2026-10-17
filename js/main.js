@@ -189,6 +189,7 @@
           maintainAspectRatio: false,
           cutout: '55%',
           layout: { padding: 8 },
+          minAngle: 5,
           plugins: {
             legend: { position: 'right', labels: { padding: 12, usePointStyle: true, pointStyle: 'circle' } },
             tooltip: { callbacks: { label: (c) => c.label + ': RM ' + Number(c.raw).toLocaleString() } }
