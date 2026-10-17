@@ -57,7 +57,7 @@
 
 /* Reset */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; scroll-padding-top: calc(var(--header-h) + var(--space-4)); }
 body {
   font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
   background: var(--bg);
@@ -217,7 +217,7 @@ body {
   border-color: var(--accent);
   box-shadow: 0 0 0 3px var(--accent-soft);
 }
-.header-search-input::placeholder { color: var(--text-meta); }
+.header-search-input::placeholder { color: var(--text-secondary); }
 
 @media (min-width: 769px) {
   .desktop-header { display: flex; }
@@ -333,7 +333,7 @@ body {
   font: var(--font-meta);
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: var(--text-meta);
+  color: var(--text-secondary);
 }
 .kpi-value {
   font: var(--font-kpi);
@@ -373,7 +373,7 @@ body {
   font-size: 0.875rem;
   color: var(--text);
 }
-.chart-container { padding: var(--space-3); height: 300px; }
+.chart-container { padding: var(--space-3); height: 350px; }
 
 /* Alert Card */
 .alert-card { border-left: 3px solid var(--accent); }
@@ -446,7 +446,9 @@ body {
   grid-template-columns: 1fr 1fr;
   gap: var(--space-3);
   margin-bottom: var(--space-3);
+  align-items: start;
 }
+.grid-2-1 > .span-2 { grid-column: span 2; }
 
 /* ============================================
    Tables — hairline separators, warm hover
@@ -573,8 +575,9 @@ body {
 }
 .platform-btn:hover { background: var(--hover); color: var(--text); }
 .platform-btn.active {
-  background: var(--text);
+  background: var(--accent);
   color: #fff;
+  box-shadow: 0 2px 8px rgba(217, 79, 92, 0.3);
 }
 
 /* ============================================
@@ -597,7 +600,7 @@ body {
   border-color: var(--accent);
   box-shadow: 0 0 0 3px var(--accent-soft);
 }
-.search-input::placeholder { color: var(--text-meta); }
+.search-input::placeholder { color: var(--text-secondary); }
 
 /* ============================================
    Report Cards
@@ -695,4 +698,53 @@ body {
   .section-header { flex-direction: column; align-items: flex-start; gap: var(--space-1); }
   .section-subtitle { white-space: normal; }
   .header-search { display: none; }
+}
+
+/* ============================================
+   Masonry Layout — variable height grid
+   ============================================ */
+.masonry {
+  columns: 2;
+  column-gap: var(--space-3);
+}
+.masonry > * {
+  break-inside: avoid;
+  margin-bottom: var(--space-3);
+}
+.masonry > *:last-child { margin-bottom: 0; }
+
+/* Compact KPI cards — shorter row */
+.kpi-grid.compact .kpi-card { padding: var(--space-2) var(--space-3); }
+.kpi-grid.compact .kpi-value { font-size: 1.5rem; }
+
+/* Full-width table card */
+.table-card-full { grid-column: span 2; }
+
+/* ============================================
+   Table Overflow — horizontal scroll
+   ============================================ */
+.table-container {
+  overflow-x: auto;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  max-height: 500px;
+}
+.data-table {
+  width: 100%;
+  min-width: 500px;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+}
+.data-table thead th {
+  white-space: nowrap;
+  position: sticky;
+  top: 0;
+  background: var(--card-bg);
+  z-index: 1;
+}
+.data-table tbody td {
+  white-space: nowrap;
+  max-width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
