@@ -178,9 +178,10 @@
           datasets: [{
             data: [kpi.channels.shopee, kpi.channels.tiktok, kpi.channels.lazada],
             backgroundColor: ['#FF6B35', '#1DA1F2', '#274D0C'],
-            borderWidth: 1,
+            borderWidth: 2,
             borderColor: '#FFFFFF',
             hoverOffset: 4,
+            spacing: 2,
           }]
         },
         options: {
