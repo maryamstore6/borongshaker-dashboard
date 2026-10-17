@@ -5,6 +5,22 @@
   const fmtPct = (n) => (n != null ? Number(n).toFixed(1) + '%' : '-');
   window.DASH = { fmtRM, fmtNum, fmtPct };
 
+  // Chart.js global defaults — monochrome editorial
+  if (typeof Chart !== 'undefined') {
+    Chart.defaults.color = '#737373';
+    Chart.defaults.borderColor = '#E5E7EB';
+    Chart.defaults.font.family = 'system-ui, -apple-system, sans-serif';
+    Chart.defaults.font.size = 12;
+    Chart.defaults.plugins.legend.labels.usePointStyle = true;
+    Chart.defaults.plugins.legend.labels.pointStyle = 'circle';
+    Chart.defaults.plugins.legend.labels.padding = 12;
+    Chart.defaults.plugins.tooltip.backgroundColor = '#262626';
+    Chart.defaults.plugins.tooltip.titleColor = '#FFFFFF';
+    Chart.defaults.plugins.tooltip.bodyColor = '#FFFFFF';
+    Chart.defaults.plugins.tooltip.padding = 12;
+    Chart.defaults.plugins.tooltip.cornerRadius = 8;
+  }
+
   function onDataReady() {
     initOverview();
     initStock();
@@ -164,11 +180,11 @@
         data: {
           labels: monthly.map(m => m.month),
           datasets: [
-            { label: 'Jualan (RM)', data: monthly.map(m => m.sales), backgroundColor: 'rgba(39, 77, 12, 0.15)', borderColor: '#274D0C', borderWidth: 2, yAxisID: 'y' },
-            { label: 'Untung (RM)', data: monthly.map(m => m.profit), type: 'line', borderColor: '#22C55E', backgroundColor: '#22C55E', borderWidth: 2, pointRadius: 4, yAxisID: 'y1' }
+            { label: 'Jualan (RM)', data: monthly.map(m => m.sales), backgroundColor: 'rgba(38, 38, 38, 0.08)', borderColor: '#262626', borderWidth: 2, yAxisID: 'y' },
+            { label: 'Untung (RM)', data: monthly.map(m => m.profit), type: 'line', borderColor: '#059669', backgroundColor: '#059669', borderWidth: 2, pointRadius: 4, yAxisID: 'y1' }
           ]
         },
-        options: { responsive: true, maintainAspectRatio: false, interaction: { mode: 'index', intersect: false }, scales: { y: { position: 'left' }, y1: { position: 'right', grid: { drawOnChartArea: false } } } }
+        options: { responsive: true, maintainAspectRatio: false, interaction: { mode: 'index', intersect: false }, scales: { y: { position: 'left', grid: { color: '#E5E7EB' } }, y1: { position: 'right', grid: { drawOnChartArea: false } } } }
       });
     }
 
@@ -181,9 +197,9 @@
           labels: ['Shopee', 'TikTok', 'Lazada'],
           datasets: [{
             data: [kpi.channels.shopee, kpi.channels.tiktok, kpi.channels.lazada],
-            backgroundColor: ['#FF6B35', '#1DA1F2', '#274D0C'],
+            backgroundColor: ['#262626', '#737373', '#D4D4D4'],
             borderWidth: 2,
-            borderColor: '#FFFFFF',
+            borderColor: '#FAFAFA',
             hoverOffset: 4,
             spacing: 2,
           }]
@@ -243,8 +259,8 @@
     if (ctx1) {
       new Chart(ctx1, {
         type: 'bar',
-        data: { labels: monthly.map(m => m.month), datasets: [{ label: 'Jualan (RM)', data: monthly.map(m => m.sales), backgroundColor: '#274D0C', borderRadius: 8 }] },
-        options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } } }
+        data: { labels: monthly.map(m => m.month), datasets: [{ label: 'Jualan (RM)', data: monthly.map(m => m.sales), backgroundColor: '#262626', borderRadius: 4 }] },
+        options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { y: { grid: { color: '#E5E7EB' } } } }
       });
     }
 
@@ -255,9 +271,9 @@
         type: 'bar',
         data: {
           labels: ['Shopee', 'TikTok', 'Lazada'],
-          datasets: [{ label: 'Jualan (RM)', data: [kpi.channels.shopee, kpi.channels.tiktok, kpi.channels.lazada], backgroundColor: ['#FF6B35', '#1DA1F2', '#274D0C'], borderRadius: 8 }]
+          datasets: [{ label: 'Jualan (RM)', data: [kpi.channels.shopee, kpi.channels.tiktok, kpi.channels.lazada], backgroundColor: ['#262626', '#737373', '#D4D4D4'], borderRadius: 4 }]
         },
-        options: { responsive: true, maintainAspectRatio: false, indexAxis: 'y', plugins: { legend: { display: false } } }
+        options: { responsive: true, maintainAspectRatio: false, indexAxis: 'y', plugins: { legend: { display: false } }, scales: { x: { grid: { color: '#E5E7EB' } } } }
       });
     }
 
@@ -266,7 +282,7 @@
     if (dailyTbody && daily) {
       dailyTbody.innerHTML = daily.slice(0, 100).map(d => '<tr><td>' + d.date + '</td><td class="text-right">' + d.orders + '</td><td class="text-right">RM ' + d.sales.toFixed(2) + '</td><td class="text-right">RM ' + d.profit.toFixed(2) + '</td><td class="text-right">' + d.margin.toFixed(1) + '%</td></tr>').join('');
       if (daily.length > 100) {
-        dailyTbody.innerHTML += '<tr><td colspan="5" style="text-align:center;color:#6B7280;">... dan ' + (daily.length - 100) + ' rows lagi</td></tr>';
+        dailyTbody.innerHTML += '<tr><td colspan="5" style="text-align:center;color:#737373;">... dan ' + (daily.length - 100) + ' rows lagi</td></tr>';
       }
     }
   }
@@ -315,8 +331,8 @@
           datasets: [{
             label: 'Jualan (RM)',
             data: sorted.map(d => d.sales),
-            borderColor: '#274D0C',
-            backgroundColor: 'rgba(39, 77, 12, 0.1)',
+            borderColor: '#262626',
+            backgroundColor: 'rgba(38, 38, 38, 0.06)',
             borderWidth: 2,
             pointRadius: 0,
             pointHoverRadius: 4,
@@ -331,7 +347,7 @@
           plugins: { legend: { display: false } },
           scales: {
             x: { ticks: { maxTicksLimit: 12 }, grid: { display: false } },
-            y: { beginAtZero: true, ticks: { callback: v => 'RM' + v.toLocaleString() } }
+            y: { beginAtZero: true, ticks: { callback: v => 'RM' + v.toLocaleString() }, grid: { color: '#E5E7EB' } }
           }
         }
       });
@@ -346,9 +362,9 @@
         data: {
           labels: sorted.map(d => d.date),
           datasets: [
-            { label: 'Shopee', data: sorted.map(d => d.shopee), backgroundColor: '#FF6B35', stack: 'stack' },
-            { label: 'TikTok', data: sorted.map(d => d.tiktok), backgroundColor: '#1DA1F2', stack: 'stack' },
-            { label: 'Lazada', data: sorted.map(d => d.lazada), backgroundColor: '#274D0C', stack: 'stack' }
+            { label: 'Shopee', data: sorted.map(d => d.shopee), backgroundColor: '#262626', stack: 'stack' },
+            { label: 'TikTok', data: sorted.map(d => d.tiktok), backgroundColor: '#737373', stack: 'stack' },
+            { label: 'Lazada', data: sorted.map(d => d.lazada), backgroundColor: '#D4D4D4', stack: 'stack' }
           ]
         },
         options: {
@@ -357,7 +373,7 @@
           interaction: { mode: 'index', intersect: false },
           scales: {
             x: { stacked: true, ticks: { maxTicksLimit: 12 }, grid: { display: false } },
-            y: { stacked: true, beginAtZero: true, ticks: { callback: v => 'RM' + v.toLocaleString() } }
+            y: { stacked: true, beginAtZero: true, ticks: { callback: v => 'RM' + v.toLocaleString() }, grid: { color: '#E5E7EB' } }
           }
         }
       });
@@ -374,8 +390,8 @@
           datasets: [{
             label: 'Margin (%)',
             data: sorted.map(d => d.margin),
-            borderColor: '#22C55E',
-            backgroundColor: 'rgba(34, 197, 94, 0.1)',
+            borderColor: '#059669',
+            backgroundColor: 'rgba(5, 150, 105, 0.06)',
             borderWidth: 2,
             pointRadius: 0,
             pointHoverRadius: 4,
@@ -390,7 +406,7 @@
           plugins: { legend: { display: false } },
           scales: {
             x: { ticks: { maxTicksLimit: 12 }, grid: { display: false } },
-            y: { beginAtZero: true, ticks: { callback: v => v + '%' } }
+            y: { beginAtZero: true, ticks: { callback: v => v + '%' }, grid: { color: '#E5E7EB' } }
           }
         }
       });
@@ -399,7 +415,7 @@
     // Chart: Order vs Sales scatter (colored by month)
     const ctx4 = document.getElementById('chart-scatter');
     if (ctx4) {
-      const monthColors = ['#FF6B35', '#1DA1F2', '#274D0C', '#F59E0B', '#8B5CF6', '#EC4899', '#06B6D4', '#84CC16', '#F97316'];
+      const monthColors = ['#262626', '#737373', '#2563EB', '#D97706', '#DC2626', '#059669', '#737373', '#262626', '#737373'];
       const sorted = [...daily].sort((a, b) => a.date.localeCompare(b.date));
       const datasets = [];
       const monthMap = {};
@@ -425,8 +441,8 @@
           maintainAspectRatio: false,
           plugins: { legend: { position: 'bottom' } },
           scales: {
-            x: { title: { display: true, text: 'Jumlah Order' }, beginAtZero: true },
-            y: { title: { display: true, text: 'Jualan (RM)' }, beginAtZero: true, ticks: { callback: v => 'RM' + v.toLocaleString() } }
+            x: { title: { display: true, text: 'Jumlah Order' }, beginAtZero: true, grid: { color: '#E5E7EB' } },
+            y: { title: { display: true, text: 'Jualan (RM)' }, beginAtZero: true, ticks: { callback: v => 'RM' + v.toLocaleString() }, grid: { color: '#E5E7EB' } }
           }
         }
       });
@@ -439,12 +455,13 @@
         const prev = i > 0 ? monthly[i - 1] : null;
         const trend = prev ? ((m.sales / prev.sales - 1) * 100).toFixed(1) : null;
         const trendHtml = trend !== null
-          ? '<span style="color:' + (parseFloat(trend) >= 0 ? '#22C55E' : '#EF4444') + '">' + (parseFloat(trend) >= 0 ? '↑' : '↓') + ' ' + Math.abs(parseFloat(trend)) + '%</span>'
-          : '<span style="color:#6B7280;">—</span>';
+          ? '<span style="color:' + (parseFloat(trend) >= 0 ? '#059669' : '#DC2626') + '">' + (parseFloat(trend) >= 0 ? '↑' : '↓') + ' ' + Math.abs(parseFloat(trend)) + '%</span>'
+          : '<span style="color:#737373;">—</span>';
         return '<tr><td>' + m.month + '</td><td class="text-right">' + fmtNum(m.orders) + '</td><td class="text-right">' + fmtRM(m.sales) + '</td><td class="text-right">' + fmtRM(m.profit) + '</td><td class="text-right">' + fmtPct(m.margin) + '</td><td class="text-right">' + fmtRM(m.shopee) + '</td><td class="text-right">' + fmtRM(m.tiktok) + '</td><td class="text-right">' + fmtRM(m.lazada) + '</td><td>' + trendHtml + '</td></tr>';
       }).join('');
     }
   }
+
   // Products
   function initProducts() {
     const products = window.DASHBOARD_DATA.productsList;
@@ -474,7 +491,7 @@
       });
       if (tbody) {
         tbody.innerHTML = filtered.map(p => {
-          const stockColor = p.stock === 0 ? '#EF4444' : (p.available < 10 ? '#F59E0B' : '#22C55E');
+          const stockColor = p.stock === 0 ? '#DC2626' : (p.available < 10 ? '#D97706' : '#059669');
           const stockLabel = p.stock === 0 ? 'Habis' : p.stock;
           return '<tr><td>' + (p.sku || '-') + '</td><td>' + (p.title || '-') + '</td><td class="text-right">RM ' + Number(p.cost || 0).toFixed(2) + '</td><td class="text-right" style="color:' + stockColor + ';font-weight:600;">' + stockLabel + '</td><td class="text-right">' + (p.avgDailySales || 0).toFixed(1) + '</td><td class="text-right">RM ' + ((p.cost || 0) * 3).toFixed(2) + '</td></tr>';
         }).join('');
@@ -509,16 +526,16 @@
     if (ctx) {
       const labels = ['Kritikal', 'Low Stock', 'Sihat'];
       const data = [statusCounts.critical, statusCounts.low, statusCounts.healthy];
-      const colors = ['#FF6B35', '#1DA1F2', '#274D0C', '#F59E0B', '#8B5CF6', '#EC4899'];
+      const colors = ['#DC2626', '#D97706', '#059669'];
       new Chart(ctx, {
         type: 'doughnut',
         data: {
           labels: labels,
           datasets: [{
             data: data,
-            backgroundColor: colors.slice(0, labels.length),
+            backgroundColor: colors,
             borderWidth: 2,
-            borderColor: '#FFFFFF',
+            borderColor: '#FAFAFA',
             hoverOffset: 4,
             spacing: 2
           }]
@@ -592,7 +609,7 @@
     if (ctx) {
       const labels = menu.map(c => c.name);
       const data = menu.map(c => (c.children || []).length);
-      const colors = ['#274D0C', '#FF6B35', '#1DA1F2'];
+      const colors = ['#262626', '#737373', '#D4D4D4'];
       new Chart(ctx, {
         type: 'bar',
         data: {
@@ -601,7 +618,7 @@
             label: 'Bilangan Laporan',
             data: data,
             backgroundColor: colors.slice(0, labels.length),
-            borderRadius: 8
+            borderRadius: 4
           }]
         },
         options: {
@@ -609,7 +626,7 @@
           maintainAspectRatio: false,
           plugins: { legend: { display: false } },
           scales: {
-            y: { beginAtZero: true, ticks: { stepSize: 1 } }
+            y: { beginAtZero: true, ticks: { stepSize: 1 }, grid: { color: '#E5E7EB' } }
           }
         }
       });
@@ -630,7 +647,7 @@
         });
       });
       exportsTbody.innerHTML = recentExports.slice(0, 10).map(e =>
-        '<tr><td>' + e.name + '</td><td>' + e.category + '</td><td>' + e.date + '</td><td><span style="color:#22C55E;font-weight:600;">' + e.status + '</span></td></tr>'
+        '<tr><td>' + e.name + '</td><td>' + e.category + '</td><td>' + e.date + '</td><td><span style="color:#059669;font-weight:600;">' + e.status + '</span></td></tr>'
       ).join('');
     }
   }
@@ -662,7 +679,7 @@
     const tbody = document.querySelector('#orders-table tbody');
     if (tbody) {
       tbody.innerHTML = orders.slice(0, 50).map(o => {
-        const stateColor = o.state === 'new' ? '#3B82F6' : o.state === 'processing' ? '#F59E0B' : o.state === 'shipped' ? '#22C55E' : o.state === 'completed' ? '#22C55E' : '#EF4444';
+        const stateColor = o.state === 'new' ? '#2563EB' : o.state === 'processing' ? '#D97706' : o.state === 'shipped' ? '#059669' : o.state === 'completed' ? '#059669' : '#DC2626';
         const stateLabel = o.state === 'new' ? 'New' : o.state === 'processing' ? 'Processing' : o.state === 'shipped' ? 'Shipped' : o.state === 'completed' ? 'Completed' : 'Cancelled';
         return '<tr><td>' + o.id + '</td><td>' + o.platform + '</td><td>' + o.shop + '</td><td><span style="color:' + stateColor + ';font-weight:600;">' + stateLabel + '</span></td><td class="text-right">' + fmtRM(o.amount) + '</td><td class="text-right">' + o.items + '</td><td>' + o.buyer + '</td><td>' + o.date + '</td></tr>';
       }).join('');
@@ -678,7 +695,7 @@
         const filtered = filter === 'all' ? orders : orders.filter(o => o.platform === filter);
         if (tbody) {
           tbody.innerHTML = filtered.slice(0, 50).map(o => {
-            const stateColor = o.state === 'new' ? '#3B82F6' : o.state === 'processing' ? '#F59E0B' : o.state === 'shipped' ? '#22C55E' : o.state === 'completed' ? '#22C55E' : '#EF4444';
+            const stateColor = o.state === 'new' ? '#2563EB' : o.state === 'processing' ? '#D97706' : o.state === 'shipped' ? '#059669' : o.state === 'completed' ? '#059669' : '#DC2626';
             const stateLabel = o.state === 'new' ? 'New' : o.state === 'processing' ? 'Processing' : o.state === 'shipped' ? 'Shipped' : o.state === 'completed' ? 'Completed' : 'Cancelled';
             return '<tr><td>' + o.id + '</td><td>' + o.platform + '</td><td>' + o.shop + '</td><td><span style="color:' + stateColor + ';font-weight:600;">' + stateLabel + '</span></td><td class="text-right">' + fmtRM(o.amount) + '</td><td class="text-right">' + o.items + '</td><td>' + o.buyer + '</td><td>' + o.date + '</td></tr>';
           }).join('');
@@ -691,7 +708,7 @@
     if (ctx) {
       const labels = Object.keys(platformCounts);
       const data = Object.values(platformCounts);
-      const colors = ['#FF6B35', '#1DA1F2', '#274D0C', '#F59E0B', '#8B5CF6', '#EC4899'];
+      const colors = ['#262626', '#737373', '#D4D4D4', '#D97706', '#2563EB', '#DC2626'];
       new Chart(ctx, {
         type: 'doughnut',
         data: {
@@ -700,7 +717,7 @@
             data: data,
             backgroundColor: colors.slice(0, labels.length),
             borderWidth: 2,
-            borderColor: '#FFFFFF',
+            borderColor: '#FAFAFA',
             hoverOffset: 4,
             spacing: 2
           }]
@@ -747,8 +764,8 @@
           datasets: [{
             label: 'Bilangan Produk',
             data: [critical.length, lowStock.length, noStock.length, Math.max(0, healthyCount)],
-            backgroundColor: ['#EF4444', '#F59E0B', '#7F1D1D', '#22C55E'],
-            borderRadius: 8
+            backgroundColor: ['#DC2626', '#D97706', '#262626', '#059669'],
+            borderRadius: 4
           }]
         },
         options: {
@@ -756,7 +773,7 @@
           maintainAspectRatio: false,
           plugins: { legend: { display: false } },
           scales: {
-            y: { beginAtZero: true, ticks: { stepSize: 10 } }
+            y: { beginAtZero: true, ticks: { stepSize: 10 }, grid: { color: '#E5E7EB' } }
           }
         }
       });
