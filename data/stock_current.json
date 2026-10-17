@@ -10,24 +10,6 @@
       "threshold": 419
     },
     {
-      "sku": "SHA 300ML - PINK",
-      "title": "Shaker 300ml Pink",
-      "onhand": 0,
-      "available": 0,
-      "avgDailySales": 3.88,
-      "cost": 0.88,
-      "threshold": 419
-    },
-    {
-      "sku": "SHA 300ML - RED",
-      "title": "SHAKER 300ML - RED",
-      "onhand": 0,
-      "available": 0,
-      "avgDailySales": 0.69,
-      "cost": 0.88,
-      "threshold": 139
-    },
-    {
       "sku": "SHA 300ML - RED",
       "title": "SHAKER 300ML - RED",
       "onhand": 0,
@@ -46,15 +28,6 @@
       "threshold": 141
     },
     {
-      "sku": "SHA 300ML - BLUE",
-      "title": "SHAKER 300ML - BLUE",
-      "onhand": 0,
-      "available": 0,
-      "avgDailySales": 0.61,
-      "cost": 0.88,
-      "threshold": 141
-    },
-    {
       "sku": "SHA 300ML - GREEN",
       "title": "SHAKER 300ML - GREEN",
       "onhand": 0,
@@ -62,24 +35,6 @@
       "avgDailySales": 0.13,
       "cost": 0.88,
       "threshold": 141
-    },
-    {
-      "sku": "SHA 300ML - GREEN",
-      "title": "SHAKER 300ML - GREEN",
-      "onhand": 0,
-      "available": 0,
-      "avgDailySales": 0.13,
-      "cost": 0.88,
-      "threshold": 141
-    },
-    {
-      "sku": "YELLOW MINION HALF",
-      "title": "Cute Helmet Budak [Topi Keledar Budak Comel]",
-      "onhand": 0,
-      "available": 0,
-      "avgDailySales": 0.05,
-      "cost": 8.33,
-      "threshold": 17
     },
     {
       "sku": "YELLOW MINION HALF",
@@ -106,24 +61,6 @@
       "available": 0,
       "avgDailySales": 0.03,
       "cost": 8.0,
-      "threshold": 1
-    },
-    {
-      "sku": "TORQUISE DEER",
-      "title": "Kids Baby Motorcycle Safety Belt Protection",
-      "onhand": 0,
-      "available": 0,
-      "avgDailySales": 0.03,
-      "cost": 8.0,
-      "threshold": 1
-    },
-    {
-      "sku": "ACRYLIC RACK 30S",
-      "title": "Display Rack Acrylic 20 Slot",
-      "onhand": 0,
-      "available": 0,
-      "avgDailySales": 0.01,
-      "cost": 0.0,
       "threshold": 1
     },
     {
@@ -147,24 +84,6 @@
       "threshold": 419
     },
     {
-      "sku": "SHA 300ML - PINK",
-      "title": "Shaker 300ml Pink",
-      "onhand": 0,
-      "available": 0,
-      "avgDailySales": 3.88,
-      "cost": 0.88,
-      "threshold": 419
-    },
-    {
-      "sku": "SHA 300ML - RED",
-      "title": "SHAKER 300ML - RED",
-      "onhand": 0,
-      "available": 0,
-      "avgDailySales": 0.69,
-      "cost": 0.88,
-      "threshold": 139
-    },
-    {
       "sku": "SHA 300ML - RED",
       "title": "SHAKER 300ML - RED",
       "onhand": 0,
@@ -183,15 +102,6 @@
       "threshold": 141
     },
     {
-      "sku": "SHA 300ML - BLUE",
-      "title": "SHAKER 300ML - BLUE",
-      "onhand": 0,
-      "available": 0,
-      "avgDailySales": 0.61,
-      "cost": 0.88,
-      "threshold": 141
-    },
-    {
       "sku": "SHA 300ML - GREEN",
       "title": "SHAKER 300ML - GREEN",
       "onhand": 0,
@@ -199,24 +109,6 @@
       "avgDailySales": 0.13,
       "cost": 0.88,
       "threshold": 141
-    },
-    {
-      "sku": "SHA 300ML - GREEN",
-      "title": "SHAKER 300ML - GREEN",
-      "onhand": 0,
-      "available": 0,
-      "avgDailySales": 0.13,
-      "cost": 0.88,
-      "threshold": 141
-    },
-    {
-      "sku": "YELLOW MINION HALF",
-      "title": "Cute Helmet Budak [Topi Keledar Budak Comel]",
-      "onhand": 0,
-      "available": 0,
-      "avgDailySales": 0.05,
-      "cost": 8.33,
-      "threshold": 17
     },
     {
       "sku": "YELLOW MINION HALF",
@@ -243,24 +135,6 @@
       "available": 0,
       "avgDailySales": 0.03,
       "cost": 8.0,
-      "threshold": 1
-    },
-    {
-      "sku": "TORQUISE DEER",
-      "title": "Kids Baby Motorcycle Safety Belt Protection",
-      "onhand": 0,
-      "available": 0,
-      "avgDailySales": 0.03,
-      "cost": 8.0,
-      "threshold": 1
-    },
-    {
-      "sku": "ACRYLIC RACK 30S",
-      "title": "Display Rack Acrylic 20 Slot",
-      "onhand": 0,
-      "available": 0,
-      "avgDailySales": 0.01,
-      "cost": 0.0,
       "threshold": 1
     },
     {
@@ -955,267 +829,6 @@
       "avgDailySales": 0.0,
       "cost": 11.97,
       "threshold": 14
-    },
-    {
-      "sku": "FULL PEACH FLOWER",
-      "title": "HELEMT FULL PEACH FLOWER",
-      "onhand": 0,
-      "available": 0,
-      "avgDailySales": 0.0,
-      "cost": 15.88,
-      "threshold": 12
-    },
-    {
-      "sku": "FULL RED KITTY-ECO",
-      "title": "HELMET FULL RED KITTY ECONOMICAL",
-      "onhand": 0,
-      "available": 0,
-      "avgDailySales": 0.0,
-      "cost": 11.87,
-      "threshold": 29
-    },
-    {
-      "sku": "FULL BLUE ASTRO-ECO",
-      "title": "HELMET FULL BLUE ASTRO ECONOMICAL",
-      "onhand": 0,
-      "available": 0,
-      "avgDailySales": 0.0,
-      "cost": 12.0,
-      "threshold": 6
-    },
-    {
-      "sku": "FULL PEACH RABBIT",
-      "title": "HELMET FULL PEACH RABBIT",
-      "onhand": 0,
-      "available": 0,
-      "avgDailySales": 0.0,
-      "cost": 12.59,
-      "threshold": 1
-    },
-    {
-      "sku": "SEJ-SAN-SUL-QIZ",
-      "title": "SEJADAH SANDAR SULAM QIZI",
-      "onhand": 0,
-      "available": 0,
-      "avgDailySales": 0.0,
-      "cost": 23.0,
-      "threshold": 1
-    },
-    {
-      "sku": "ACRYLIC RACK 40S",
-      "title": "Display Rack Acrylic 40 Slot",
-      "onhand": 0,
-      "available": 0,
-      "avgDailySales": 0.0,
-      "cost": 0.0,
-      "threshold": 1
-    },
-    {
-      "sku": "HALF EAR BLUE CAT",
-      "title": "Kids Cute Helmet - Topi keledar budak pink",
-      "onhand": 0,
-      "available": 0,
-      "avgDailySales": 0.0,
-      "cost": 11.0,
-      "threshold": 4
-    },
-    {
-      "sku": "SEJ-SAN-SUL-RMA",
-      "title": "SEJADAH SANDAR MARYAM bercorak sulam dan batik [READY STOCK]",
-      "onhand": 0,
-      "available": 0,
-      "avgDailySales": 0.0,
-      "cost": 23.0,
-      "threshold": 5
-    },
-    {
-      "sku": "SEJ-SAN-SON-SEV",
-      "title": "Sejadah Sandar Maryam Corak Songket",
-      "onhand": 0,
-      "available": 0,
-      "avgDailySales": 0.0,
-      "cost": 23.0,
-      "threshold": 2
-    },
-    {
-      "sku": "WOO-60S-NOCOV",
-      "title": "1:64 Diecast Alloy Car Rack Solid Wooden Suitable for Hotwheels Birthdays Present for Boys 60 slots",
-      "onhand": 0,
-      "available": 0,
-      "avgDailySales": 0.0,
-      "cost": 62.0,
-      "threshold": 26
-    },
-    {
-      "sku": "779853377",
-      "title": "READY STOCK MALAYSIA - Cute Kids Baby Potty Training",
-      "onhand": 0,
-      "available": 0,
-      "avgDailySales": 0.0,
-      "cost": 0.0,
-      "threshold": 2
-    },
-    {
-      "sku": "779853380",
-      "title": "READY STOCK MALAYSIA - Cute Kids Baby Potty Training",
-      "onhand": 0,
-      "available": 0,
-      "avgDailySales": 0.0,
-      "cost": 0.0,
-      "threshold": 2
-    },
-    {
-      "sku": "1775791579",
-      "title": "READY STOCK MALAYSIA - Cute Kids Baby Potty Training",
-      "onhand": 0,
-      "available": 0,
-      "avgDailySales": 0.0,
-      "cost": 0.0,
-      "threshold": 3
-    },
-    {
-      "sku": "61318260868",
-      "title": "perfume mini tester 2ML minyak wangi mini /souvenir /goodies kawin/hadiah untuk yang tersayang",
-      "onhand": 0,
-      "available": 0,
-      "avgDailySales": 0.0,
-      "cost": 0.0,
-      "threshold": 3
-    },
-    {
-      "sku": "Songket Sev",
-      "title": "Sejadah Sandar Maryam Corak Songket",
-      "onhand": 0,
-      "available": 0,
-      "avgDailySales": 0.0,
-      "cost": 23.0,
-      "threshold": 3
-    },
-    {
-      "sku": "Songket Kapu",
-      "title": "Sejadah Sandar Maryam Corak Songket",
-      "onhand": 0,
-      "available": 0,
-      "avgDailySales": 0.0,
-      "cost": 23.0,
-      "threshold": 4
-    },
-    {
-      "sku": "LARGE",
-      "title": "TUDUNG SAJI PLASTIK/Foldable Tabletop Cover Aluminium Foil Food Cover",
-      "onhand": 0,
-      "available": 0,
-      "avgDailySales": 0.0,
-      "cost": 0.0,
-      "threshold": 3
-    },
-    {
-      "sku": "SMALL",
-      "title": "TUDUNG SAJI PLASTIK/Foldable Tabletop Cover Aluminium Foil Food Cover",
-      "onhand": 0,
-      "available": 0,
-      "avgDailySales": 0.0,
-      "cost": 0.0,
-      "threshold": 3
-    },
-    {
-      "sku": "RED SPIDERMAN",
-      "title": "Kids Baby Motorcycle Safety Belt Protection",
-      "onhand": 0,
-      "available": 0,
-      "avgDailySales": 0.0,
-      "cost": 8.0,
-      "threshold": 1
-    },
-    {
-      "sku": "AHMIQ",
-      "title": "[Ready Stock] Sejadah Sandar MARYAM bercorak Sulam dan Batik",
-      "onhand": 0,
-      "available": 0,
-      "avgDailySales": 0.0,
-      "cost": 23.0,
-      "threshold": 4
-    },
-    {
-      "sku": "DHAHAB",
-      "title": "[Ready Stock] Sejadah Sandar MARYAM bercorak Sulam dan Batik",
-      "onhand": 0,
-      "available": 0,
-      "avgDailySales": 0.0,
-      "cost": 23.0,
-      "threshold": 5
-    },
-    {
-      "sku": "RAJWAN",
-      "title": "[Ready Stock] Sejadah Sandar MARYAM bercorak Sulam dan Batik",
-      "onhand": 0,
-      "available": 0,
-      "avgDailySales": 0.0,
-      "cost": 23.0,
-      "threshold": 1
-    },
-    {
-      "sku": "PINK KITYY HALF",
-      "title": "Kids Cute Helmet - Topi keledar budak",
-      "onhand": 0,
-      "available": 0,
-      "avgDailySales": 0.0,
-      "cost": 6.27,
-      "threshold": 11
-    },
-    {
-      "sku": "BLUE POTTY",
-      "title": "READY STOCK MALAYSIA - Cute Kids Baby Potty Training",
-      "onhand": 0,
-      "available": 0,
-      "avgDailySales": 0.0,
-      "cost": 0.0,
-      "threshold": 2
-    },
-    {
-      "sku": "PINK POTTY",
-      "title": "READY STOCK MALAYSIA - Cute Kids Baby Potty Training",
-      "onhand": 0,
-      "available": 0,
-      "avgDailySales": 0.0,
-      "cost": 0.0,
-      "threshold": 2
-    },
-    {
-      "sku": "HEL-HAL-BLU-ULT",
-      "title": "HELMET HALF BLUE ULTRAMAN",
-      "onhand": 0,
-      "available": 0,
-      "avgDailySales": 0.0,
-      "cost": 9.5,
-      "threshold": 8
-    },
-    {
-      "sku": "BIK-STA-VER-HOR",
-      "title": "BIKE STAND VERTICAL HORIZONTAL",
-      "onhand": 0,
-      "available": 0,
-      "avgDailySales": 0.0,
-      "cost": 14.56,
-      "threshold": 5
-    },
-    {
-      "sku": "HEL-FUL-BLU-DOR",
-      "title": "HELMET FULL - BLUE DORAEMON",
-      "onhand": 0,
-      "available": 0,
-      "avgDailySales": 0.0,
-      "cost": 15.6,
-      "threshold": 4
-    },
-    {
-      "sku": "HEL-FUL-PIN-KIT",
-      "title": "HELMET FULL - PINK KITY",
-      "onhand": 0,
-      "available": 0,
-      "avgDailySales": 0.0,
-      "cost": 11.97,
-      "threshold": 14
     }
   ],
   "low_stock": [
@@ -1283,24 +896,6 @@
       "threshold": 67
     },
     {
-      "sku": "MAILBOX INDOOR",
-      "title": "MAILBOX INDOOR",
-      "onhand": 40,
-      "available": 38,
-      "avgDailySales": 2.45,
-      "cost": 7.54,
-      "threshold": 67
-    },
-    {
-      "sku": "STICKER HOTWHEELS 5X11CM",
-      "title": "STICKER HOTWHEELS",
-      "onhand": 1307,
-      "available": 1306,
-      "avgDailySales": 1.66,
-      "cost": 0.15,
-      "threshold": 2897
-    },
-    {
       "sku": "STICKER HOTWHEELS 5X11CM",
       "title": "STICKER HOTWHEELS",
       "onhand": 1307,
@@ -1337,24 +932,6 @@
       "threshold": 122
     },
     {
-      "sku": "SHA 300ML - YELLOW",
-      "title": "Shaker 300ml Yellow",
-      "onhand": 2,
-      "available": 2,
-      "avgDailySales": 0.67,
-      "cost": 0.88,
-      "threshold": 122
-    },
-    {
-      "sku": "PREM BLACK-PASSWD",
-      "title": "MAILBOX PREMIUM BLACK PASSWORD",
-      "onhand": 12,
-      "available": 11,
-      "avgDailySales": 0.55,
-      "cost": 17.68,
-      "threshold": 101
-    },
-    {
       "sku": "PREM BLACK-PASSWD",
       "title": "MAILBOX PREMIUM BLACK PASSWORD",
       "onhand": 12,
@@ -1371,15 +948,6 @@
       "avgDailySales": 0.41,
       "cost": 0.35,
       "threshold": 295
-    },
-    {
-      "sku": "MB-STAI-SIZ-S",
-      "title": "MAILBOX STAINLESS STEEL SIZE",
-      "onhand": 6,
-      "available": 5,
-      "avgDailySales": 0.38,
-      "cost": 18.99,
-      "threshold": 12
     },
     {
       "sku": "MB-STAI-SIZ-S",
@@ -1463,24 +1031,6 @@
       "threshold": 120
     },
     {
-      "sku": "PREM WHITE-PASSWD",
-      "title": "MAILBOX PREMIUM WHITE PASSWORD",
-      "onhand": 8,
-      "available": 8,
-      "avgDailySales": 0.15,
-      "cost": 17.7,
-      "threshold": 27
-    },
-    {
-      "sku": "BOX-HOT-30S-WHI",
-      "title": "BOX HOTWHEELS 30SLOT WHITE",
-      "onhand": 1,
-      "available": 1,
-      "avgDailySales": 0.15,
-      "cost": 5.42,
-      "threshold": 120
-    },
-    {
       "sku": "HEL-HAL-RED-KIT",
       "title": "HELMET HALF RED KITTY",
       "onhand": 34,
@@ -1506,15 +1056,6 @@
       "avgDailySales": 0.08,
       "cost": 6.88,
       "threshold": 6
-    },
-    {
-      "sku": "FULL PINK RABBIT-ECO",
-      "title": "HELMET FULL PINK RABBIT ECONOMICAL",
-      "onhand": 18,
-      "available": 18,
-      "avgDailySales": 0.08,
-      "cost": 11.82,
-      "threshold": 30
     },
     {
       "sku": "BOX-HOT-30S-PIN",
@@ -2415,102 +1956,12 @@
       "avgDailySales": 0.0,
       "cost": 8.0,
       "threshold": 7
-    },
-    {
-      "sku": "BIKE STAND HORIZONTAL",
-      "title": "BIKE HORIZONTAL",
-      "onhand": 2,
-      "available": 2,
-      "avgDailySales": 0.0,
-      "cost": 9.47,
-      "threshold": 14
-    },
-    {
-      "sku": "HALF EAR BLUE - TEBAL",
-      "title": "HELMET HALF EAR BLUE TEBAL",
-      "onhand": 2,
-      "available": 2,
-      "avgDailySales": 0.0,
-      "cost": 23.0,
-      "threshold": 6
-    },
-    {
-      "sku": "MB-STAI-SIZ-L",
-      "title": "MAIL BOX STAINLESS STEEL SIZE L",
-      "onhand": 1,
-      "available": 1,
-      "avgDailySales": 0.0,
-      "cost": 33.08,
-      "threshold": 10
-    },
-    {
-      "sku": "HALF EAR PIN - TEBAL",
-      "title": "HELMET HALF EAR PINK TEBAL",
-      "onhand": 3,
-      "available": 3,
-      "avgDailySales": 0.0,
-      "cost": 23.0,
-      "threshold": 6
-    },
-    {
-      "sku": "WOO-60S-WITCOV",
-      "title": "1:64 Diecast Alloy Car Rack Solid Wooden Suitable for Hotwheels Birthdays Present for Boys 60 slots",
-      "onhand": 1,
-      "available": 1,
-      "avgDailySales": 0.0,
-      "cost": 59.61,
-      "threshold": 19
-    },
-    {
-      "sku": "61318260871",
-      "title": "perfume mini tester 2ML minyak wangi mini /souvenir /goodies kawin/hadiah untuk yang tersayang",
-      "onhand": 2,
-      "available": 2,
-      "avgDailySales": 0.0,
-      "cost": 0.0,
-      "threshold": 4
-    },
-    {
-      "sku": "61318260870",
-      "title": "perfume mini tester 2ML minyak wangi mini /souvenir /goodies kawin/hadiah untuk yang tersayang",
-      "onhand": 5,
-      "available": 5,
-      "avgDailySales": 0.0,
-      "cost": 0.0,
-      "threshold": 6
-    },
-    {
-      "sku": "61318260869",
-      "title": "perfume mini tester 2ML minyak wangi mini /souvenir /goodies kawin/hadiah untuk yang tersayang",
-      "onhand": 11,
-      "available": 11,
-      "avgDailySales": 0.0,
-      "cost": 0.0,
-      "threshold": 12
-    },
-    {
-      "sku": "61318260860",
-      "title": "perfume mini tester 2ML minyak wangi mini /souvenir /goodies kawin/hadiah untuk yang tersayang",
-      "onhand": 2,
-      "available": 2,
-      "avgDailySales": 0.0,
-      "cost": 0.0,
-      "threshold": 3
-    },
-    {
-      "sku": "USTU",
-      "title": "[Ready Stock] Sejadah Sandar MARYAM bercorak Sulam dan Batik",
-      "onhand": 2,
-      "available": 2,
-      "avgDailySales": 0.0,
-      "cost": 23.0,
-      "threshold": 9
     }
   ],
   "summary": {
-    "no_stock_count": 120,
-    "low_stock_count": 143,
-    "critical_count": 15,
+    "no_stock_count": 84,
+    "low_stock_count": 125,
+    "critical_count": 8,
     "total_products": 263
   }
 }

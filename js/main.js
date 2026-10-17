@@ -175,9 +175,24 @@
         type: 'doughnut',
         data: {
           labels: ['Shopee', 'TikTok', 'Lazada'],
-          datasets: [{ data: [kpi.channels.shopee, kpi.channels.tiktok, kpi.channels.lazada], backgroundColor: ['#FF6B35', '#1DA1F2', '#274D0C'], borderWidth: 0 }]
+          datasets: [{
+            data: [kpi.channels.shopee, kpi.channels.tiktok, kpi.channels.lazada],
+            backgroundColor: ['#FF6B35', '#1DA1F2', '#274D0C'],
+            borderWidth: 1,
+            borderColor: '#FFFFFF',
+            hoverOffset: 4,
+          }]
         },
-        options: { responsive: true, maintainAspectRatio: false, cutout: '60%' }
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          cutout: '55%',
+          layout: { padding: 8 },
+          plugins: {
+            legend: { position: 'right', labels: { padding: 12, usePointStyle: true, pointStyle: 'circle' } },
+            tooltip: { callbacks: { label: (c) => c.label + ': RM ' + Number(c.raw).toLocaleString() } }
+          }
+        }
       });
     }
 
