@@ -7,14 +7,14 @@
 
   // Chart.js global defaults — monochrome editorial
   if (typeof Chart !== 'undefined') {
-    Chart.defaults.color = '#737373';
-    Chart.defaults.borderColor = '#E5E7EB';
+    Chart.defaults.color = '#8B7E74';
+    Chart.defaults.borderColor = '#EAE6E3';
     Chart.defaults.font.family = 'system-ui, -apple-system, sans-serif';
     Chart.defaults.font.size = 12;
     Chart.defaults.plugins.legend.labels.usePointStyle = true;
     Chart.defaults.plugins.legend.labels.pointStyle = 'circle';
     Chart.defaults.plugins.legend.labels.padding = 12;
-    Chart.defaults.plugins.tooltip.backgroundColor = '#262626';
+    Chart.defaults.plugins.tooltip.backgroundColor = '#2D251F';
     Chart.defaults.plugins.tooltip.titleColor = '#FFFFFF';
     Chart.defaults.plugins.tooltip.bodyColor = '#FFFFFF';
     Chart.defaults.plugins.tooltip.padding = 12;
@@ -180,7 +180,7 @@
         data: {
           labels: monthly.map(m => m.month),
           datasets: [
-            { label: 'Jualan (RM)', data: monthly.map(m => m.sales), backgroundColor: 'rgba(38, 38, 38, 0.08)', borderColor: '#262626', borderWidth: 2, yAxisID: 'y' },
+            { label: 'Jualan (RM)', data: monthly.map(m => m.sales), backgroundColor: 'rgba(38, 38, 38, 0.08)', borderColor: '#2D251F', borderWidth: 2, yAxisID: 'y' },
             { label: 'Untung (RM)', data: monthly.map(m => m.profit), type: 'line', borderColor: '#059669', backgroundColor: '#059669', borderWidth: 2, pointRadius: 4, yAxisID: 'y1' }
           ]
         },
@@ -197,7 +197,7 @@
           labels: ['Shopee', 'TikTok', 'Lazada'],
           datasets: [{
             data: [kpi.channels.shopee, kpi.channels.tiktok, kpi.channels.lazada],
-            backgroundColor: ['#262626', '#737373', '#D4D4D4'],
+            backgroundColor: ['#2D251F', '#737373', '#D4D4D4'],
             borderWidth: 2,
             borderColor: '#FAFAFA',
             hoverOffset: 4,
@@ -259,7 +259,7 @@
     if (ctx1) {
       new Chart(ctx1, {
         type: 'bar',
-        data: { labels: monthly.map(m => m.month), datasets: [{ label: 'Jualan (RM)', data: monthly.map(m => m.sales), backgroundColor: '#262626', borderRadius: 4 }] },
+        data: { labels: monthly.map(m => m.month), datasets: [{ label: 'Jualan (RM)', data: monthly.map(m => m.sales), backgroundColor: '#2D251F', borderRadius: 4 }] },
         options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { y: { grid: { color: '#E5E7EB' } } } }
       });
     }
@@ -271,7 +271,7 @@
         type: 'bar',
         data: {
           labels: ['Shopee', 'TikTok', 'Lazada'],
-          datasets: [{ label: 'Jualan (RM)', data: [kpi.channels.shopee, kpi.channels.tiktok, kpi.channels.lazada], backgroundColor: ['#262626', '#737373', '#D4D4D4'], borderRadius: 4 }]
+          datasets: [{ label: 'Jualan (RM)', data: [kpi.channels.shopee, kpi.channels.tiktok, kpi.channels.lazada], backgroundColor: ['#2D251F', '#737373', '#D4D4D4'], borderRadius: 4 }]
         },
         options: { responsive: true, maintainAspectRatio: false, indexAxis: 'y', plugins: { legend: { display: false } }, scales: { x: { grid: { color: '#E5E7EB' } } } }
       });
@@ -331,7 +331,7 @@
           datasets: [{
             label: 'Jualan (RM)',
             data: sorted.map(d => d.sales),
-            borderColor: '#262626',
+            borderColor: '#2D251F',
             backgroundColor: 'rgba(38, 38, 38, 0.06)',
             borderWidth: 2,
             pointRadius: 0,
@@ -362,7 +362,7 @@
         data: {
           labels: sorted.map(d => d.date),
           datasets: [
-            { label: 'Shopee', data: sorted.map(d => d.shopee), backgroundColor: '#262626', stack: 'stack' },
+            { label: 'Shopee', data: sorted.map(d => d.shopee), backgroundColor: '#2D251F', stack: 'stack' },
             { label: 'TikTok', data: sorted.map(d => d.tiktok), backgroundColor: '#737373', stack: 'stack' },
             { label: 'Lazada', data: sorted.map(d => d.lazada), backgroundColor: '#D4D4D4', stack: 'stack' }
           ]
@@ -415,7 +415,7 @@
     // Chart: Order vs Sales scatter (colored by month)
     const ctx4 = document.getElementById('chart-scatter');
     if (ctx4) {
-      const monthColors = ['#262626', '#737373', '#2563EB', '#D97706', '#DC2626', '#059669', '#737373', '#262626', '#737373'];
+      const monthColors = ['#2D251F', '#737373', '#2563EB', '#D97706', '#DC2626', '#059669', '#737373', '#2D251F', '#737373'];
       const sorted = [...daily].sort((a, b) => a.date.localeCompare(b.date));
       const datasets = [];
       const monthMap = {};
@@ -609,7 +609,7 @@
     if (ctx) {
       const labels = menu.map(c => c.name);
       const data = menu.map(c => (c.children || []).length);
-      const colors = ['#262626', '#737373', '#D4D4D4'];
+      const colors = ['#2D251F', '#737373', '#D4D4D4'];
       new Chart(ctx, {
         type: 'bar',
         data: {
@@ -708,7 +708,7 @@
     if (ctx) {
       const labels = Object.keys(platformCounts);
       const data = Object.values(platformCounts);
-      const colors = ['#262626', '#737373', '#D4D4D4', '#D97706', '#2563EB', '#DC2626'];
+      const colors = ['#2D251F', '#737373', '#D4D4D4', '#D97706', '#2563EB', '#DC2626'];
       new Chart(ctx, {
         type: 'doughnut',
         data: {
@@ -764,7 +764,7 @@
           datasets: [{
             label: 'Bilangan Produk',
             data: [critical.length, lowStock.length, noStock.length, Math.max(0, healthyCount)],
-            backgroundColor: ['#DC2626', '#D97706', '#262626', '#059669'],
+            backgroundColor: ['#DC2626', '#D97706', '#2D251F', '#059669'],
             borderRadius: 4
           }]
         },
