@@ -12,9 +12,6 @@
   <header class="desktop-header">
     <button class="hamburger desktop-toggle" id="desktop-toggle" aria-label="Toggle menu">☰</button>
     <span class="desktop-title">BigSeller Dashboard</span>
-    <div class="header-search">
-      <input type="text" class="header-search-input" placeholder="Cari produk, order, laporan..." aria-label="Cari">
-    </div>
     <span class="desktop-updated" id="date-desktop">Dikemas kini: ...</span>
   </header>
 
@@ -71,6 +68,9 @@
           <span>Stock Alerts</span>
         </a>
       </nav>
+      <div class="sidebar-footer">
+        <span class="sidebar-updated" id="date-sidebar">Dikemas kini: ...</span>
+      </div>
     </aside>
 
     <!-- Backdrop for mobile sidebar -->
@@ -82,36 +82,30 @@
         <!-- Section 1: Overview -->
         <section class="slide" id="overview">
           <div class="section-header">
-            <div>
-              <h1 class="section-title">Ringkasan BigSeller</h1>
-              <div class="tag-chips">
-                <span class="tag-chip accent">KPI</span>
-                <span class="tag-chip">9 bulan</span>
-                <span class="tag-chip">Jan-Sep 2026</span>
-              </div>
-            </div>
+            <h1 class="section-title">Ringkasan BigSeller</h1>
+            <p class="section-subtitle" id="date-section">9 bulan • Jan-Sep 2026 • Dikemas kini: ...</p>
           </div>
-
+          
           <!-- KPI Cards -->
-          <div class="kpi-grid compact">
+          <div class="kpi-grid">
             <div class="kpi-card">
-              <span class="kpi-value" id="kpi-sales">RM 0</span>
               <span class="kpi-label">Jumlah Jualan</span>
+              <span class="kpi-value" id="kpi-sales">RM 0</span>
               <span class="kpi-trend up" id="kpi-sales-trend">↑ 0%</span>
             </div>
             <div class="kpi-card">
-              <span class="kpi-value" id="kpi-profit">RM 0</span>
               <span class="kpi-label">Untung Kasar</span>
+              <span class="kpi-value" id="kpi-profit">RM 0</span>
               <span class="kpi-trend up" id="kpi-profit-trend">↑ 0%</span>
             </div>
             <div class="kpi-card">
-              <span class="kpi-value" id="kpi-orders">0</span>
               <span class="kpi-label">Jumlah Order</span>
+              <span class="kpi-value" id="kpi-orders">0</span>
               <span class="kpi-trend up" id="kpi-orders-trend">↑ 0%</span>
             </div>
             <div class="kpi-card">
-              <span class="kpi-value" id="kpi-margin">0%</span>
               <span class="kpi-label">Margin Purata</span>
+              <span class="kpi-value" id="kpi-margin">0%</span>
               <span class="kpi-trend up" id="kpi-margin-trend">↑ 0%</span>
             </div>
           </div>
@@ -142,16 +136,8 @@
         <!-- Section 2: Stok -->
         <section class="slide" id="stok">
           <div class="section-header">
-            <div>
-              <h1 class="section-title">Pengurusan Stok</h1>
-              <div class="tag-chips">
-                <span class="tag-chip accent">Inventori</span>
-                <span class="tag-chip">209 No Stock</span>
-                <span class="tag-chip">54 Low Stock</span>
-                <span class="tag-chip">8 Kritikal</span>
-              </div>
-            </div>
-            <p class="section-subtitle">Live Data</p>
+            <h1 class="section-title">Pengurusan Stok</h1>
+            <p class="section-subtitle">209 No Stock • 54 Low Stock • 8 Kritikal</p>
           </div>
 
           <!-- Stock Summary Cards -->
@@ -218,15 +204,8 @@
         <!-- Section 3: Jualan -->
         <section class="slide" id="jualan">
           <div class="section-header">
-            <div>
-              <h1 class="section-title">Analisis Jualan</h1>
-              <div class="tag-chips">
-                <span class="tag-chip accent">Jualan</span>
-                <span class="tag-chip">268 rows</span>
-                <span class="tag-chip">Jan-Sep 2026</span>
-              </div>
-            </div>
-            <p class="section-subtitle">Data Harian</p>
+            <h1 class="section-title">Analisis Jualan</h1>
+            <p class="section-subtitle">Data harian 268 rows • Jan-Sep 2026</p>
           </div>
 
           <div class="grid-2-1">
@@ -262,14 +241,8 @@
         <!-- Section 4: Restock -->
         <section class="slide" id="restock">
           <div class="section-header">
-            <div>
-              <h1 class="section-title">Senarai Restock</h1>
-              <div class="tag-chips">
-                <span class="tag-chip accent">Restock</span>
-                <span class="tag-chip">Keutamaan</span>
-              </div>
-            </div>
-            <p class="section-subtitle">Produk Kritikal</p>
+            <h1 class="section-title">Senarai Restock</h1>
+            <p class="section-subtitle">Produk kritikal mengikut keutamaan</p>
           </div>
 
           <div class="card">
@@ -288,16 +261,8 @@
         <!-- Section 5: Analisis -->
         <section class="slide" id="analisis">
           <div class="section-header">
-            <div>
-              <h1 class="section-title">Analisis Mendalam</h1>
-              <div class="tag-chips">
-                <span class="tag-chip accent">Analisis</span>
-                <span class="tag-chip">Trend</span>
-                <span class="tag-chip">Margin</span>
-                <span class="tag-chip">Bulanan</span>
-              </div>
-            </div>
-            <p class="section-subtitle">Jan-Sep 2026</p>
+            <h1 class="section-title">Analisis Mendalam</h1>
+            <p class="section-subtitle">Trend harian, margin & perbandingan bulanan • Jan-Sep 2026</p>
           </div>
 
           <div class="grid-2-1">
@@ -348,15 +313,8 @@
         <!-- Section 6: Products -->
         <section class="slide" id="products">
           <div class="section-header">
-            <div>
-              <h1 class="section-title">Senarai Produk</h1>
-              <div class="tag-chips">
-                <span class="tag-chip accent">Produk</span>
-                <span class="tag-chip">23 produk</span>
-                <span class="tag-chip">Shopee/TikTok/Lazada/Shopify</span>
-              </div>
-            </div>
-            <p class="section-subtitle" id="products-subtitle">Data Inventori</p>
+            <h1 class="section-title">Senarai Produk</h1>
+            <p class="section-subtitle" id="products-subtitle">23 produk • Shopee/TikTok/Lazada/Shopify</p>
           </div>
 
           <!-- Platform Filter -->
@@ -374,7 +332,7 @@
 
           <div class="grid-2-1">
             <!-- Product Table -->
-            <div class="card table-card-full">
+            <div class="card">
               <div class="card-header"><span class="card-title">Senarai Produk</span></div>
               <div class="table-container">
                 <table id="products-table" class="data-table">
@@ -404,19 +362,12 @@
         <!-- Section 7: Reports -->
         <section class="slide" id="reports">
           <div class="section-header">
-            <div>
-              <h1 class="section-title">Laporan & Export</h1>
-              <div class="tag-chips">
-                <span class="tag-chip accent">Laporan</span>
-                <span class="tag-chip">Export</span>
-                <span class="tag-chip">Download</span>
-              </div>
-            </div>
-            <p class="section-subtitle">Sales/Profit/Order</p>
+            <h1 class="section-title">Laporan & Export</h1>
+            <p class="section-subtitle">Download center • Sales/Profit/Order reports</p>
           </div>
 
           <!-- Report Category Cards -->
-          <div class="report-cards masonry" id="report-cards"></div>
+          <div class="report-cards" id="report-cards"></div>
 
           <!-- Report Type Breakdown Chart -->
           <div class="card">
@@ -446,17 +397,8 @@
         <!-- Section 8: Orders -->
         <section class="slide" id="orders">
           <div class="section-header">
-            <div>
-              <h1 class="section-title">Senarai Orders</h1>
-              <div class="tag-chips">
-                <span class="tag-chip accent">Orders</span>
-                <span class="tag-chip">Shopee</span>
-                <span class="tag-chip">TikTok</span>
-                <span class="tag-chip">Lazada</span>
-                <span class="tag-chip">Shopify</span>
-              </div>
-            </div>
-            <p class="section-subtitle">Semua Status</p>
+            <h1 class="section-title">Senarai Orders</h1>
+            <p class="section-subtitle">Shopee/TikTok/Lazada/Shopify • Semua status</p>
           </div>
 
           <!-- Order Status Summary Cards -->
@@ -524,15 +466,8 @@
         <!-- Section 9: Stock Alerts -->
         <section class="slide" id="stock-alerts">
           <div class="section-header">
-            <div>
-              <h1 class="section-title">Amaran Stok</h1>
-              <div class="tag-chips">
-                <span class="tag-chip accent">Amaran</span>
-                <span class="tag-chip">Kritikal</span>
-                <span class="tag-chip">Low Stock</span>
-              </div>
-            </div>
-            <p class="section-subtitle">Produk Kritikal & Low Stock</p>
+            <h1 class="section-title">Amaran Stok</h1>
+            <p class="section-subtitle">Produk kritikal & low stock</p>
           </div>
 
           <!-- Stock Health Summary Cards -->
