@@ -1,255 +1,402 @@
 [
   {
-    "id": 593351506,
-    "title": "",
-    "sku": "",
-    "price": 14,
-    "stock": "",
-    "platform": "1688",
-    "status": 0,
-    "image": "",
-    "shopName": ""
+    "sku": "SHA 300ML - PINK",
+    "title": "Shaker 300ml Pink",
+    "stock": 0,
+    "available": 0,
+    "cost": 0.88,
+    "avgDailySales": 3.88
   },
   {
-    "id": 575027233,
-    "title": "",
-    "sku": "",
-    "price": 700,
-    "stock": "",
-    "platform": "1688",
-    "status": 0,
-    "image": "",
-    "shopName": ""
+    "sku": "SHA 300ML - RED",
+    "title": "SHAKER 300ML - RED",
+    "stock": 0,
+    "available": 0,
+    "cost": 0.88,
+    "avgDailySales": 0.69
   },
   {
-    "id": 575026884,
-    "title": "",
-    "sku": "",
-    "price": 600,
-    "stock": "",
-    "platform": "1688",
-    "status": 0,
-    "image": "",
-    "shopName": ""
+    "sku": "SHA 300ML - BLUE",
+    "title": "SHAKER 300ML - BLUE",
+    "stock": 0,
+    "available": 0,
+    "cost": 0.88,
+    "avgDailySales": 0.61
   },
   {
-    "id": 575024186,
-    "title": "",
-    "sku": "",
-    "price": 880,
-    "stock": "",
-    "platform": "1688",
-    "status": 0,
-    "image": "",
-    "shopName": ""
+    "sku": "SHA 300ML - GREEN",
+    "title": "SHAKER 300ML - GREEN",
+    "stock": 0,
+    "available": 0,
+    "cost": 0.88,
+    "avgDailySales": 0.13
   },
   {
-    "id": 575023775,
-    "title": "",
-    "sku": "",
-    "price": 650,
-    "stock": "",
-    "platform": "1688",
-    "status": 0,
-    "image": "",
-    "shopName": ""
+    "sku": "YELLOW MINION HALF",
+    "title": "Cute Helmet Budak [Topi Keledar Budak Comel]",
+    "stock": 0,
+    "available": 0,
+    "cost": 8.33,
+    "avgDailySales": 0.05
   },
   {
-    "id": 575023572,
-    "title": "",
-    "sku": "",
-    "price": 700,
-    "stock": "",
-    "platform": "1688",
-    "status": 0,
-    "image": "",
-    "shopName": ""
+    "sku": "HALF PINK KITTY - EAR",
+    "title": "HELMET HALF PINK KITTY - EAR",
+    "stock": 0,
+    "available": 0,
+    "cost": 15.0,
+    "avgDailySales": 0.04
   },
   {
-    "id": 575023436,
-    "title": "",
-    "sku": "",
-    "price": 600,
-    "stock": "",
-    "platform": "1688",
-    "status": 0,
-    "image": "",
-    "shopName": ""
+    "sku": "TORQUISE DEER",
+    "title": "Kids Baby Motorcycle Safety Belt Protection",
+    "stock": 0,
+    "available": 0,
+    "cost": 8.0,
+    "avgDailySales": 0.03
   },
   {
-    "id": 574822208,
-    "title": "",
-    "sku": "",
-    "price": 650,
-    "stock": "",
-    "platform": "1688",
-    "status": 0,
-    "image": "",
-    "shopName": ""
+    "sku": "ACRYLIC RACK 30S",
+    "title": "Display Rack Acrylic 20 Slot",
+    "stock": 0,
+    "available": 0,
+    "cost": 0.0,
+    "avgDailySales": 0.01
   },
   {
-    "id": 574822148,
-    "title": "",
-    "sku": "",
-    "price": 200,
-    "stock": "",
-    "platform": "1688",
-    "status": 0,
-    "image": "",
-    "shopName": ""
+    "sku": "HEL-HAL-YEL-KIT",
+    "title": "HELMET HALF - YELLOW KITY",
+    "stock": 0,
+    "available": 0,
+    "cost": 0.0,
+    "avgDailySales": 0.0
   },
   {
-    "id": 574821664,
-    "title": "",
-    "sku": "",
-    "price": 430,
-    "stock": "",
-    "platform": "1688",
-    "status": 0,
-    "image": "",
-    "shopName": ""
+    "sku": "KALI-ALLAH-GOLD-BESI-1",
+    "title": "KALIGRAFI ALLAH 1",
+    "stock": 0,
+    "available": 0,
+    "cost": 30.0,
+    "avgDailySales": 0.0
   },
   {
-    "id": 574821542,
-    "title": "",
-    "sku": "",
-    "price": 280,
-    "stock": "",
-    "platform": "1688",
-    "status": 0,
-    "image": "",
-    "shopName": ""
+    "sku": "MAILBOX METAL - WHITE",
+    "title": "MAILBOX METAL LIGTH - WHITE",
+    "stock": 0,
+    "available": 0,
+    "cost": 14.16,
+    "avgDailySales": 0.0
   },
   {
-    "id": 574821443,
-    "title": "",
-    "sku": "",
-    "price": 290,
-    "stock": "",
-    "platform": "1688",
-    "status": 0,
-    "image": "",
-    "shopName": ""
+    "sku": "FULL PEACH FLOWER",
+    "title": "HELEMT FULL PEACH FLOWER",
+    "stock": 0,
+    "available": 0,
+    "cost": 15.88,
+    "avgDailySales": 0.0
   },
   {
-    "id": 574821360,
-    "title": "",
-    "sku": "",
-    "price": 320,
-    "stock": "",
-    "platform": "1688",
-    "status": 0,
-    "image": "",
-    "shopName": ""
+    "sku": "FULL RED KITTY-ECO",
+    "title": "HELMET FULL RED KITTY ECONOMICAL",
+    "stock": 0,
+    "available": 0,
+    "cost": 11.87,
+    "avgDailySales": 0.0
   },
   {
-    "id": 574821255,
-    "title": "",
-    "sku": "",
-    "price": 280,
-    "stock": "",
-    "platform": "1688",
-    "status": 0,
-    "image": "",
-    "shopName": ""
+    "sku": "FULL BLUE ASTRO-ECO",
+    "title": "HELMET FULL BLUE ASTRO ECONOMICAL",
+    "stock": 0,
+    "available": 0,
+    "cost": 12.0,
+    "avgDailySales": 0.0
   },
   {
-    "id": 574821207,
-    "title": "",
-    "sku": "",
-    "price": 480,
-    "stock": "",
-    "platform": "1688",
-    "status": 0,
-    "image": "",
-    "shopName": ""
+    "sku": "FULL PEACH RABBIT",
+    "title": "HELMET FULL PEACH RABBIT",
+    "stock": 0,
+    "available": 0,
+    "cost": 12.59,
+    "avgDailySales": 0.0
   },
   {
-    "id": 574820398,
-    "title": "",
-    "sku": "",
-    "price": 310,
-    "stock": "",
-    "platform": "1688",
-    "status": 0,
-    "image": "",
-    "shopName": ""
+    "sku": "FULL BLUE SPIDERMAN",
+    "title": "HELMET FULL BLUE ULTRAMAN",
+    "stock": 0,
+    "available": 0,
+    "cost": 15.6,
+    "avgDailySales": 0.0
   },
   {
-    "id": 574819964,
-    "title": "",
-    "sku": "",
-    "price": 290,
-    "stock": "",
-    "platform": "1688",
-    "status": 0,
-    "image": "",
-    "shopName": ""
+    "sku": "HEL-FUL-BLU-ULTRAMAN",
+    "title": "HELMET FULL BLUE ULTRAMAN",
+    "stock": 0,
+    "available": 0,
+    "cost": 15.6,
+    "avgDailySales": 0.0
   },
   {
-    "id": 574819527,
-    "title": "",
-    "sku": "",
-    "price": 270,
-    "stock": "",
-    "platform": "1688",
-    "status": 0,
-    "image": "",
-    "shopName": ""
+    "sku": "SEJ-SAN-SUL-QIZ",
+    "title": "SEJADAH SANDAR SULAM QIZI",
+    "stock": 0,
+    "available": 0,
+    "cost": 23.0,
+    "avgDailySales": 0.0
   },
   {
-    "id": 574819461,
-    "title": "",
-    "sku": "",
-    "price": 920,
-    "stock": "",
-    "platform": "1688",
-    "status": 0,
-    "image": "",
-    "shopName": ""
+    "sku": "MAI-PREM-WHI-KEY",
+    "title": "MAILBOX PREMIUM WHITE KEY",
+    "stock": 0,
+    "available": 0,
+    "cost": 27.0,
+    "avgDailySales": 0.0
   },
   {
-    "id": 574819405,
-    "title": "",
-    "sku": "",
-    "price": 200,
-    "stock": "",
-    "platform": "1688",
-    "status": 0,
-    "image": "",
-    "shopName": ""
+    "sku": "FULL RED SPIDERMAN",
+    "title": "HELMETBFULL RED SPIDERMAN",
+    "stock": 0,
+    "available": 0,
+    "cost": 17.34,
+    "avgDailySales": 0.0
   },
   {
-    "id": 574819379,
-    "title": "",
-    "sku": "",
-    "price": 60,
-    "stock": "",
-    "platform": "1688",
-    "status": 0,
-    "image": "",
-    "shopName": ""
+    "sku": "ACRYLIC RACK 20S",
+    "title": "Display Rack Acrylic 20 Slot",
+    "stock": 0,
+    "available": 0,
+    "cost": 0.0,
+    "avgDailySales": 0.0
   },
   {
-    "id": 574819362,
-    "title": "",
-    "sku": "",
-    "price": 220,
-    "stock": "",
-    "platform": "1688",
-    "status": 0,
-    "image": "",
-    "shopName": ""
+    "sku": "ACRYLIC RACK 40S",
+    "title": "Display Rack Acrylic 40 Slot",
+    "stock": 0,
+    "available": 0,
+    "cost": 0.0,
+    "avgDailySales": 0.0
   },
   {
-    "id": 574818575,
-    "title": "",
-    "sku": "",
-    "price": 140,
-    "stock": "",
-    "platform": "1688",
-    "status": 0,
-    "image": "",
-    "shopName": ""
+    "sku": "HALF EAR BLUE CAT",
+    "title": "Kids Cute Helmet - Topi keledar budak pink",
+    "stock": 0,
+    "available": 0,
+    "cost": 11.0,
+    "avgDailySales": 0.0
+  },
+  {
+    "sku": "HALF EAR PINK CAT",
+    "title": "Kids Cute Helmet - Topi keledar budak pink",
+    "stock": 0,
+    "available": 0,
+    "cost": 11.0,
+    "avgDailySales": 0.0
+  },
+  {
+    "sku": "HEL-FUL-YEL-SPONGEB",
+    "title": "HELMET FULL YELLOW SPONGEBOB",
+    "stock": 0,
+    "available": 0,
+    "cost": 15.65,
+    "avgDailySales": 0.0
+  },
+  {
+    "sku": "SEJ-SAN-SUL-RMA",
+    "title": "SEJADAH SANDAR MARYAM bercorak sulam dan batik [READY STOCK]",
+    "stock": 0,
+    "available": 0,
+    "cost": 23.0,
+    "avgDailySales": 0.0
+  },
+  {
+    "sku": "SEJ-SAN-SUL-DHA",
+    "title": "SEJADAH SANDAR MARYAM bercorak sulam dan batik [READY STOCK]",
+    "stock": 0,
+    "available": 0,
+    "cost": 23.0,
+    "avgDailySales": 0.0
+  },
+  {
+    "sku": "SEJ-SAN-SON-KAR",
+    "title": "Sejadah Sandar Maryam Corak Songket",
+    "stock": 0,
+    "available": 0,
+    "cost": 23.0,
+    "avgDailySales": 0.0
+  },
+  {
+    "sku": "SEJ-SAN-SON-DEG",
+    "title": "Sejadah Sandar Maryam Corak Songket",
+    "stock": 0,
+    "available": 0,
+    "cost": 23.0,
+    "avgDailySales": 0.0
+  },
+  {
+    "sku": "SEJ-SAN-SON-SEV",
+    "title": "Sejadah Sandar Maryam Corak Songket",
+    "stock": 0,
+    "available": 0,
+    "cost": 23.0,
+    "avgDailySales": 0.0
+  },
+  {
+    "sku": "SEJ-SAN-SON-KAP",
+    "title": "Sejadah Sandar Maryam Corak Songket",
+    "stock": 0,
+    "available": 0,
+    "cost": 23.0,
+    "avgDailySales": 0.0
+  },
+  {
+    "sku": "WOO-60S-NOCOV",
+    "title": "1:64 Diecast Alloy Car Rack Solid Wooden Suitable for Hotwheels Birthdays Present for Boys 60 slots",
+    "stock": 0,
+    "available": 0,
+    "cost": 62.0,
+    "avgDailySales": 0.0
+  },
+  {
+    "sku": "SEJ-SAN-SUL-YAZ",
+    "title": "SEJADAH SANDAR SULAM YAZI",
+    "stock": 0,
+    "available": 0,
+    "cost": 23.0,
+    "avgDailySales": 0.0
+  },
+  {
+    "sku": "779853377",
+    "title": "READY STOCK MALAYSIA - Cute Kids Baby Potty Training",
+    "stock": 0,
+    "available": 0,
+    "cost": 0.0,
+    "avgDailySales": 0.0
+  },
+  {
+    "sku": "779853380",
+    "title": "READY STOCK MALAYSIA - Cute Kids Baby Potty Training",
+    "stock": 0,
+    "available": 0,
+    "cost": 0.0,
+    "avgDailySales": 0.0
+  },
+  {
+    "sku": "1775791579",
+    "title": "READY STOCK MALAYSIA - Cute Kids Baby Potty Training",
+    "stock": 0,
+    "available": 0,
+    "cost": 0.0,
+    "avgDailySales": 0.0
+  },
+  {
+    "sku": "61318260868",
+    "title": "perfume mini tester 2ML minyak wangi mini /souvenir /goodies kawin/hadiah untuk yang tersayang",
+    "stock": 0,
+    "available": 0,
+    "cost": 0.0,
+    "avgDailySales": 0.0
+  },
+  {
+    "sku": "61318260862",
+    "title": "perfume mini tester 2ML minyak wangi mini /souvenir /goodies kawin/hadiah untuk yang tersayang",
+    "stock": 0,
+    "available": 0,
+    "cost": 0.0,
+    "avgDailySales": 0.0
+  },
+  {
+    "sku": "71318322899",
+    "title": "perfume mini tester 2ML minyak wangi mini /souvenir /goodies kawin/hadiah untuk yang tersayang",
+    "stock": 0,
+    "available": 0,
+    "cost": 0.0,
+    "avgDailySales": 0.0
+  },
+  {
+    "sku": "SULAM RMADI",
+    "title": "Sejadah Sandar MARYAM Bawa Mengaji Kuliah Hadiah Mak Ayah",
+    "stock": 0,
+    "available": 0,
+    "cost": 23.0,
+    "avgDailySales": 0.0
+  },
+  {
+    "sku": "helmet yellow",
+    "title": "Kids Cute Helmet Cartoon Full Face 3 - 7 years old kid's",
+    "stock": 0,
+    "available": 0,
+    "cost": 0.0,
+    "avgDailySales": 0.0
+  },
+  {
+    "sku": "helmet pink",
+    "title": "Kids Cute Helmet Cartoon Full Face 3 - 7 years old kid's",
+    "stock": 0,
+    "available": 0,
+    "cost": 0.0,
+    "avgDailySales": 0.0
+  },
+  {
+    "sku": "helmet blue",
+    "title": "Kids Cute Helmet Cartoon Full Face 3 - 7 years old kid's",
+    "stock": 0,
+    "available": 0,
+    "cost": 0.0,
+    "avgDailySales": 0.0
+  },
+  {
+    "sku": "Songket Sev",
+    "title": "Sejadah Sandar Maryam Corak Songket",
+    "stock": 0,
+    "available": 0,
+    "cost": 23.0,
+    "avgDailySales": 0.0
+  },
+  {
+    "sku": "Songket Karmi",
+    "title": "Sejadah Sandar Maryam Corak Songket",
+    "stock": 0,
+    "available": 0,
+    "cost": 23.0,
+    "avgDailySales": 0.0
+  },
+  {
+    "sku": "Songket Kapu",
+    "title": "Sejadah Sandar Maryam Corak Songket",
+    "stock": 0,
+    "available": 0,
+    "cost": 23.0,
+    "avgDailySales": 0.0
+  },
+  {
+    "sku": "LARGE",
+    "title": "TUDUNG SAJI PLASTIK/Foldable Tabletop Cover Aluminium Foil Food Cover",
+    "stock": 0,
+    "available": 0,
+    "cost": 0.0,
+    "avgDailySales": 0.0
+  },
+  {
+    "sku": "SMALL",
+    "title": "TUDUNG SAJI PLASTIK/Foldable Tabletop Cover Aluminium Foil Food Cover",
+    "stock": 0,
+    "available": 0,
+    "cost": 0.0,
+    "avgDailySales": 0.0
+  },
+  {
+    "sku": "50 X 60 CM",
+    "title": "Courier Bag Flyer Plastic Bag Plastik Hitam Pos 25 x 35 cm, 100 pcs, No pocket",
+    "stock": 0,
+    "available": 0,
+    "cost": 0.0,
+    "avgDailySales": 0.0
+  },
+  {
+    "sku": "10-VANILLA",
+    "title": "perfume mini tester 2ML minyak wangi mini /souvenir /goodies kawin/hadiah untuk yang tersayang",
+    "stock": 0,
+    "available": 0,
+    "cost": 0.0,
+    "avgDailySales": 0.0
   }
 ]

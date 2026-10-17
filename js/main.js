@@ -450,41 +450,45 @@
 
     const tbody = document.querySelector('#products-table tbody');
     const subtitle = document.getElementById('products-subtitle');
-    if (subtitle) subtitle.textContent = products.length + ' produk • Shopee/TikTok/Lazada/Shopify';
+    if (subtitle) subtitle.textContent = products.length + ' produk • Data inventori';
 
-    // Platform distribution
-    const platformCounts = {};
+    // Stock status distribution
+    const statusCounts = { critical: 0, low: 0, healthy: 0 };
     products.forEach(p => {
-      const plat = p.platform || 'Lain-lain';
-      platformCounts[plat] = (platformCounts[plat] || 0) + 1;
+      if (p.stock === 0) statusCounts.critical++;
+      else if ((p.available || 0) < 10) statusCounts.low++;
+      else statusCounts.healthy++;
     });
 
     // Render table
-    function renderTable(filterPlatform, searchTerm) {
+    function renderTable(filterStatus, searchTerm) {
       const filtered = products.filter(p => {
-        const matchPlatform = filterPlatform === 'all' || (p.platform || '') === filterPlatform;
+        let matchStatus = true;
+        if (filterStatus === 'critical') matchStatus = p.stock === 0;
+        else if (filterStatus === 'low') matchStatus = p.stock > 0 && (p.available || 0) < 10;
+        else if (filterStatus === 'healthy') matchStatus = (p.available || 0) >= 10;
         const matchSearch = !searchTerm || (p.title || '').toLowerCase().includes(searchTerm.toLowerCase()) || (p.sku || '').toLowerCase().includes(searchTerm.toLowerCase());
-        return matchPlatform && matchSearch;
+        return matchStatus && matchSearch;
       });
       if (tbody) {
         tbody.innerHTML = filtered.map(p => {
-          const statusLabel = p.status === 1 ? 'Aktif' : 'Tidak Aktif';
-          const statusColor = p.status === 1 ? '#22C55E' : '#EF4444';
-          return '<tr><td>' + (p.sku || '-') + '</td><td>' + (p.title || '-') + '</td><td class="text-right">RM ' + Number(p.price || 0).toFixed(2) + '</td><td class="text-right">' + (p.stock || '-') + '</td><td>' + (p.platform || '-') + '</td><td><span style="color:' + statusColor + ';font-weight:600;">' + statusLabel + '</span></td></tr>';
+          const stockColor = p.stock === 0 ? '#EF4444' : (p.available < 10 ? '#F59E0B' : '#22C55E');
+          const stockLabel = p.stock === 0 ? 'Habis' : p.stock;
+          return '<tr><td>' + (p.sku || '-') + '</td><td>' + (p.title || '-') + '</td><td class="text-right">RM ' + Number(p.cost || 0).toFixed(2) + '</td><td class="text-right" style="color:' + stockColor + ';font-weight:600;">' + stockLabel + '</td><td class="text-right">' + (p.avgDailySales || 0).toFixed(1) + '</td><td class="text-right">RM ' + ((p.cost || 0) * 3).toFixed(2) + '</td></tr>';
         }).join('');
       }
     }
     renderTable('all', '');
 
-    // Platform filter buttons
+    // Stock status filter buttons
     const filterBtns = document.querySelectorAll('.platform-btn');
     filterBtns.forEach(btn => {
       btn.addEventListener('click', () => {
         filterBtns.forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
-        const platform = btn.getAttribute('data-platform');
+        const status = btn.getAttribute('data-filter');
         const searchTerm = document.getElementById('product-search').value;
-        renderTable(platform, searchTerm);
+        renderTable(status, searchTerm);
       });
     });
 
@@ -493,16 +497,16 @@
     if (searchInput) {
       searchInput.addEventListener('input', () => {
         const activeBtn = document.querySelector('.platform-btn.active');
-        const platform = activeBtn ? activeBtn.getAttribute('data-platform') : 'all';
-        renderTable(platform, searchInput.value);
+        const status = activeBtn ? activeBtn.getAttribute('data-filter') : 'all';
+        renderTable(status, searchInput.value);
       });
     }
 
-    // Platform distribution chart
+    // Stock status distribution chart
     const ctx = document.getElementById('chart-platform-dist');
     if (ctx) {
-      const labels = Object.keys(platformCounts);
-      const data = Object.values(platformCounts);
+      const labels = ['Kritikal', 'Low Stock', 'Sihat'];
+      const data = [statusCounts.critical, statusCounts.low, statusCounts.healthy];
       const colors = ['#FF6B35', '#1DA1F2', '#274D0C', '#F59E0B', '#8B5CF6', '#EC4899'];
       new Chart(ctx, {
         type: 'doughnut',
