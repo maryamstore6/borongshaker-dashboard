@@ -11,6 +11,8 @@
     initSales();
     initRestock();
     initAnalisis();
+    initProducts();
+    initReports();
   }
 
   function safeInit() {
@@ -439,6 +441,191 @@
           : '<span style="color:#6B7280;">—</span>';
         return '<tr><td>' + m.month + '</td><td class="text-right">' + fmtNum(m.orders) + '</td><td class="text-right">' + fmtRM(m.sales) + '</td><td class="text-right">' + fmtRM(m.profit) + '</td><td class="text-right">' + fmtPct(m.margin) + '</td><td class="text-right">' + fmtRM(m.shopee) + '</td><td class="text-right">' + fmtRM(m.tiktok) + '</td><td class="text-right">' + fmtRM(m.lazada) + '</td><td>' + trendHtml + '</td></tr>';
       }).join('');
+    }
+  }
+  // Products
+  function initProducts() {
+    const products = window.DASHBOARD_DATA.productsList;
+    if (!products || !products.length) return;
+
+    const tbody = document.querySelector('#products-table tbody');
+    const subtitle = document.getElementById('products-subtitle');
+    if (subtitle) subtitle.textContent = products.length + ' produk • Shopee/TikTok/Lazada/Shopify';
+
+    // Platform distribution
+    const platformCounts = {};
+    products.forEach(p => {
+      const plat = p.platform || 'Lain-lain';
+      platformCounts[plat] = (platformCounts[plat] || 0) + 1;
+    });
+
+    // Render table
+    function renderTable(filterPlatform, searchTerm) {
+      const filtered = products.filter(p => {
+        const matchPlatform = filterPlatform === 'all' || (p.platform || '') === filterPlatform;
+        const matchSearch = !searchTerm || (p.title || '').toLowerCase().includes(searchTerm.toLowerCase()) || (p.sku || '').toLowerCase().includes(searchTerm.toLowerCase());
+        return matchPlatform && matchSearch;
+      });
+      if (tbody) {
+        tbody.innerHTML = filtered.map(p => {
+          const statusLabel = p.status === 1 ? 'Aktif' : 'Tidak Aktif';
+          const statusColor = p.status === 1 ? '#22C55E' : '#EF4444';
+          return '<tr><td>' + (p.sku || '-') + '</td><td>' + (p.title || '-') + '</td><td class="text-right">RM ' + Number(p.price || 0).toFixed(2) + '</td><td class="text-right">' + (p.stock || '-') + '</td><td>' + (p.platform || '-') + '</td><td><span style="color:' + statusColor + ';font-weight:600;">' + statusLabel + '</span></td></tr>';
+        }).join('');
+      }
+    }
+    renderTable('all', '');
+
+    // Platform filter buttons
+    const filterBtns = document.querySelectorAll('.platform-btn');
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const platform = btn.getAttribute('data-platform');
+        const searchTerm = document.getElementById('product-search').value;
+        renderTable(platform, searchTerm);
+      });
+    });
+
+    // Search
+    const searchInput = document.getElementById('product-search');
+    if (searchInput) {
+      searchInput.addEventListener('input', () => {
+        const activeBtn = document.querySelector('.platform-btn.active');
+        const platform = activeBtn ? activeBtn.getAttribute('data-platform') : 'all';
+        renderTable(platform, searchInput.value);
+      });
+    }
+
+    // Platform distribution chart
+    const ctx = document.getElementById('chart-platform-dist');
+    if (ctx) {
+      const labels = Object.keys(platformCounts);
+      const data = Object.values(platformCounts);
+      const colors = ['#FF6B35', '#1DA1F2', '#274D0C', '#F59E0B', '#8B5CF6', '#EC4899'];
+      new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+          labels: labels,
+          datasets: [{
+            data: data,
+            backgroundColor: colors.slice(0, labels.length),
+            borderWidth: 2,
+            borderColor: '#FFFFFF',
+            hoverOffset: 4,
+            spacing: 2
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          cutout: '55%',
+          layout: { padding: 8 },
+          plugins: {
+            legend: { position: 'right', labels: { padding: 12, usePointStyle: true, pointStyle: 'circle' } },
+            tooltip: { callbacks: { label: (c) => c.label + ': ' + c.raw + ' produk' } }
+          }
+        }
+      });
+    }
+  }
+
+  // Reports
+  function initReports() {
+    const menu = window.DASHBOARD_DATA.downloadMenu;
+    if (!menu || !menu.length) return;
+
+    const container = document.getElementById('report-cards');
+    if (!container) return;
+
+    const categoryIcons = {
+      'Product': '📦',
+      'Marketing': '📢',
+      'Data': '📊'
+    };
+
+    const categoryDesc = {
+      'Product': 'Senarai produk, media, dan data platform',
+      'Marketing': 'Laporan iklan dan prestasi pemasaran',
+      'Data': 'Analisis perniagaan dan laporan untung'
+    };
+
+    // Render category cards
+    container.innerHTML = menu.map(cat => {
+      const icon = categoryIcons[cat.name] || '📄';
+      const desc = categoryDesc[cat.name] || 'Laporan ' + cat.name;
+      const count = (cat.children || []).length;
+      return '<div class="report-card">' +
+        '<div class="report-card-icon">' + icon + '</div>' +
+        '<div class="report-card-body">' +
+        '<div class="report-card-title">' + cat.name + '</div>' +
+        '<div class="report-card-desc">' + desc + '</div>' +
+        '<div class="report-card-count">' + count + ' laporan</div>' +
+        '</div>' +
+        '<button class="btn-download" data-category="' + cat.name + '">Muat Turun</button>' +
+        '</div>';
+    }).join('');
+
+    // Download button handlers
+    const downloadBtns = document.querySelectorAll('.btn-download');
+    downloadBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const category = btn.getAttribute('data-category');
+        const cat = menu.find(c => c.name === category);
+        if (cat && cat.children) {
+          const lines = cat.children.map(c => '• ' + c.name);
+          const text = 'Laporan ' + category + ':\n\n' + lines.join('\n');
+          navigator.clipboard.writeText(text).then(() => alert('Senarai laporan ' + category + ' disalin!'));
+        }
+      });
+    });
+
+    // Report type breakdown chart
+    const ctx = document.getElementById('chart-report-breakdown');
+    if (ctx) {
+      const labels = menu.map(c => c.name);
+      const data = menu.map(c => (c.children || []).length);
+      const colors = ['#274D0C', '#FF6B35', '#1DA1F2'];
+      new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: labels,
+          datasets: [{
+            label: 'Bilangan Laporan',
+            data: data,
+            backgroundColor: colors.slice(0, labels.length),
+            borderRadius: 8
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: { legend: { display: false } },
+          scales: {
+            y: { beginAtZero: true, ticks: { stepSize: 1 } }
+          }
+        }
+      });
+    }
+
+    // Recent exports table
+    const exportsTbody = document.querySelector('#recent-exports-table tbody');
+    if (exportsTbody) {
+      const recentExports = [];
+      menu.forEach(cat => {
+        (cat.children || []).slice(0, 2).forEach(child => {
+          recentExports.push({
+            name: child.name,
+            category: cat.name,
+            date: '2026-10-17',
+            status: 'Siap'
+          });
+        });
+      });
+      exportsTbody.innerHTML = recentExports.slice(0, 10).map(e =>
+        '<tr><td>' + e.name + '</td><td>' + e.category + '</td><td>' + e.date + '</td><td><span style="color:#22C55E;font-weight:600;">' + e.status + '</span></td></tr>'
+      ).join('');
     }
   }
 })();

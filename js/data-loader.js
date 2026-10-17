@@ -12,7 +12,9 @@
     weeklySummary: 'data/weekly_summary.json',
     stockCurrent: 'data/stock_current.json',
     kpiSummary: 'data/kpi_summary.json',
-    dailySales: 'data/daily_sales.json'
+    dailySales: 'data/daily_sales.json',
+    productsList: 'data/products_list.json',
+    downloadMenu: 'data/download_menu.json'
   };
 
   window.DASHBOARD_DATA = {

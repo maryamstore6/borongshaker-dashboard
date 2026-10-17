@@ -51,6 +51,14 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="M7 15l4-6 4 3 5-8"/></svg>
           <span>Analisis</span>
         </a>
+        <a href="#products" class="sidebar-link" data-target="products">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><path d="M3.3 7L12 12l8.7-5"/><path d="M12 22V12"/></svg>
+          <span>Products</span>
+        </a>
+        <a href="#reports" class="sidebar-link" data-target="reports">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+          <span>Reports</span>
+        </a>
       </nav>
       <div class="sidebar-footer">
         <span class="sidebar-updated" id="date-sidebar">Dikemas kini: ...</span>
@@ -286,6 +294,91 @@
                     <th class="text-right">TikTok</th>
                     <th class="text-right">Lazada</th>
                     <th>Trend</th>
+                  </tr>
+                </thead>
+                <tbody></tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- Section 6: Products -->
+        <section class="slide" id="products">
+          <div class="section-header">
+            <h1 class="section-title">Senarai Produk</h1>
+            <p class="section-subtitle" id="products-subtitle">23 produk • Shopee/TikTok/Lazada/Shopify</p>
+          </div>
+
+          <!-- Platform Filter -->
+          <div class="platform-filters" id="platform-filters">
+            <button class="platform-btn active" data-platform="all">Semua</button>
+            <button class="platform-btn" data-platform="Shopee">Shopee</button>
+            <button class="platform-btn" data-platform="TikTok">TikTok</button>
+            <button class="platform-btn" data-platform="Lazada">Lazada</button>
+            <button class="platform-btn" data-platform="Shopify">Shopify</button>
+          </div>
+
+          <!-- Search -->
+          <div class="search-box">
+            <input type="text" id="product-search" placeholder="Cari produk..." class="search-input">
+          </div>
+
+          <div class="grid-2-1">
+            <!-- Product Table -->
+            <div class="card">
+              <div class="card-header"><span class="card-title">Senarai Produk</span></div>
+              <div class="table-container">
+                <table id="products-table" class="data-table">
+                  <thead>
+                    <tr>
+                      <th>SKU</th>
+                      <th>Produk</th>
+                      <th class="text-right">Harga</th>
+                      <th class="text-right">Stok</th>
+                      <th>Platform</th>
+                      <th>Status</th>
+                    </tr>
+                  </thead>
+                  <tbody></tbody>
+                </table>
+              </div>
+            </div>
+
+            <!-- Platform Distribution Chart -->
+            <div class="card">
+              <div class="card-header"><span class="card-title">Pecahan Platform</span></div>
+              <div class="chart-container"><canvas id="chart-platform-dist"></canvas></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Section 7: Reports -->
+        <section class="slide" id="reports">
+          <div class="section-header">
+            <h1 class="section-title">Laporan & Export</h1>
+            <p class="section-subtitle">Download center • Sales/Profit/Order reports</p>
+          </div>
+
+          <!-- Report Category Cards -->
+          <div class="report-cards" id="report-cards"></div>
+
+          <!-- Report Type Breakdown Chart -->
+          <div class="card">
+            <div class="card-header"><span class="card-title">Pecahan Jenis Laporan</span></div>
+            <div class="chart-container"><canvas id="chart-report-breakdown"></canvas></div>
+          </div>
+
+          <!-- Recent Exports -->
+          <div class="card">
+            <div class="card-header"><span class="card-title">Export Terbaru</span></div>
+            <div class="table-container">
+              <table id="recent-exports-table" class="data-table">
+                <thead>
+                  <tr>
+                    <th>Laporan</th>
+                    <th>Kategori</th>
+                    <th>Tarikh</th>
+                    <th>Status</th>
                   </tr>
                 </thead>
                 <tbody></tbody>

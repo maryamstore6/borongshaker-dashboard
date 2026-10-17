@@ -1,0 +1,78 @@
+{
+  "platforms": {
+    "shopee": {
+      "name": "Shopee",
+      "shops": [
+        {
+          "id": 4314375,
+          "name": "Maryam Kitchenware"
+        },
+        {
+          "id": 4678681,
+          "name": "Maryam_Kaligrafi"
+        },
+        {
+          "id": 2533250,
+          "name": "Shopee Ayah"
+        },
+        {
+          "id": 4516300,
+          "name": "shopee lily"
+        },
+        {
+          "id": 916267,
+          "name": "Shopee Ummi"
+        }
+      ]
+    },
+    "tiktok": {
+      "name": "TikTok",
+      "shops": [
+        {
+          "id": 2604887,
+          "name": "Tiktok Maryam"
+        }
+      ]
+    },
+    "lazada": {
+      "name": "Lazada",
+      "shops": [
+        {
+          "id": 828852,
+          "name": "Lazada Little Kids"
+        }
+      ]
+    },
+    "shopify": {
+      "name": "Shopify",
+      "shops": [
+        {
+          "id": 4670462,
+          "name": "Maryam Kaligrafi"
+        }
+      ]
+    },
+    "chat": {
+      "name": "WhatsApp/Messenger",
+      "shops": [
+        {
+          "id": 2567318,
+          "name": "WhatsApp Order"
+        },
+        {
+          "id": 2805934,
+          "name": "Sejadah Sandar Maryam"
+        }
+      ]
+    }
+  },
+  "warehouses": [
+    {
+      "id": 26044,
+      "name": "MARYAM STORE",
+      "manager": "Kamal",
+      "phone": "0176055349",
+      "location": "NO 49 & 49-1, JALAN MJ 59, TAMAN MERDEKA JAYA, BATU BERENDAM, 75350, MELAKA"
+    }
+  ]
+}
