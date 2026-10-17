@@ -46,17 +46,11 @@
   function scrollToSlide(targetId) {
     const targetSlide = document.getElementById(targetId);
     if (!targetSlide || !scrollContainer) return;
-    const isMobile = window.innerWidth < 768;
-    if (isMobile) {
-      const slideIndex = Array.from(slides).indexOf(targetSlide);
-      const slideWidth = scrollContainer.clientWidth;
-      scrollContainer.scrollTo({ left: slideIndex * slideWidth, behavior: 'instant' });
-    } else {
-      const slideIndex = Array.from(slides).indexOf(targetSlide);
-      const slideWidth = scrollContainer.clientWidth;
-      scrollContainer.scrollTo({ left: slideIndex * slideWidth, behavior: 'instant' });
-    }
+    const slideIndex = Array.from(slides).indexOf(targetSlide);
+    const slideHeight = scrollContainer.clientHeight;
+    scrollContainer.scrollTo({ top: slideIndex * slideHeight, behavior: 'smooth' });
     sidebarLinks.forEach(l => l.classList.toggle('active', l.getAttribute('data-target') === targetId));
+    document.querySelectorAll('.nav-dot').forEach(d => d.classList.toggle('active', d.getAttribute('data-target') === targetId));
     if (window.innerWidth < 768) closeSidebar();
     history.replaceState(null, '', '#' + targetId);
   }
@@ -67,6 +61,30 @@
       scrollToSlide(link.getAttribute('data-target'));
     });
   });
+
+  // Nav dots click handlers
+  const navDots = document.querySelectorAll('.nav-dot');
+  navDots.forEach(dot => {
+    dot.addEventListener('click', (e) => {
+      e.preventDefault();
+      scrollToSlide(dot.getAttribute('data-target'));
+    });
+  });
+
+  // IntersectionObserver for active section detection
+  if (scrollContainer && 'IntersectionObserver' in window) {
+    const observerOptions = { root: scrollContainer, threshold: 0.5 };
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const id = entry.target.id;
+          sidebarLinks.forEach(l => l.classList.toggle('active', l.getAttribute('data-target') === id));
+          document.querySelectorAll('.nav-dot').forEach(d => d.classList.toggle('active', d.getAttribute('data-target') === id));
+        }
+      });
+    }, observerOptions);
+    slides.forEach(slide => observer.observe(slide));
+  }
 
   const backdrop = document.getElementById('sidebar-backdrop');
   function closeSidebar() {
