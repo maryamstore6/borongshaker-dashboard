@@ -5,18 +5,9 @@
       "title": "Shaker 300ml Pink",
       "onhand": 0,
       "available": 0,
-      "avgDailySales": 3.83,
+      "avgDailySales": 2.96,
       "cost": 0.88,
       "threshold": 419
-    },
-    {
-      "sku": "SHA 300ML - RED",
-      "title": "SHAKER 300ML - RED",
-      "onhand": 0,
-      "available": 0,
-      "avgDailySales": 0.69,
-      "cost": 0.88,
-      "threshold": 139
     },
     {
       "sku": "SHA 300ML - BLUE",
@@ -28,22 +19,13 @@
       "threshold": 141
     },
     {
-      "sku": "SHA 300ML - GREEN",
-      "title": "SHAKER 300ML - GREEN",
+      "sku": "SHA 300ML - RED",
+      "title": "SHAKER 300ML - RED",
       "onhand": 0,
       "available": 0,
-      "avgDailySales": 0.13,
+      "avgDailySales": 0.58,
       "cost": 0.88,
-      "threshold": 141
-    },
-    {
-      "sku": "YELLOW MINION HALF",
-      "title": "Cute Helmet Budak [Topi Keledar Budak Comel]",
-      "onhand": 0,
-      "available": 0,
-      "avgDailySales": 0.05,
-      "cost": 8.33,
-      "threshold": 17
+      "threshold": 139
     },
     {
       "sku": "HALF PINK KITTY - EAR",
@@ -55,6 +37,15 @@
       "threshold": 0
     },
     {
+      "sku": "YELLOW MINION HALF",
+      "title": "Cute Helmet Budak [Topi Keledar Budak Comel]",
+      "onhand": 0,
+      "available": 0,
+      "avgDailySales": 0.04,
+      "cost": 8.33,
+      "threshold": 17
+    },
+    {
       "sku": "TORQUISE DEER",
       "title": "Kids Baby Motorcycle Safety Belt Protection",
       "onhand": 0,
@@ -62,6 +53,15 @@
       "avgDailySales": 0.03,
       "cost": 8.0,
       "threshold": 1
+    },
+    {
+      "sku": "SHA 300ML - GREEN",
+      "title": "SHAKER 300ML - GREEN",
+      "onhand": 0,
+      "available": 0,
+      "avgDailySales": 0.02,
+      "cost": 0.88,
+      "threshold": 141
     },
     {
       "sku": "ACRYLIC RACK 30S",
@@ -79,18 +79,9 @@
       "title": "Shaker 300ml Pink",
       "onhand": 0,
       "available": 0,
-      "avgDailySales": 3.83,
+      "avgDailySales": 2.96,
       "cost": 0.88,
       "threshold": 419
-    },
-    {
-      "sku": "SHA 300ML - RED",
-      "title": "SHAKER 300ML - RED",
-      "onhand": 0,
-      "available": 0,
-      "avgDailySales": 0.69,
-      "cost": 0.88,
-      "threshold": 139
     },
     {
       "sku": "SHA 300ML - BLUE",
@@ -102,22 +93,13 @@
       "threshold": 141
     },
     {
-      "sku": "SHA 300ML - GREEN",
-      "title": "SHAKER 300ML - GREEN",
+      "sku": "SHA 300ML - RED",
+      "title": "SHAKER 300ML - RED",
       "onhand": 0,
       "available": 0,
-      "avgDailySales": 0.13,
+      "avgDailySales": 0.58,
       "cost": 0.88,
-      "threshold": 141
-    },
-    {
-      "sku": "YELLOW MINION HALF",
-      "title": "Cute Helmet Budak [Topi Keledar Budak Comel]",
-      "onhand": 0,
-      "available": 0,
-      "avgDailySales": 0.05,
-      "cost": 8.33,
-      "threshold": 17
+      "threshold": 139
     },
     {
       "sku": "HALF PINK KITTY - EAR",
@@ -129,6 +111,15 @@
       "threshold": 0
     },
     {
+      "sku": "YELLOW MINION HALF",
+      "title": "Cute Helmet Budak [Topi Keledar Budak Comel]",
+      "onhand": 0,
+      "available": 0,
+      "avgDailySales": 0.04,
+      "cost": 8.33,
+      "threshold": 17
+    },
+    {
       "sku": "TORQUISE DEER",
       "title": "Kids Baby Motorcycle Safety Belt Protection",
       "onhand": 0,
@@ -136,6 +127,15 @@
       "avgDailySales": 0.03,
       "cost": 8.0,
       "threshold": 1
+    },
+    {
+      "sku": "SHA 300ML - GREEN",
+      "title": "SHAKER 300ML - GREEN",
+      "onhand": 0,
+      "available": 0,
+      "avgDailySales": 0.02,
+      "cost": 0.88,
+      "threshold": 141
     },
     {
       "sku": "ACRYLIC RACK 30S",
@@ -837,79 +837,79 @@
       "title": "SHAKER RANDOM 350ML",
       "onhand": 9313,
       "available": 9313,
-      "avgDailySales": 74.86,
+      "avgDailySales": 43.83,
       "cost": 1.4,
       "threshold": 1031
     },
     {
       "sku": "WHITE-BAR",
       "title": "SHAKER BAR - WHITE 350ML",
-      "onhand": 9760,
-      "available": 9737,
-      "avgDailySales": 32.02,
+      "onhand": 9732,
+      "available": 9704,
+      "avgDailySales": 30.62,
       "cost": 1.45,
       "threshold": 114
     },
     {
       "sku": "PINK BAR",
       "title": "SHAKER BAR- PINK 350ML",
-      "onhand": 14462,
-      "available": 14455,
-      "avgDailySales": 28.48,
+      "onhand": 14452,
+      "available": 14444,
+      "avgDailySales": 27.34,
       "cost": 1.45,
       "threshold": 323
     },
     {
       "sku": "SHA-BAR-PURPLE-350ML",
       "title": "SHAKER BAR- PURPLE 350ML",
-      "onhand": 17432,
-      "available": 17426,
-      "avgDailySales": 12.19,
+      "onhand": 17426,
+      "available": 17422,
+      "avgDailySales": 11.99,
       "cost": 1.45,
       "threshold": 222
     },
     {
       "sku": "GREEN-BAR",
       "title": "SHAKER BAR- GREEN 350ML",
-      "onhand": 13709,
-      "available": 13706,
-      "avgDailySales": 9.95,
+      "onhand": 13706,
+      "available": 13703,
+      "avgDailySales": 9.92,
       "cost": 1.45,
       "threshold": 497
     },
     {
       "sku": "TALI SILICON - WHITE",
       "title": "TALI SILICON - WHITE",
-      "onhand": 812,
+      "onhand": 802,
       "available": 802,
-      "avgDailySales": 3.68,
+      "avgDailySales": 3.18,
       "cost": 0.3,
       "threshold": 296
     },
     {
       "sku": "MAILBOX INDOOR",
       "title": "MAILBOX INDOOR",
-      "onhand": 37,
-      "available": 34,
-      "avgDailySales": 1.97,
+      "onhand": 35,
+      "available": 33,
+      "avgDailySales": 1.88,
       "cost": 7.54,
       "threshold": 67
     },
     {
       "sku": "STICKER HOTWHEELS 5X11CM",
       "title": "STICKER HOTWHEELS",
-      "onhand": 1306,
+      "onhand": 1301,
       "available": 1300,
-      "avgDailySales": 1.63,
+      "avgDailySales": 1.74,
       "cost": 0.15,
       "threshold": 2897
     },
     {
       "sku": "R8S- COMPACT-WALL",
       "title": "RACK 8 SLOT- COMPACT - WALL",
-      "onhand": 12,
-      "available": 5,
-      "avgDailySales": 0.96,
+      "onhand": 6,
+      "available": 3,
+      "avgDailySales": 1.55,
       "cost": 5.2,
       "threshold": 0
     },
@@ -918,14 +918,14 @@
       "title": "Shaker 300ml Yellow",
       "onhand": 2,
       "available": 2,
-      "avgDailySales": 0.67,
+      "avgDailySales": 0.58,
       "cost": 0.88,
       "threshold": 122
     },
     {
       "sku": "BUBBLE WRAP",
       "title": "BUBBLE WRAP",
-      "onhand": 802,
+      "onhand": 800,
       "available": 800,
       "avgDailySales": 0.54,
       "cost": 0.35,
@@ -941,11 +941,20 @@
       "threshold": 15
     },
     {
+      "sku": "FULL PINK RABBIT-ECO",
+      "title": "HELMET FULL PINK RABBIT ECONOMICAL",
+      "onhand": 16,
+      "available": 16,
+      "avgDailySales": 0.37,
+      "cost": 11.82,
+      "threshold": 30
+    },
+    {
       "sku": "PREM BLACK-PASSWD",
       "title": "MAILBOX PREMIUM BLACK PASSWORD",
       "onhand": 11,
-      "available": 11,
-      "avgDailySales": 0.39,
+      "available": 10,
+      "avgDailySales": 0.35,
       "cost": 17.68,
       "threshold": 101
     },
@@ -959,33 +968,6 @@
       "threshold": 295
     },
     {
-      "sku": "RAC- HT - SINGLE",
-      "title": "RACK 1 SLOT- COMPACT - STACK",
-      "onhand": 35,
-      "available": 35,
-      "avgDailySales": 0.29,
-      "cost": 3.0,
-      "threshold": 5
-    },
-    {
-      "sku": "MB-STAI-SIZ-S",
-      "title": "MAILBOX STAINLESS STEEL SIZE",
-      "onhand": 6,
-      "available": 5,
-      "avgDailySales": 0.28,
-      "cost": 18.99,
-      "threshold": 12
-    },
-    {
-      "sku": "FULL PINK RABBIT-ECO",
-      "title": "HELMET FULL PINK RABBIT ECONOMICAL",
-      "onhand": 18,
-      "available": 16,
-      "avgDailySales": 0.22,
-      "cost": 11.82,
-      "threshold": 30
-    },
-    {
       "sku": "METAL LIGHT",
       "title": "MAILBOX METAL LIGTH",
       "onhand": 1,
@@ -993,6 +975,15 @@
       "avgDailySales": 0.21,
       "cost": 14.81,
       "threshold": 0
+    },
+    {
+      "sku": "MB-STAI-SIZ-S",
+      "title": "MAILBOX STAINLESS STEEL SIZE",
+      "onhand": 6,
+      "available": 5,
+      "avgDailySales": 0.2,
+      "cost": 18.99,
+      "threshold": 12
     },
     {
       "sku": "BOX-HOT-18S-PREMIUM",
@@ -1004,20 +995,29 @@
       "threshold": 0
     },
     {
-      "sku": "PREM WHITE-PASSWD",
-      "title": "MAILBOX PREMIUM WHITE PASSWORD",
-      "onhand": 8,
-      "available": 8,
-      "avgDailySales": 0.15,
-      "cost": 17.7,
-      "threshold": 27
+      "sku": "BELT RED MICKEY",
+      "title": "BABY BELT - RED MICKEY",
+      "onhand": 15,
+      "available": 15,
+      "avgDailySales": 0.18,
+      "cost": 8.0,
+      "threshold": 7
+    },
+    {
+      "sku": "RAC- HT - SINGLE",
+      "title": "RACK 1 SLOT- COMPACT - STACK",
+      "onhand": 35,
+      "available": 35,
+      "avgDailySales": 0.16,
+      "cost": 3.0,
+      "threshold": 5
     },
     {
       "sku": "BOX-HOT-30S-WHI",
       "title": "BOX HOTWHEELS 30SLOT WHITE",
       "onhand": 1,
       "available": 1,
-      "avgDailySales": 0.15,
+      "avgDailySales": 0.14,
       "cost": 5.42,
       "threshold": 120
     },
@@ -1038,6 +1038,15 @@
       "avgDailySales": 0.11,
       "cost": 0.41,
       "threshold": 0
+    },
+    {
+      "sku": "PREM WHITE-PASSWD",
+      "title": "MAILBOX PREMIUM WHITE PASSWORD",
+      "onhand": 8,
+      "available": 8,
+      "avgDailySales": 0.06,
+      "cost": 17.7,
+      "threshold": 27
     },
     {
       "sku": "BIN RED",
@@ -1085,19 +1094,10 @@
       "threshold": 17
     },
     {
-      "sku": "BELT RED MICKEY",
-      "title": "BABY BELT - RED MICKEY",
-      "onhand": 16,
-      "available": 15,
-      "avgDailySales": 0.02,
-      "cost": 8.0,
-      "threshold": 7
-    },
-    {
       "sku": "QARZI",
       "title": "[Ready Stock] Sejadah Sandar MARYAM bercorak Sulam dan Batik",
       "onhand": 11,
-      "available": 11,
+      "available": 10,
       "avgDailySales": 0.02,
       "cost": 23.0,
       "threshold": 3
