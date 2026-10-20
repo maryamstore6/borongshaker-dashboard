@@ -835,26 +835,26 @@
     {
       "sku": "RANDOM COLOR",
       "title": "SHAKER RANDOM 350ML",
-      "onhand": 9313,
-      "available": 9313,
-      "avgDailySales": 43.83,
+      "onhand": 9311,
+      "available": 9309,
+      "avgDailySales": 43.54,
       "cost": 1.4,
       "threshold": 1031
     },
     {
       "sku": "WHITE-BAR",
       "title": "SHAKER BAR - WHITE 350ML",
-      "onhand": 9732,
-      "available": 9704,
-      "avgDailySales": 30.62,
+      "onhand": 9698,
+      "available": 9655,
+      "avgDailySales": 28.98,
       "cost": 1.45,
       "threshold": 114
     },
     {
       "sku": "PINK BAR",
       "title": "SHAKER BAR- PINK 350ML",
-      "onhand": 14452,
-      "available": 14444,
+      "onhand": 14426,
+      "available": 14417,
       "avgDailySales": 27.34,
       "cost": 1.45,
       "threshold": 323
@@ -862,18 +862,18 @@
     {
       "sku": "SHA-BAR-PURPLE-350ML",
       "title": "SHAKER BAR- PURPLE 350ML",
-      "onhand": 17426,
-      "available": 17422,
-      "avgDailySales": 11.99,
+      "onhand": 17390,
+      "available": 17388,
+      "avgDailySales": 11.9,
       "cost": 1.45,
       "threshold": 222
     },
     {
       "sku": "GREEN-BAR",
       "title": "SHAKER BAR- GREEN 350ML",
-      "onhand": 13706,
-      "available": 13703,
-      "avgDailySales": 9.92,
+      "onhand": 13703,
+      "available": 13599,
+      "avgDailySales": 8.98,
       "cost": 1.45,
       "threshold": 497
     },
@@ -881,37 +881,37 @@
       "sku": "TALI SILICON - WHITE",
       "title": "TALI SILICON - WHITE",
       "onhand": 802,
-      "available": 802,
-      "avgDailySales": 3.18,
+      "available": 792,
+      "avgDailySales": 4.39,
       "cost": 0.3,
       "threshold": 296
     },
     {
+      "sku": "R8S- COMPACT-WALL",
+      "title": "RACK 8 SLOT- COMPACT - WALL",
+      "onhand": 3,
+      "available": 3,
+      "avgDailySales": 2.01,
+      "cost": 5.2,
+      "threshold": 0
+    },
+    {
       "sku": "MAILBOX INDOOR",
       "title": "MAILBOX INDOOR",
-      "onhand": 35,
-      "available": 33,
-      "avgDailySales": 1.88,
+      "onhand": 34,
+      "available": 32,
+      "avgDailySales": 1.84,
       "cost": 7.54,
       "threshold": 67
     },
     {
       "sku": "STICKER HOTWHEELS 5X11CM",
       "title": "STICKER HOTWHEELS",
-      "onhand": 1301,
-      "available": 1300,
-      "avgDailySales": 1.74,
+      "onhand": 1300,
+      "available": 1297,
+      "avgDailySales": 1.71,
       "cost": 0.15,
       "threshold": 2897
-    },
-    {
-      "sku": "R8S- COMPACT-WALL",
-      "title": "RACK 8 SLOT- COMPACT - WALL",
-      "onhand": 6,
-      "available": 3,
-      "avgDailySales": 1.55,
-      "cost": 5.2,
-      "threshold": 0
     },
     {
       "sku": "SHA 300ML - YELLOW",
@@ -925,18 +925,27 @@
     {
       "sku": "BUBBLE WRAP",
       "title": "BUBBLE WRAP",
-      "onhand": 800,
-      "available": 800,
-      "avgDailySales": 0.54,
+      "onhand": 799,
+      "available": 798,
+      "avgDailySales": 0.53,
       "cost": 0.35,
       "threshold": 295
+    },
+    {
+      "sku": "PREM BLACK-PASSWD",
+      "title": "MAILBOX PREMIUM BLACK PASSWORD",
+      "onhand": 10,
+      "available": 10,
+      "avgDailySales": 0.41,
+      "cost": 17.68,
+      "threshold": 101
     },
     {
       "sku": "BOX-HOT-30S-BLU",
       "title": "BOX HOTWHEELS 30SLOT BLUE",
       "onhand": 17,
       "available": 17,
-      "avgDailySales": 0.53,
+      "avgDailySales": 0.37,
       "cost": 5.55,
       "threshold": 15
     },
@@ -945,54 +954,18 @@
       "title": "HELMET FULL PINK RABBIT ECONOMICAL",
       "onhand": 16,
       "available": 16,
-      "avgDailySales": 0.37,
+      "avgDailySales": 0.35,
       "cost": 11.82,
       "threshold": 30
-    },
-    {
-      "sku": "PREM BLACK-PASSWD",
-      "title": "MAILBOX PREMIUM BLACK PASSWORD",
-      "onhand": 11,
-      "available": 10,
-      "avgDailySales": 0.35,
-      "cost": 17.68,
-      "threshold": 101
-    },
-    {
-      "sku": "11-RANDOM",
-      "title": "perfume mini tester 2ML minyak wangi mini /souvenir /goodies kawin/hadiah untuk yang tersayang",
-      "onhand": 727,
-      "available": 727,
-      "avgDailySales": 0.33,
-      "cost": 0.0,
-      "threshold": 295
-    },
-    {
-      "sku": "METAL LIGHT",
-      "title": "MAILBOX METAL LIGTH",
-      "onhand": 1,
-      "available": 1,
-      "avgDailySales": 0.21,
-      "cost": 14.81,
-      "threshold": 0
     },
     {
       "sku": "MB-STAI-SIZ-S",
       "title": "MAILBOX STAINLESS STEEL SIZE",
       "onhand": 6,
       "available": 5,
-      "avgDailySales": 0.2,
+      "avgDailySales": 0.18,
       "cost": 18.99,
       "threshold": 12
-    },
-    {
-      "sku": "BOX-HOT-18S-PREMIUM",
-      "title": "HOTWHEELS BOX Premium white 18slot",
-      "onhand": 21,
-      "available": 21,
-      "avgDailySales": 0.19,
-      "cost": 18.69,
-      "threshold": 0
     },
     {
       "sku": "BELT RED MICKEY",
@@ -1004,6 +977,15 @@
       "threshold": 7
     },
     {
+      "sku": "QARZI",
+      "title": "[Ready Stock] Sejadah Sandar MARYAM bercorak Sulam dan Batik",
+      "onhand": 10,
+      "available": 9,
+      "avgDailySales": 0.17,
+      "cost": 23.0,
+      "threshold": 3
+    },
+    {
       "sku": "RAC- HT - SINGLE",
       "title": "RACK 1 SLOT- COMPACT - STACK",
       "onhand": 35,
@@ -1011,15 +993,6 @@
       "avgDailySales": 0.16,
       "cost": 3.0,
       "threshold": 5
-    },
-    {
-      "sku": "BOX-HOT-30S-WHI",
-      "title": "BOX HOTWHEELS 30SLOT WHITE",
-      "onhand": 1,
-      "available": 1,
-      "avgDailySales": 0.14,
-      "cost": 5.42,
-      "threshold": 120
     },
     {
       "sku": "MB-STAI-SIZ-M",
@@ -1031,11 +1004,47 @@
       "threshold": 4
     },
     {
+      "sku": "11-RANDOM",
+      "title": "perfume mini tester 2ML minyak wangi mini /souvenir /goodies kawin/hadiah untuk yang tersayang",
+      "onhand": 727,
+      "available": 727,
+      "avgDailySales": 0.12,
+      "cost": 0.0,
+      "threshold": 295
+    },
+    {
+      "sku": "BOX-HOT-30S-WHI",
+      "title": "BOX HOTWHEELS 30SLOT WHITE",
+      "onhand": 1,
+      "available": 1,
+      "avgDailySales": 0.12,
+      "cost": 5.42,
+      "threshold": 120
+    },
+    {
+      "sku": "METAL LIGHT",
+      "title": "MAILBOX METAL LIGTH",
+      "onhand": 1,
+      "available": 1,
+      "avgDailySales": 0.11,
+      "cost": 14.81,
+      "threshold": 0
+    },
+    {
+      "sku": "BOX-HOT-18S-PREMIUM",
+      "title": "HOTWHEELS BOX Premium white 18slot",
+      "onhand": 21,
+      "available": 21,
+      "avgDailySales": 0.09,
+      "cost": 18.69,
+      "threshold": 0
+    },
+    {
       "sku": "HEL-HAL-RED-KIT",
       "title": "HELMET HALF RED KITTY",
       "onhand": 34,
       "available": 34,
-      "avgDailySales": 0.11,
+      "avgDailySales": 0.08,
       "cost": 0.41,
       "threshold": 0
     },
@@ -1067,15 +1076,6 @@
       "threshold": 0
     },
     {
-      "sku": "RED KITTY HALF",
-      "title": "Kids Cute Helmet - Topi keledar budak",
-      "onhand": 29,
-      "available": 29,
-      "avgDailySales": 0.04,
-      "cost": 6.88,
-      "threshold": 6
-    },
-    {
       "sku": "TAPE FRAGILE",
       "title": "TAPE FRAGILE",
       "onhand": 239,
@@ -1094,13 +1094,13 @@
       "threshold": 17
     },
     {
-      "sku": "QARZI",
-      "title": "[Ready Stock] Sejadah Sandar MARYAM bercorak Sulam dan Batik",
-      "onhand": 11,
-      "available": 10,
-      "avgDailySales": 0.02,
-      "cost": 23.0,
-      "threshold": 3
+      "sku": "RED KITTY HALF",
+      "title": "Kids Cute Helmet - Topi keledar budak",
+      "onhand": 29,
+      "available": 29,
+      "avgDailySales": 0.03,
+      "cost": 6.88,
+      "threshold": 6
     },
     {
       "sku": "BLUE DORAEMON HALF",
@@ -1124,7 +1124,7 @@
       "sku": "COKLAT",
       "title": "sejadah sandar Gebu PREMIUM. HADIAH BUAT YANG tersayang. FREE BAG🎁",
       "onhand": 18,
-      "available": 18,
+      "available": 17,
       "avgDailySales": 0.01,
       "cost": 23.0,
       "threshold": 6
@@ -1736,7 +1736,7 @@
       "sku": "8 SLOT BOX",
       "title": "Toys Storage Box for Hotwheels Car and Thomas Train - 30 slot",
       "onhand": 79,
-      "available": 79,
+      "available": 78,
       "avgDailySales": 0.0,
       "cost": 8.87,
       "threshold": 14
