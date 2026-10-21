@@ -5,7 +5,7 @@
       "title": "Shaker 300ml Pink",
       "onhand": 0,
       "available": 0,
-      "avgDailySales": 2.96,
+      "avgDailySales": 1.3,
       "cost": 0.88,
       "threshold": 419
     },
@@ -14,7 +14,7 @@
       "title": "SHAKER 300ML - BLUE",
       "onhand": 0,
       "available": 0,
-      "avgDailySales": 0.61,
+      "avgDailySales": 0.28,
       "cost": 0.88,
       "threshold": 141
     },
@@ -23,9 +23,18 @@
       "title": "SHAKER 300ML - RED",
       "onhand": 0,
       "available": 0,
-      "avgDailySales": 0.58,
+      "avgDailySales": 0.25,
       "cost": 0.88,
       "threshold": 139
+    },
+    {
+      "sku": "METAL LIGHT",
+      "title": "MAILBOX METAL LIGTH",
+      "onhand": 1,
+      "available": 0,
+      "avgDailySales": 0.09,
+      "cost": 14.81,
+      "threshold": 0
     },
     {
       "sku": "HALF PINK KITTY - EAR",
@@ -79,7 +88,7 @@
       "title": "Shaker 300ml Pink",
       "onhand": 0,
       "available": 0,
-      "avgDailySales": 2.96,
+      "avgDailySales": 1.3,
       "cost": 0.88,
       "threshold": 419
     },
@@ -88,7 +97,7 @@
       "title": "SHAKER 300ML - BLUE",
       "onhand": 0,
       "available": 0,
-      "avgDailySales": 0.61,
+      "avgDailySales": 0.28,
       "cost": 0.88,
       "threshold": 141
     },
@@ -97,9 +106,18 @@
       "title": "SHAKER 300ML - RED",
       "onhand": 0,
       "available": 0,
-      "avgDailySales": 0.58,
+      "avgDailySales": 0.25,
       "cost": 0.88,
       "threshold": 139
+    },
+    {
+      "sku": "METAL LIGHT",
+      "title": "MAILBOX METAL LIGTH",
+      "onhand": 1,
+      "available": 0,
+      "avgDailySales": 0.09,
+      "cost": 14.81,
+      "threshold": 0
     },
     {
       "sku": "HALF PINK KITTY - EAR",
@@ -835,54 +853,54 @@
     {
       "sku": "RANDOM COLOR",
       "title": "SHAKER RANDOM 350ML",
-      "onhand": 9311,
-      "available": 9309,
-      "avgDailySales": 43.54,
+      "onhand": 9307,
+      "available": 9307,
+      "avgDailySales": 43.62,
       "cost": 1.4,
       "threshold": 1031
     },
     {
       "sku": "WHITE-BAR",
       "title": "SHAKER BAR - WHITE 350ML",
-      "onhand": 9698,
-      "available": 9655,
-      "avgDailySales": 28.98,
+      "onhand": 9643,
+      "available": 9606,
+      "avgDailySales": 32.55,
       "cost": 1.45,
       "threshold": 114
     },
     {
       "sku": "PINK BAR",
       "title": "SHAKER BAR- PINK 350ML",
-      "onhand": 14426,
-      "available": 14417,
-      "avgDailySales": 27.34,
+      "onhand": 14415,
+      "available": 14196,
+      "avgDailySales": 21.99,
       "cost": 1.45,
       "threshold": 323
     },
     {
-      "sku": "SHA-BAR-PURPLE-350ML",
-      "title": "SHAKER BAR- PURPLE 350ML",
-      "onhand": 17390,
-      "available": 17388,
-      "avgDailySales": 11.9,
-      "cost": 1.45,
-      "threshold": 222
-    },
-    {
       "sku": "GREEN-BAR",
       "title": "SHAKER BAR- GREEN 350ML",
-      "onhand": 13703,
-      "available": 13599,
-      "avgDailySales": 8.98,
+      "onhand": 13598,
+      "available": 13597,
+      "avgDailySales": 20.34,
       "cost": 1.45,
       "threshold": 497
     },
     {
+      "sku": "SHA-BAR-PURPLE-350ML",
+      "title": "SHAKER BAR- PURPLE 350ML",
+      "onhand": 17387,
+      "available": 17378,
+      "avgDailySales": 13.18,
+      "cost": 1.45,
+      "threshold": 222
+    },
+    {
       "sku": "TALI SILICON - WHITE",
       "title": "TALI SILICON - WHITE",
-      "onhand": 802,
+      "onhand": 792,
       "available": 792,
-      "avgDailySales": 4.39,
+      "avgDailySales": 4.23,
       "cost": 0.3,
       "threshold": 296
     },
@@ -896,38 +914,29 @@
       "threshold": 0
     },
     {
-      "sku": "MAILBOX INDOOR",
-      "title": "MAILBOX INDOOR",
-      "onhand": 34,
-      "available": 32,
-      "avgDailySales": 1.84,
-      "cost": 7.54,
-      "threshold": 67
-    },
-    {
       "sku": "STICKER HOTWHEELS 5X11CM",
       "title": "STICKER HOTWHEELS",
-      "onhand": 1300,
+      "onhand": 1298,
       "available": 1297,
-      "avgDailySales": 1.71,
+      "avgDailySales": 1.87,
       "cost": 0.15,
       "threshold": 2897
     },
     {
-      "sku": "SHA 300ML - YELLOW",
-      "title": "Shaker 300ml Yellow",
-      "onhand": 2,
-      "available": 2,
-      "avgDailySales": 0.58,
-      "cost": 0.88,
-      "threshold": 122
+      "sku": "MAILBOX INDOOR",
+      "title": "MAILBOX INDOOR",
+      "onhand": 32,
+      "available": 31,
+      "avgDailySales": 1.69,
+      "cost": 7.54,
+      "threshold": 67
     },
     {
       "sku": "BUBBLE WRAP",
       "title": "BUBBLE WRAP",
-      "onhand": 799,
+      "onhand": 798,
       "available": 798,
-      "avgDailySales": 0.53,
+      "avgDailySales": 0.76,
       "cost": 0.35,
       "threshold": 295
     },
@@ -935,8 +944,8 @@
       "sku": "PREM BLACK-PASSWD",
       "title": "MAILBOX PREMIUM BLACK PASSWORD",
       "onhand": 10,
-      "available": 10,
-      "avgDailySales": 0.41,
+      "available": 8,
+      "avgDailySales": 0.4,
       "cost": 17.68,
       "threshold": 101
     },
@@ -950,11 +959,29 @@
       "threshold": 15
     },
     {
+      "sku": "QARZI",
+      "title": "[Ready Stock] Sejadah Sandar MARYAM bercorak Sulam dan Batik",
+      "onhand": 9,
+      "available": 9,
+      "avgDailySales": 0.32,
+      "cost": 23.0,
+      "threshold": 3
+    },
+    {
+      "sku": "SHA 300ML - YELLOW",
+      "title": "Shaker 300ml Yellow",
+      "onhand": 2,
+      "available": 2,
+      "avgDailySales": 0.25,
+      "cost": 0.88,
+      "threshold": 122
+    },
+    {
       "sku": "FULL PINK RABBIT-ECO",
       "title": "HELMET FULL PINK RABBIT ECONOMICAL",
       "onhand": 16,
       "available": 16,
-      "avgDailySales": 0.35,
+      "avgDailySales": 0.24,
       "cost": 11.82,
       "threshold": 30
     },
@@ -977,15 +1004,6 @@
       "threshold": 7
     },
     {
-      "sku": "QARZI",
-      "title": "[Ready Stock] Sejadah Sandar MARYAM bercorak Sulam dan Batik",
-      "onhand": 10,
-      "available": 9,
-      "avgDailySales": 0.17,
-      "cost": 23.0,
-      "threshold": 3
-    },
-    {
       "sku": "RAC- HT - SINGLE",
       "title": "RACK 1 SLOT- COMPACT - STACK",
       "onhand": 35,
@@ -993,6 +1011,24 @@
       "avgDailySales": 0.16,
       "cost": 3.0,
       "threshold": 5
+    },
+    {
+      "sku": "COKLAT",
+      "title": "sejadah sandar Gebu PREMIUM. HADIAH BUAT YANG tersayang. FREE BAG🎁",
+      "onhand": 17,
+      "available": 17,
+      "avgDailySales": 0.16,
+      "cost": 23.0,
+      "threshold": 6
+    },
+    {
+      "sku": "8 SLOT BOX",
+      "title": "Toys Storage Box for Hotwheels Car and Thomas Train - 30 slot",
+      "onhand": 79,
+      "available": 78,
+      "avgDailySales": 0.15,
+      "cost": 8.87,
+      "threshold": 14
     },
     {
       "sku": "MB-STAI-SIZ-M",
@@ -1017,18 +1053,9 @@
       "title": "BOX HOTWHEELS 30SLOT WHITE",
       "onhand": 1,
       "available": 1,
-      "avgDailySales": 0.12,
+      "avgDailySales": 0.11,
       "cost": 5.42,
       "threshold": 120
-    },
-    {
-      "sku": "METAL LIGHT",
-      "title": "MAILBOX METAL LIGTH",
-      "onhand": 1,
-      "available": 1,
-      "avgDailySales": 0.11,
-      "cost": 14.81,
-      "threshold": 0
     },
     {
       "sku": "BOX-HOT-18S-PREMIUM",
@@ -1076,15 +1103,6 @@
       "threshold": 0
     },
     {
-      "sku": "TAPE FRAGILE",
-      "title": "TAPE FRAGILE",
-      "onhand": 239,
-      "available": 239,
-      "avgDailySales": 0.03,
-      "cost": 3.67,
-      "threshold": 0
-    },
-    {
       "sku": "UMI-TNB-PLU",
       "title": "Malaysia Ready Stock - TNB Plug Converter UK Pin Malaysia Cina Power Conver",
       "onhand": 367,
@@ -1096,8 +1114,8 @@
     {
       "sku": "RED KITTY HALF",
       "title": "Kids Cute Helmet - Topi keledar budak",
-      "onhand": 29,
-      "available": 29,
+      "onhand": 28,
+      "available": 28,
       "avgDailySales": 0.03,
       "cost": 6.88,
       "threshold": 6
@@ -1121,13 +1139,13 @@
       "threshold": 12
     },
     {
-      "sku": "COKLAT",
-      "title": "sejadah sandar Gebu PREMIUM. HADIAH BUAT YANG tersayang. FREE BAG🎁",
-      "onhand": 18,
-      "available": 17,
+      "sku": "TAPE FRAGILE",
+      "title": "TAPE FRAGILE",
+      "onhand": 239,
+      "available": 239,
       "avgDailySales": 0.01,
-      "cost": 23.0,
-      "threshold": 6
+      "cost": 3.67,
+      "threshold": 0
     },
     {
       "sku": "PLA-TUD-SAJ-RAN",
@@ -1366,8 +1384,8 @@
     {
       "sku": "BIN GREEN",
       "title": "MINI DUST BIN",
-      "onhand": 103,
-      "available": 103,
+      "onhand": 102,
+      "available": 102,
       "avgDailySales": 0.0,
       "cost": 1.55,
       "threshold": 2
@@ -1733,15 +1751,6 @@
       "threshold": 4
     },
     {
-      "sku": "8 SLOT BOX",
-      "title": "Toys Storage Box for Hotwheels Car and Thomas Train - 30 slot",
-      "onhand": 79,
-      "available": 78,
-      "avgDailySales": 0.0,
-      "cost": 8.87,
-      "threshold": 14
-    },
-    {
       "sku": "REJECT QUALITY",
       "title": "Toys Storage Box for Hotwheels Car and Thomas Train - 30 slot",
       "onhand": 1,
@@ -1889,7 +1898,7 @@
       "sku": "VISOR ONLY HALF",
       "title": "Kids Cute Helmet - Topi keledar budak",
       "onhand": 73,
-      "available": 73,
+      "available": 72,
       "avgDailySales": 0.0,
       "cost": 4.0,
       "threshold": 27
@@ -1959,9 +1968,9 @@
     }
   ],
   "summary": {
-    "no_stock_count": 84,
-    "low_stock_count": 125,
-    "critical_count": 8,
+    "no_stock_count": 85,
+    "low_stock_count": 124,
+    "critical_count": 9,
     "total_products": 263
   }
 }
