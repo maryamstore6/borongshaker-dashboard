@@ -128,15 +128,15 @@
   {
     "month": "2026-10",
     "month_name": "Oktober",
-    "orders": 1205,
-    "qty": 4003,
-    "sales": 11453.07,
-    "revenue": 10442.77,
-    "cost": 6236.06,
-    "profit": 4206.71,
-    "margin": 36.7,
-    "shopee": 4542.27,
-    "tiktok": 4454.04,
+    "orders": 1273,
+    "qty": 4294,
+    "sales": 12226.48,
+    "revenue": 11174.1,
+    "cost": 6453.36,
+    "profit": 4720.74,
+    "margin": 38.6,
+    "shopee": 4627.74,
+    "tiktok": 4829.28,
     "lazada": 416.39
   }
 ]
