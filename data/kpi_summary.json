@@ -1,13 +1,13 @@
 {
-  "total_sales": 289154.27,
-  "total_profit": 89726.19,
-  "total_orders": 23695,
-  "total_qty": 133401,
+  "total_sales": 289694.66,
+  "total_profit": 89676.59,
+  "total_orders": 23759,
+  "total_qty": 133476,
   "avg_margin": 31.0,
   "channels": {
-    "shopee": 106447.33,
-    "tiktok": 100346.21,
+    "shopee": 106716.85,
+    "tiktok": 100625.62,
     "lazada": 5780.35
   },
-  "updated": "2026-10-23"
+  "updated": "2026-10-24"
 }
